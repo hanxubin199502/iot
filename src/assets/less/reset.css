@@ -1,0 +1,65 @@
+* {
+    word-wrap: break-word;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  
+  body {
+    min-width: 1200px;
+    overflow-y: auto;
+    position: absolute;
+    font-size: 12px;
+  }
+  
+  html, body, #app {
+    /* height: 100%; */
+    width: 100%;
+    overflow-y:auto;
+  }
+  
+  html,body,h1,h2,h3,h4,h5,h6,div,p,b,em.i,a,img,ul,li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body,
+  textarea,
+  input[type='text'] {
+    font-family: "Microsoft YaHei", "Arial", "Helvetica", "方正兰亭", "Georgia", "Sans-serif", "Tahoma";
+  }
+  
+  [class^="icon"]{
+    font-family:"iconfont" !important;
+    font-size:20px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #404040;
+  }
+  
+  a img {
+    border: 0
+  }
+  
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  button{
+      outline: none;
+  }
+  input:focus {
+    outline: none;
+  }
+  

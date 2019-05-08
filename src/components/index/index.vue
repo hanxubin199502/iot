@@ -1,0 +1,735 @@
+<template>
+    <div class="home_page">
+        <div class="header" :class="{act:scrollTag}">
+            <div class="min-header">
+                <div style="float:left;margin-right:38px">
+                     <span class='logo'></span><span class="logo-text"></span>
+                </div>               
+                <ul>
+                    <li>
+                        <el-popover
+                            placement="bottom"
+                            title="标题"
+                            width="200"
+                            trigger="hover"
+                            content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+                            <span slot="reference">产品</span>
+                        </el-popover>
+                    </li>
+                     <li>
+                        <el-popover
+                            placement="bottom"
+                            title="标题"
+                            width="200"
+                            trigger="hover"
+                            content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+                            <span slot="reference">解决方案</span>
+                        </el-popover>
+                    </li>
+                    <li>合作</li>
+                    <li>新闻与动态</li>
+                    <li>关于我们</li>
+                </ul>
+                <p style="float:right;color:#fff">
+                    <span style="margin-right:32px;">开发者社区</span>
+                    <span>管理控制台 |  中文站</span>
+                    <button class="dl">登录</button>
+                </p>
+            </div>
+        </div>
+        <div class="swiper">
+            <el-carousel>
+                <el-carousel-item v-for="item in 4" :key="item">               
+                    <h3></h3>
+                </el-carousel-item>
+            </el-carousel>
+        </div> 
+        <div class="info1">
+            <div class="min-info1">
+                <div class="item1">
+                    <p class="img"></p>
+                    <p class="p2">连接设备</p>
+                    <p class="p3">开放生态，物联网终端将更加智能化，促使终端设备之间的协作逐渐成为常态。</p>
+                </div>
+                <div class="item2">
+                    <p class="img"></p>
+                    <p class="p2">连接人</p>
+                    <p class="p3">从连接设备到连接人，物联网将协助各行业搭建“超级大脑”，智慧生活。 </p>
+                </div>
+                <div class="item3">
+                    <p class="img"></p>
+                    <p class="p2">AI驱动</p>
+                    <p class="p3">人工智能技术融入物联网应用变得更容易，场景更具赋能空间。</p>
+                </div>
+            </div>
+        </div> 
+        <div class="info2">
+            <div class="min-info2">
+                <h2>拥抱未来&nbsp&nbsp&nbsp打造智慧物联生态</h2>
+                <div class="line"></div>
+                 <el-row :gutter="110" class="row-content">
+                    <el-col :span="8"><div class="grid-content bg1"></div></el-col>
+                    <el-col :span="8"><div class="grid-content bg2"></div></el-col>
+                    <el-col :span="8"><div class="grid-content bg3"></div></el-col>             
+                </el-row>
+                <p class="describe">博彦物联致力于打造以人为本、以使用者为核心的万物互联的美好生活应用场景</p>
+            </div>
+           
+        </div> 
+        <div class="info3">
+            <div class="min-info3">
+                <h2>物联网一站式服务</h2>
+                <div class="line"></div>
+                <el-row :gutter="40" class="row-content">
+                    <el-col :span="6">
+                        <div class="grid-content bg1">
+                            <p class="img"></p>
+                            <p class="tit">设备接入平台</p>
+                            <p class="text">设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台</p>
+                        </div></el-col>
+                    <el-col :span="6">
+                        <div class="grid-content bg2">
+                            <p class="img"></p>
+                            <p class="tit">场景应用平台</p>
+                            <p class="text">设备接入平台设备接入平台设备接入平台设备接入平台</p>
+                        </div></el-col>
+                    <el-col :span="6">
+                        <div class="grid-content bg3">
+                            <p class="img"></p>
+                            <p class="tit">开发平台</p>
+                            <p class="text">设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台</p>
+                        </div>
+                    </el-col> 
+                    <el-col :span="6">
+                        <div class="grid-content bg4">
+                            <p class="img"></p>
+                            <p class="tit">数据应用平台</p>
+                            <p class="text">设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台</p>
+                        </div>
+                    </el-col>             
+                </el-row>
+            </div>
+        </div>  
+        <div class="info4">
+            <div class="min-info4">
+                <h2>物联网应用场景</h2>
+                <div class="line"></div>                             
+            </div>
+            <div class="box">
+                 <div class="min-box">
+                    <el-row  class="row-content">
+                        <el-col :span="4">
+                            <div class="grid-content bg1">
+                                <p class="img"></p>
+                                <p class="tit">智慧楼宇</p>
+                            </div>
+                        </el-col>
+                        <el-col :span="4">
+                            <div class="grid-content bg2">
+                                 <p class="img"></p>
+                                <p class="tit">智慧园区</p>
+                            </div>
+                        </el-col>
+                        <el-col :span="4">
+                            <div class="grid-content bg3">
+                                 <p class="img"></p>
+                                <p class="tit">智慧场馆</p>
+                            </div>
+                        </el-col> 
+                        <el-col :span="4">
+                            <div class="grid-content bg4">
+                                 <p class="img"></p>
+                                <p class="tit">智慧地产</p>
+                            </div>
+                        </el-col>
+                        <el-col :span="4">
+                            <div class="grid-content bg5">
+                                 <p class="img"></p>
+                                <p class="tit">智慧商业</p>
+                            </div>
+                        </el-col>
+                        <el-col :span="4">
+                            <div class="grid-content bg6">
+                                 <p class="img"></p>
+                                <p class="tit">智慧城市</p>
+                            </div>
+                        </el-col>             
+                    </el-row>
+                 </div>                
+            </div>
+        </div>
+        <div class="footer">
+            <div class="min-footer">
+                 <div class="div1">
+                    <div class="pic1"></div>
+                    <div class="pic2"></div>
+                </div>
+                <div class="div2">
+                    <p class="p1">产品与服务</p>
+                    <p class="p2">设备接入平台</p>
+                    <p class="p2">场景应用平台</p>
+                    <p class="p2">开发平台</p>
+                    <p class="p2">数据应用平台</p>
+                
+                </div>
+                <div class="div3">
+                    <p class="p1">解决方案</p>
+                    <p class="p2">智慧楼宇解决方案</p>
+                    <p class="p2">场景应用平台</p>
+                   
+                    <p class="p2">智慧楼宇解决方案</p>
+                    <p class="p2">智慧楼宇解决方案</p>
+                    <p class="p2">智慧楼宇解决方案</p>
+                    <p class="p2">智慧楼宇解决方案</p>             
+                </div>
+                  <div class="div4">
+                    <p class="p1">关于我们</p>
+                    <p class="p2">关于博彦科技</p>           
+                </div>
+                  <div class="div5">
+                    <p class="p1">咨询电话</p>
+                    <p class="p2">400 000 6282</p>                                 
+                </div>
+            </div>
+            <div class="footer-bottom">@2019 博彦科技 博彦物联   用户协议   隐私权政策   服务状态 </div>
+           
+        </div>
+        <div class="floating">
+            意见 · 反馈
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    data(){
+        return{
+            scrollTag:false
+        }
+    },
+    mounted(){
+        // setTimeout(()=>{
+        //     this.handleScroll()
+        //     console.log(555)
+        // },10000)
+       
+        window.addEventListener('scroll',this.handleScroll)
+    },
+  
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods:{
+        handleScroll(){          
+            let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset        
+            if(top>0){
+            this.scrollTag=true;
+            
+            }else{
+            this.scrollTag=false
+                
+            }
+        }
+    }
+
+}
+</script>
+<style lang="less">
+.el-carousel__container{
+    width:100%;
+    height: 649px;
+    // z-index: 2;
+}
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    /* opacity: 0.75; */
+    height: 649px;
+    background: url(../../assets/images/banner_01.png);
+    background-size:100%;
+    // line-height: 649px;
+    margin: 0;
+    text-align:center;
+  }
+  
+  .home_page{
+        .el-carousel__button{
+            height:3px;
+        }
+        .el-carousel__indicators--horizontal{
+            bottom:25px;
+        }
+  }
+</style>
+<style lang="less" scoped>
+    .home_page{
+        // height: 1000px;;       
+        .header{
+            width: 100%;
+            height: 78px;              
+            z-index: 99;   
+            background:transparent;
+            position: fixed;
+            &:hover{
+                background: #053982;
+                // z-index: 1;
+            }
+            .min-header{
+                width: 1200px;
+                height: 100%;
+                line-height: 78px;
+                margin:0 auto;
+                .logo{
+                    width: 28px;
+                    display: inline-block;
+                    height: 31px;
+                    vertical-align: middle;
+                    background:url(../../assets/images/logo.png);
+                    background-size:100%;
+                }
+                 .logo-text{
+                    width: 78px;
+                    height: 18px;
+                    display: inline-block;
+                     vertical-align: middle;
+                    background:url(../../assets/images/logo-text.png);
+                    background-size:100%;
+                    margin-left:8px;
+                }
+                ul{
+                    display: inline-block ;
+                    li{
+                        float: left;
+                        margin:0 15px;
+                        color:#fff;
+                    }
+                }
+                .dl{
+                    width: 57px;
+                    height: 24px;
+                    border:1px solid #fff;
+                    background:transparent;
+                    color:#fff;
+                    margin-left:32px;
+                }
+            }
+        }
+        .act{
+            background: #053982;
+        }
+        .swiper{
+            width:100%;
+            height:649px;
+            position: relative;
+        }
+        .info1{
+            width: 100%;
+            height: 255px;
+            background:#003f98;
+            .min-info1{
+                width: 1200px;
+                margin:0 auto;
+                div{
+                    width:33.33%;
+                    float:left;
+                    // text-align:center;
+                    padding:28px 15px 0 15px;;
+                    >.img{
+                        width: 85px;
+                        height: 85px;
+                        // margin-left:142px;
+                    }
+                    >.p2{
+                        margin:15px 0px;
+                        font-size:18px;
+                        color:#fff;
+                    }
+                    >.p3{
+                        font-size: 14px;
+                        color:#fff;
+                        // text-align:left;
+                        line-height: 1.4;
+                        width:289px;
+                        
+                    }
+                }
+                .item1{
+                    
+                    .img{
+                        margin-left:103px;
+                        background:url(../../assets/images/img1.png);
+                        background-size: 100%;
+                        &:hover{
+                             margin-left:103px;
+                            background:url(../../assets/images/img1_1.png);
+                            background-size: 100%;
+                        }
+                    }
+                    .p2{
+                        padding-left:103px;
+                    }
+                    .p3{
+                        padding-left:25px;
+                    }
+                }
+                 .item2{
+                        padding-left:50px;
+                    .p2{
+                        padding-left:133px;
+                    }
+                    .p3{
+                        padding-left:25px;
+                    }
+                    .img{
+                        margin-left:113px;
+                        background:url(../../assets/images/img2.png);
+                        background-size: 100%;
+                           &:hover{
+                             margin-left:113px;
+                            background:url(../../assets/images/img2_1.png);
+                            background-size: 100%;
+                        }
+                    }
+                }
+                 .item3{
+                        padding-left:80px;
+                    .p2{
+                        padding-left:123px;
+                    }
+                    .p3{
+                        padding-left:25px;
+                    }
+                    .img{
+                        margin-left:103px;
+                        background:url(../../assets/images/img3.png);
+                        background-size: 100%;
+                           &:hover{
+                             margin-left:103px;
+                            background:url(../../assets/images/img3_1.png);
+                            background-size: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .info2{
+            width: 100%;
+            height: 440px;
+            background:#fff;
+            .min-info2{
+                width: 1200px;
+                margin:0 auto;
+                padding-top:68px;
+                h2{
+                    font-size:34px;
+                    text-align:center;
+                    font-weight: 400;
+                }
+                .describe{
+                    color:#2D2D2D;
+                    font-size:24px;
+                    margin-top:28px;
+                    text-align:center;
+                }
+                .line{
+                    width: 74px;
+                    height: 7px;
+                    background:#053982;
+                    margin:25px auto 35px;
+                }
+                .row-content{
+                    height:155px;
+                    .grid-content{
+                        height: 155px;
+                    }
+                    .bg1{
+                        background: url(../../assets/images/tu01.png);
+                        background-size:100%;
+                    }
+                     .bg2{
+                        background: url(../../assets/images/tu02.png);
+                        background-size:100%;
+                    }
+                     .bg3{
+                        background: url(../../assets/images/tu03.png);
+                        background-size:100%;
+                    }
+
+                }
+            }
+           
+        }
+        .info3{
+             height: 394px;
+             width:100%;
+             background-color: #F5F5F6;
+             .min-info3{
+                width: 1200px;
+                height: 100%;
+                margin:0 auto;
+                padding-top:50px;
+                h2{
+                    font-size:34px;
+                    text-align:center;
+                    font-weight: 400;
+                }
+                .line{
+                    width: 74px;
+                    height: 7px;
+                    background:#053982;
+                    margin:20px auto 30px;
+                }
+
+                .row-content{
+                    height: 250px;;
+                    .grid-content{
+                       height: 250px;;
+                        .img{
+                            width: 85px;
+                            height: 85px;
+                            margin-left:90px;
+                        }
+                        .tit{
+                            font-size:18px;
+                            text-align: center;
+                            margin:15px 0 20px;
+                            color:#3f3f3f;
+                        }
+                        .text{
+                            font-size:14px;
+                            padding:0 10px;
+                            line-height:1.5;
+                            color:#3f3f3f;
+                        }
+                    }
+                    .bg1{
+                        .img{
+                            background: url(../../assets/images/wu01.png);
+                            background-size:100%;
+                            &:hover{
+                                background:url(../../assets/images/wu01_1.png);
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                    .bg2{
+                        .img{
+                            background: url(../../assets/images/wu02.png);
+                            background-size:100%;
+                             &:hover{
+                                background:url(../../assets/images/wu02_1.png);
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                     .bg3{
+                        .img{
+                            background: url(../../assets/images/wu03.png);
+                            background-size:100%;
+                             &:hover{
+                                background:url(../../assets/images/wu03_1.png);
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                      .bg4{
+                        .img{
+                            background: url(../../assets/images/wu04.png);
+                            background-size:100%;
+                             &:hover{
+                                background:url(../../assets/images/wu04_1.png);
+                                background-size: 100%;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .info4{
+            width: 100%;
+            height: 600px;
+            background:#fff;
+             .box{
+                    width: 100%;
+                    height:362px;
+                    background:#003f98;
+                    .min-box{
+                         width: 1200px;
+                         margin:0 auto;
+                         height: 100%;
+                    }
+                    .row-content{                       
+                        height:362px;
+                        .grid-content{
+                            height: 362px;
+                            padding-top:100px;
+                            
+                            .img{
+                                width: 45px;
+                                height: 45px;
+                                margin-left:80px;
+
+                            }
+                            .tit{
+                                color:#fff;
+                                margin-top:30px;
+                                text-align:center;
+                                font-size:17px;
+                            }
+                   
+                        }
+                         .bg1{
+                            background: url(../../assets/images/bg_01.png);
+                            background-size:100%;
+                            .img{
+                                background: url(../../assets/images/zh01.png);
+                                background-size:100%;
+                            }
+                        }
+                         .bg2{
+                            background: url(../../assets/images/bg_02.png);
+                            background-size:100%;
+                             .img{
+                                background: url(../../assets/images/zh02.png);
+                                background-size:100%;
+                            }
+                        }
+                         .bg3{
+                            background: url(../../assets/images/bg_03.png);
+                            background-size:100%;
+                             .img{
+                                background: url(../../assets/images/zh03.png);
+                                background-size:100%;
+                            }
+                        }
+                         .bg4{
+                            background: url(../../assets/images/bg_04.png);
+                            background-size:100%;
+                             .img{
+                                background: url(../../assets/images/zh04.png);
+                                background-size:100%;
+                            }
+                        }
+                         .bg5{
+                            background: url(../../assets/images/bg_05.png);
+                            
+                            background-size:100%;
+                             .img{
+                                background: url(../../assets/images/zh05.png);
+                                background-size:100%;
+                            }
+                        }
+                         .bg6{
+                            background: url(../../assets/images/bg_06.png);
+                            background-size:100%;
+                             .img{
+                                background: url(../../assets/images/zh06.png);
+                                background-size:100%;
+                            }
+                        }
+                    }
+                }
+            .min-info4{
+                width: 1200px;
+                margin:0 auto;
+                padding-top:68px;
+                h2{
+                    font-size:34px;
+                    text-align:center;
+                    font-weight: 400;
+                }
+                .line{
+                    width: 74px;
+                    height: 7px;
+                    background:#053982;
+                    margin:25px auto 35px;
+                }
+
+               
+                 
+            }
+        }
+        .footer{
+            height: 328px;
+            background-color:#363636;
+            position: relative;
+            .footer-bottom{
+                width: 100%;
+                height: 38px;
+                line-height:38px;
+                color:#939793;
+                text-align: center;
+                position: absolute;;
+                bottom:0;
+                left:0;
+                background-color: #252525;
+            }
+            .min-footer{
+                width: 1200px;
+                margin:0 auto;                
+                .div1{
+                    float: left;
+                    width: 88px;
+                    margin-right:150px;
+                    padding-top:12px;
+                    .pic1,.pic2{
+                        width:88px;
+                        height: 85px;
+                        margin:30px 0;
+                        background-color: #4dafde;
+                    }
+                }
+                .div2,.div3,.div4,.div5{
+                    .p1{
+                        color:#fff;
+                        font-size:14px;
+                        margin-bottom:15px;
+                    }
+                    .p2{
+                        margin-bottom:15px;
+                        color:#939793
+                    }
+                }
+                .div2{
+                    float: left;
+                    padding-top:50px;
+                    width: 120px;
+                    margin-right: 140px;
+                  
+                }
+                .div3{
+                    float: left;
+                    padding-top:50px;
+                    width: 120px;
+                    margin-right: 140px;
+                }
+                .div4{
+                    float: left;
+                    padding-top:50px;
+                    width: 120px;
+                    margin-right: 140px;
+                }
+                .div5{
+                    float: left;
+                    padding-top:50px;
+                    width: 120px;
+                }
+            }
+          
+        }
+        .floating{
+            width: 35px;
+            height: 100px;         
+            padding:13px 12px;
+            font-size:11px;
+            color:#fff;
+            background-color: #4dafde;
+            position: fixed;
+            right:12px;
+            bottom:95px;
+            text-align:center;
+            z-index:10;
+        }
+    }
+</style>
+
