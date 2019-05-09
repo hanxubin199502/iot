@@ -202,6 +202,11 @@
                    <p>售前电话</p>
                    <p>400 000 6262</p>
                 </div>
+                <div>
+                   <i class="el-icon-menu"></i>
+                   <p>建议反馈</p>
+                   <p>为万物更智联，我们渴望您的建议</p>
+                </div>
             </div>
             
         </div>
@@ -727,10 +732,9 @@ export default {
         }
         .floating{
             width: 35px;
-            height: 100px;         
-            padding:13px 12px;
-            font-size:11px;
-            
+            height: 115px;         
+            padding:18px 12px;
+            font-size:11px;           
             background-color: #4dafde;
             position: fixed;
             right:12px;
@@ -743,13 +747,14 @@ export default {
             }
             .float-window{
                 position: absolute;
-                width: 210px;
-                height: 130px;
+                width: 230px;
+                height: 150px;
+                font-size:11px;
                 bottom:0;
-                left:-220px;
+                left:-240px;
                 box-shadow:0px 2px 26px 0px rgba(6,51,120,0.4);
                 background: #fff;
-                padding:20px 15px;
+                padding:20px 12px;
                 i{
                     display: block;
                     float: left;
@@ -760,7 +765,7 @@ export default {
                 p{
                     height: 20px;
                     line-height: 20px;;
-                    padding-left:30px;
+                    padding-left:22px;
                 }
             }
         }

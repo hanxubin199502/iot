@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source /etc/environment
 WORKSPACE=$(dirname $(cd "$(dirname "$0")";pwd))
-NAME=iot-saas-fe
+NAME=iot-saas-official
 VERSION=$2
 cd $WORKSPACE/build &&
 case "$1" in
