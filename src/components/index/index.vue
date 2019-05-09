@@ -198,7 +198,7 @@
             <span>意见 · 反馈</span>
             <div class="float-window">
                 <div>
-                   <i class="el-icon-edit"></i>
+                   <i class="el-icon-menu"></i>
                    <p>售前电话</p>
                    <p>400 000 6262</p>
                 </div>
@@ -735,10 +735,11 @@ export default {
             position: fixed;
             right:12px;
             bottom:90px;
-            text-align:center;
+            
             z-index:10;
             >span{
                 color:#fff;
+                text-align:center;
             }
             .float-window{
                 position: absolute;
@@ -747,7 +748,20 @@ export default {
                 bottom:0;
                 left:-220px;
                 box-shadow:0px 2px 26px 0px rgba(6,51,120,0.4);
-                background: #fff
+                background: #fff;
+                padding:20px 15px;
+                i{
+                    display: block;
+                    float: left;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size:18px;
+                }
+                p{
+                    height: 20px;
+                    line-height: 20px;;
+                    padding-left:30px;
+                }
             }
         }
     }
