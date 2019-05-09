@@ -195,7 +195,15 @@
            
         </div>
         <div class="floating">
-            意见 · 反馈
+            <span>意见 · 反馈</span>
+            <div class="float-window">
+                <div>
+                   <i class="el-icon-edit"></i>
+                   <p>售前电话</p>
+                   <p>400 000 6262</p>
+                </div>
+            </div>
+            
         </div>
     </div>
 </template>
@@ -722,13 +730,25 @@ export default {
             height: 100px;         
             padding:13px 12px;
             font-size:11px;
-            color:#fff;
+            
             background-color: #4dafde;
             position: fixed;
             right:12px;
-            bottom:95px;
+            bottom:90px;
             text-align:center;
             z-index:10;
+            >span{
+                color:#fff;
+            }
+            .float-window{
+                position: absolute;
+                width: 210px;
+                height: 130px;
+                bottom:0;
+                left:-220px;
+                box-shadow:0px 2px 26px 0px rgba(6,51,120,0.4);
+                background: #fff
+            }
         }
     }
 </style>
