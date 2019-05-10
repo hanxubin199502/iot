@@ -190,19 +190,42 @@ export default {
             scrollTag:false
         }
     },
-    mounted(){
-        // setTimeout(()=>{
-        //     this.handleScroll()
-        //     console.log(555)
-        // },10000)
-       
+    created(){
+        this.getList()
+    },
+    mounted(){     
         window.addEventListener('scroll',this.handleScroll)
     },
   
-    beforeDestroy() {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
+   
     methods:{
+            // 获取轮播图
+        getList() {
+    
+        let params = { imagesPosition: 1 };
+        this.$http
+            .get(
+            this.$api.getApiAddress(
+                "/operationplatformmgn/o/saas/platform-images/query_images",
+                "API_ROOT"
+            ),
+            params
+            )
+            .then(res => {
+            if(res.data){
+                console.log(res.data)
+                // this.newImg =false
+                // this.imageUrl = res.data.imagesPath
+                // this.rotationItem = res.data
+            }
+            else {
+                this.imageUrl = ""
+
+        
+            }
+                console.log(this.imageUrl)
+            });
+        },
         handleScroll(){          
             let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset        
             if(top>0){
@@ -213,7 +236,10 @@ export default {
                 
             }
         }
-    }
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
 
 }
 </script>
