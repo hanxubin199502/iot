@@ -12,6 +12,7 @@ export default {
 </script>
 
 <style>
+ @import url(./assets/iconfont/iconfont.css);
 @import './assets/less/reset.css';
 @import './assets/less/reset-element.less';
 #app {

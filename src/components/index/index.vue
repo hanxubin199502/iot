@@ -175,12 +175,11 @@
                 <div class="div3">
                     <p class="p1">解决方案</p>
                     <p class="p2">智慧楼宇解决方案</p>
-                    <p class="p2">场景应用平台</p>
-                   
-                    <p class="p2">智慧楼宇解决方案</p>
-                    <p class="p2">智慧楼宇解决方案</p>
-                    <p class="p2">智慧楼宇解决方案</p>
-                    <p class="p2">智慧楼宇解决方案</p>             
+                    <p class="p2">智慧园区解决方案</p>                  
+                    <p class="p2">智慧场馆解决方案</p>
+                    <p class="p2">智慧地产解决方案</p>
+                    <p class="p2">智慧商业解决方案</p>
+                    <p class="p2">智慧城市解决方案</p>             
                 </div>
                   <div class="div4">
                     <p class="p1">关于我们</p>
@@ -195,17 +194,20 @@
            
         </div>
         <div class="floating">
+            
             <span>意见 · 反馈</span>
+            <i class="i"></i>
             <div class="float-window">
+                <i class="close el-icon-close"></i>
                 <div>
-                   <i class="el-icon-menu"></i>
-                   <p>售前电话</p>
-                   <p>400 000 6262</p>
+                   <i class="icon icon-dianhuaji"></i>
+                   <p class="p1">售前咨询电话</p>
+                   <p class="call">400 000 6262</p>
                 </div>
-                <div>
-                   <i class="el-icon-menu"></i>
-                   <p>建议反馈</p>
-                   <p>为万物更智联，我们渴望您的建议</p>
+                <div style="margin-top:25px;">
+                   <i class="icon icon-yijianfankui-"></i>
+                   <p class="p1">建议反馈</p>
+                   <p class="p2">为万物更智联，我们渴望您的建议</p>
                 </div>
             </div>
             
@@ -255,11 +257,9 @@ export default {
   .el-carousel__item h3 {
     color: #475669;
     font-size: 18px;
-    /* opacity: 0.75; */
     height: 649px;
-    background: url(../../assets/images/banner_01.png);
-    background-size:100%;
-    // line-height: 649px;
+    background: url(../../assets/images/banner_01.png) no-repeat center center;
+    background-size:1920px 649px;
     margin: 0;
     text-align:center;
   }
@@ -738,14 +738,28 @@ export default {
             background-color: #4dafde;
             position: fixed;
             right:12px;
-            bottom:90px;
-            
+            bottom:90px;            
             z-index:10;
             >span{
                 color:#fff;
+                display: block;
                 text-align:center;
             }
+            .i{
+                position: absolute;
+                width: 10px;
+                height: 150px;
+                bottom:0;
+                left:-10px;
+            }
+
+            &:hover{
+                .float-window{
+                    display: block
+                }
+            }
             .float-window{
+                display: none;
                 position: absolute;
                 width: 230px;
                 height: 150px;
@@ -755,17 +769,33 @@ export default {
                 box-shadow:0px 2px 26px 0px rgba(6,51,120,0.4);
                 background: #fff;
                 padding:20px 12px;
-                i{
+                .close{
+                    position: absolute;
+                    top:15px;
+                    right:15px;
+                    font-size: 14px;
+                }
+                i.icon{
                     display: block;
                     float: left;
                     height: 40px;
                     line-height: 40px;
                     font-size:18px;
                 }
+                .p1{
+                    color: #2D2D2D;
+                }
+                .p2{
+                    color:#767976;
+                    font-weight: 400;
+                }
+                .call{
+                    color:#4DAFDE;
+                }
                 p{
                     height: 20px;
                     line-height: 20px;;
-                    padding-left:22px;
+                    padding-left:25px;
                 }
             }
         }
