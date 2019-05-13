@@ -15,7 +15,17 @@ export default new Router({
         {
             path: '/homePage',
             name: 'homePage',
-            component:  () => import ('@/components/index/index')
+            component:  () => import ('@/components/index/index'),
+        },
+        {
+            path: '/news',
+            name: '新闻列表',
+            component:  () => import ('@/components/news/newsList'),
+        },
+        {
+            path: '/newsDetail',
+            name: '新闻详情',
+            component:  () => import ('@/components/news/newsDetail'),
         },
     ]
 })
