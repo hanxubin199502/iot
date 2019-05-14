@@ -1,48 +1,10 @@
 <template>
-    <div class="home_page">
-        <!-- <div class="header" :class="{act:scrollTag}">
-            <div class="min-header">
-                <div style="float:left;margin-right:38px">
-                     <span class='logo'></span><span class="logo-text"></span>
-                </div>               
-                <ul>
-                    <li>
-                        <el-popover
-                            placement="bottom"
-                            title="标题"
-                            width="200"
-                            trigger="hover"
-                            content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-                            <span slot="reference">产品</span>
-                        </el-popover>
-                    </li>
-                     <li>
-                        <el-popover
-                            placement="bottom"
-                            title="标题"
-                            width="200"
-                            trigger="hover"
-                            content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-                            <span slot="reference">解决方案</span>
-                        </el-popover>
-                    </li>
-                    <li>合作</li>
-                    <li>新闻与动态</li>
-                    <li>关于我们</li>
-                </ul>
-                <p style="float:right;color:#fff">
-                    <span style="margin-right:32px;">开发者社区</span>
-                    <span>管理控制台 |  中文站</span>
-                    <button class="dl">登录</button>
-                </p>
-            </div>
-        </div> -->
-<headerBar/> 
-
+    <div class="home_page"> 
+        <headerBar/> 
         <div class="swiper">
             <el-carousel>
-                <el-carousel-item v-for="item in 4" :key="item">               
-                    <h3></h3>
+                <el-carousel-item v-for="item in imgList" :key="item.id">               
+                    <h3 :style="'background:url('+item.imagesPath+')center center'"></h3>
                 </el-carousel-item>
             </el-carousel>
         </div> 
@@ -191,6 +153,7 @@ export default {
     },
     data(){
         return{
+            imgList:[]
             // scrollTag:false
         }
     },
@@ -213,17 +176,10 @@ export default {
             )
             .then(res => {
                 if(res.data){
-                    console.log(res.data)
-                    // this.newImg =false
-                    // this.imageUrl = res.data.imagesPath
-                    // this.rotationItem = res.data
+                
+                    this.imgList = res.data
                 }
-                else {
-                    this.imageUrl = ""
-
-            
-                }
-                console.log(this.imageUrl)
+             
             });
         },
         handleScroll(){          
@@ -256,10 +212,13 @@ export default {
         color: #475669;
         font-size: 18px;
         height: 540px;
-        background: url(../../assets/images/banner.png) no-repeat center center;
+        // background: url(../../assets/images/banner.png) no-repeat center center;
+      
         background-size:1920px 540px;
         margin: 0;
         text-align:center;
+        position: relative;
+        overflow: hidden;
     }
     .el-carousel__button{
         height:3px;
