@@ -1,6 +1,6 @@
 <template>
     <div class="home_page">
-        <div class="header" :class="{act:scrollTag}">
+        <!-- <div class="header" :class="{act:scrollTag}">
             <div class="min-header">
                 <div style="float:left;margin-right:38px">
                      <span class='logo'></span><span class="logo-text"></span>
@@ -36,7 +36,9 @@
                     <button class="dl">登录</button>
                 </p>
             </div>
-        </div>
+        </div> -->
+<headerBar/> 
+
         <div class="swiper">
             <el-carousel>
                 <el-carousel-item v-for="item in 4" :key="item">               
@@ -158,7 +160,7 @@
                  </div>                
             </div>
         </div>
-        <footer-bar></footer-bar>
+        <footerBar/>
         <div class="floating">            
             <span>意见 · 反馈</span>
             <i class="i"></i>
@@ -181,13 +183,15 @@
 </template>
 <script>
 import footerBar from '../common/footer'
+import headerBar from '../common/header'
 export default {
     components:{
-        footerBar
+        footerBar,
+        headerBar
     },
     data(){
         return{
-            scrollTag:false
+            // scrollTag:false
         }
     },
     created(){
@@ -268,60 +272,6 @@ export default {
 </style>
 <style lang="less" scoped>
     .home_page{
-        // height: 1000px;;       
-        .header{
-            width: 100%;
-            height: 78px;              
-            z-index: 99;   
-            background:transparent;
-            position: fixed;
-            &:hover{
-                background: #053982;
-                // z-index: 1;
-            }
-            .min-header{
-                width: 1200px;
-                height: 100%;
-                line-height: 78px;
-                margin:0 auto;
-                .logo{
-                    width: 28px;
-                    display: inline-block;
-                    height: 31px;
-                    vertical-align: middle;
-                    background:url(../../assets/images/logo.png);
-                    background-size:100%;
-                }
-                 .logo-text{
-                    width: 78px;
-                    height: 18px;
-                    display: inline-block;
-                     vertical-align: middle;
-                    background:url(../../assets/images/logo-text.png);
-                    background-size:100%;
-                    margin-left:8px;
-                }
-                ul{
-                    display: inline-block ;
-                    li{
-                        float: left;
-                        margin:0 15px;
-                        color:#fff;
-                    }
-                }
-                .dl{
-                    width: 57px;
-                    height: 24px;
-                    border:1px solid #fff;
-                    background:transparent;
-                    color:#fff;
-                    margin-left:32px;
-                }
-            }
-        }
-        .act{
-            background: #053982;
-        }
         .swiper{
             width:100%;
             height:540px;
