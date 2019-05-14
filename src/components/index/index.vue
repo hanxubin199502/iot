@@ -199,41 +199,35 @@ export default {
   
    
     methods:{
-            // 获取轮播图
+        // 获取轮播图
         getList() {
-    
-        let params = { imagesPosition: 1 };
-        this.$http
-            .get(
-            this.$api.getApiAddress(
-                "/operationplatformmgn/o/saas/platform-images/query_images",
-                "API_ROOT"
-            ),
-            params
+            this.$http.get(
+                this.$api.getApiAddress(
+                    "/operationplatformmgn/o/saas/platform-images/query_images_all",
+                    "API_ROOT"
+                ),       
             )
             .then(res => {
-            if(res.data){
-                console.log(res.data)
-                // this.newImg =false
-                // this.imageUrl = res.data.imagesPath
-                // this.rotationItem = res.data
-            }
-            else {
-                this.imageUrl = ""
+                if(res.data){
+                    console.log(res.data)
+                    // this.newImg =false
+                    // this.imageUrl = res.data.imagesPath
+                    // this.rotationItem = res.data
+                }
+                else {
+                    this.imageUrl = ""
 
-        
-            }
+            
+                }
                 console.log(this.imageUrl)
             });
         },
         handleScroll(){          
             let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset        
             if(top>0){
-            this.scrollTag=true;
-            
+                this.scrollTag=true;           
             }else{
-            this.scrollTag=false
-                
+                this.scrollTag=false                
             }
         }
     },

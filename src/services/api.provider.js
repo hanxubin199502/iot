@@ -4,7 +4,7 @@ const apiProvider = {}
 apiProvider.apiConfig = {}
 
 apiProvider.apiConfig['API_ROOT'] = process.env.API_ROOT
-console.log(process.env.API_ROOT)
+
 console.log(apiProvider.apiConfig['API_ROOT'] )
 apiProvider.mapModuleRoute = function (module) {
   if (module) {
