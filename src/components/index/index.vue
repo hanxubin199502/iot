@@ -3,8 +3,8 @@
         <headerBar/> 
         <div class="swiper">
             <el-carousel>
-                <el-carousel-item v-for="item in imgList" :key="item.id">               
-                    <h3 :style="'background:url('+item.imagesPath+')center center'"></h3>
+                <el-carousel-item>               
+                    <h3 v-for="(item,index) in imgList" :key="index" :style="'background:url('+item.imagesPath+')center center'"></h3>
                 </el-carousel-item>
             </el-carousel>
         </div> 
@@ -212,8 +212,7 @@ export default {
         color: #475669;
         font-size: 18px;
         height: 540px;
-        // background: url(../../assets/images/banner.png) no-repeat center center;
-      
+        // background: url(../../assets/images/banner.png) no-repeat center center;     
         background-size:1920px 540px;
         margin: 0;
         text-align:center;
