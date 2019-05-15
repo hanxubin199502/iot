@@ -8,7 +8,6 @@ export default new Router({
     routes: [ 
         {
             path: '/', 
-            name: 'homePage',
             redirect:'/homePage'
         
         },
@@ -23,7 +22,7 @@ export default new Router({
             component:  () => import ('@/components/news/newsList'),
         },
         {
-            path: '/newsDetail',
+            path: '/newsDetail:id',
             name: '新闻详情',
             component:  () => import ('@/components/news/newsDetail'),
         },
