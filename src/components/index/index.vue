@@ -37,8 +37,7 @@
                     <el-col :span="8"><div class="grid-content bg3"></div></el-col>             
                 </el-row>
                 <p class="describe">博彦物联致力于打造以人为本、以使用者为核心的万物互联的美好生活应用场景</p>
-            </div>
-           
+            </div>          
         </div> 
         <div class="info3">
             <div class="min-info3">
@@ -176,7 +175,7 @@ export default {
             )
             .then(res => {
                 if(res.data){
-                
+               
                     this.imgList = res.data
                 }
              
@@ -205,15 +204,15 @@ export default {
     }
     .el-carousel__container{
         width:100%;
-        height: 540px;
+        height: 560px;
         // z-index: 2;
     }
     .el-carousel__item h3 {
         color: #475669;
         font-size: 18px;
-        height: 540px;
+        height: 560px;
         // background: url(../../assets/images/banner.png) no-repeat center center;     
-        background-size:1920px 540px;
+        background-size:1920px 560px;
         margin: 0;
         text-align:center;
         position: relative;
@@ -232,7 +231,7 @@ export default {
     .home_page{
         .swiper{
             width:100%;
-            height:540px;
+            height:560px;
             position: relative;
         }
         .info1{
