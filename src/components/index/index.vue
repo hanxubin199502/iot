@@ -153,12 +153,15 @@ export default {
     data(){
         return{
             imgList:[],
-            hide:false
+            hide:false,
+            userInfo:{}
             // scrollTag:false
         }
     },
     created(){
         this.getList()
+         document.domain = 'bysiot.com'
+         this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
     },
     mounted(){     
         window.addEventListener('scroll',this.handleScroll)
