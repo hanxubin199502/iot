@@ -162,6 +162,7 @@ export default {
         this.getList()
          document.domain = 'bysiot.com'
          this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
+         console.log(this.userInfo)
     },
     mounted(){     
         window.addEventListener('scroll',this.handleScroll)
