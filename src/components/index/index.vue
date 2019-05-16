@@ -122,11 +122,11 @@
             </div>
         </div>
         <footerBar/>
-        <div class="floating">            
+        <div class="floating" @mouseover="hide=true" @mouseout="hide=false">            
             <span>意见 · 反馈</span>
             <i class="i"></i>
-            <div class="float-window">
-                <i class="close el-icon-close"></i>
+            <div class="float-window" v-show="hide">
+                <i @click="hide=false" class="close el-icon-close"></i>
                 <div>
                    <i class="icon icon-dianhuaji"></i>
                    <p class="p1">售前咨询电话</p>
@@ -152,7 +152,8 @@ export default {
     },
     data(){
         return{
-            imgList:[]
+            imgList:[],
+            hide:false
             // scrollTag:false
         }
     },
@@ -586,13 +587,13 @@ export default {
                 left:-10px;
             }
 
-            &:hover{
-                .float-window{
-                    display: block
-                }
-            }
+            // &:hover{
+            //     .float-window{
+            //         display: block
+            //     }
+            // }
             .float-window{
-                display: none;
+               
                 position: absolute;
                 width: 230px;
                 height: 150px;
