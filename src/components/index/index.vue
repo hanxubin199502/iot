@@ -173,8 +173,7 @@ export default {
     mounted(){     
         window.addEventListener('scroll',this.handleScroll)
     },
-  
-   
+    
     methods:{
         // 获取轮播图
         getList() {
@@ -185,8 +184,7 @@ export default {
                 ),       
             )
             .then(res => {
-                if(res.data){
-               
+                if(res.data){              
                     this.imgList = res.data
                 }
              

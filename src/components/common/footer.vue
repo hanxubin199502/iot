@@ -2,8 +2,8 @@
     <div class="footer">
         <div class="min-footer">
             <div class="div1">
-                <div class="pic1"></div>
-                <div class="pic2"></div>
+                <div class="pic1"><img src="https://www.beyondsoft.com/images/erweima_50.png"></div>
+                <div class="pic2"><img :src="appSrc"></div>
             </div>
             <div class="div2">
                 <p class="p1">产品与服务</p>
@@ -35,7 +35,14 @@
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            appSrc:'https://www.beyondsoft.com/images/erweima_50.png'
+        }
+    },
+    methods:{
+
+    }
 }
 </script>
 <style lang="less" scoped>
@@ -66,7 +73,11 @@ export default {
                         width:88px;
                         height: 85px;
                         margin:30px 0;
-                        background-color: #4dafde;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        // background-color: #4dafde;
                     }
                 }
                 .div2,.div3,.div4,.div5{
