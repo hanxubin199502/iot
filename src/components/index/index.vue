@@ -130,7 +130,7 @@
                 <div>
                    <i class="icon icon-dianhuaji"></i>
                    <p class="p1">售前咨询电话</p>
-                   <p class="call">400 000 6262</p>
+                   <p class="call">400 000 6282</p>
                 </div>
                 <div style="margin-top:25px;">
                    <i class="icon icon-yijianfankui-"></i>

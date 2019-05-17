@@ -25,7 +25,7 @@
           <span>发布与</span>
           <span>{{news.newsType == 1?'新闻动态':news.newsType == 2?'产品动态':'合作福利'}}</span>
           <span>发布时间：</span>
-          <span>{{$moment(news.createTime).format('YYYY-MM-DD HH:mm:ss')}}</span>
+          <span>{{$moment(news.updateTime).format('YYYY-MM-DD HH:mm:ss')}}</span>
           <p>{{news.newsAbstract}}</p>
           <p v-html="news.newsContent"></p>
         </div>
