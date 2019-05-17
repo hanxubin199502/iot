@@ -48,26 +48,26 @@
                         <div class="grid-content bg1">
                             <p class="img"></p>
                             <p class="tit">设备接入平台</p>
-                            <p class="text">设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台</p>
+                            <p class="text">提供亿量级多协议、多平台设备的长连接接入及安全认证能力</p>
                         </div></el-col>
                     <el-col :span="6">
                         <div class="grid-content bg2">
                             <p class="img"></p>
                             <p class="tit">场景应用平台</p>
-                            <p class="text">设备接入平台设备接入平台设备接入平台设备接入平台</p>
+                            <p class="text">垂直于细分领域的SaaS应用，支撑物联网应用的多场景业务需求</p>
                         </div></el-col>
                     <el-col :span="6">
                         <div class="grid-content bg3">
                             <p class="img"></p>
                             <p class="tit">开发平台</p>
-                            <p class="text">设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台</p>
+                            <p class="text">基于博彦物联网云平台各类服务，提供API/SDK等多种方式</p>
                         </div>
                     </el-col> 
                     <el-col :span="6">
                         <div class="grid-content bg4">
                             <p class="img"></p>
-                            <p class="tit">数据应用平台</p>
-                            <p class="text">设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台设备接入平台</p>
+                            <p class="tit">数据使能平台</p>
+                            <p class="text">提供数据云引擎服务，为企业数据化运营提供数据支持</p>
                         </div>
                     </el-col>             
                 </el-row>
