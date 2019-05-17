@@ -28,7 +28,7 @@
           <span>发布与</span>
           <span>{{item.newsType == 1?'新闻动态':item.newsType == 2?'产品动态':'合作福利'}}</span>
           <span>发布时间：</span>
-          <span>{{$moment(item.createTime).format('YYYY-MM-DD HH:mm:ss')}}</span>
+          <span>{{$moment(item.updateTime).format('YYYY-MM-DD HH:mm:ss')}}</span>
           <p>{{item.newsAbstract}}</p>
         </div>
         <el-pagination
