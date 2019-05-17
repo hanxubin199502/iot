@@ -13,12 +13,12 @@
       <!-- 左边导航 -->
       <div class="left_nav">
         <ul>
-          <li>公司介绍</li>
+          <li style="cursor: not-allowed;">公司介绍</li>
           <li @click="newsType=1" :class="{active:newsType=='1'}">新闻动态</li>
           <li @click="newsType=2" :class="{active:newsType=='2'}">产品动态</li>
           <li @click="newsType=3" :class="{active:newsType=='3'}">合作福利</li>
-          <li>生态合作</li>
-          <li>联系我们</li>
+          <li style="cursor: not-allowed;">生态合作</li>
+          <li style="cursor: not-allowed;">联系我们</li>
         </ul>
       </div>
 
