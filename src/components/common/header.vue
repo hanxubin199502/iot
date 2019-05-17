@@ -73,15 +73,15 @@ export default {
             url = location.href;
             
             if(url.indexOf('www-dev.iot.com')>-1){
-                location.href = 'http://saas-dev.iot.com'
+               window.open('http://saas-dev.iot.com')
             }else if(url.indexOf('http://localhost')>-1){
-                location.href = 'http://localhost:8081'
+                window.open('http://localhost:8081')
             }else if(url.indexOf('www-qa.iot.com')>-1){
-                location.href = 'http://saas.iot.com'
+                 window.open('http://saas.iot.com')
             }else if(url.indexOf('www-prod.iot.com')>-1){
-                location.href = 'http://saas-prod.iot.com'
+                window.open('http://saas-prod.iot.com')
             }else if(url.indexOf('www.bysiot.com')>-1) {
-                location.href = 'http://portal.bysiot.com'
+                window.open('http://portal.bysiot.com')
             } 
     },
       getProduction () {

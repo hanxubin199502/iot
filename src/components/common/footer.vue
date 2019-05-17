@@ -2,8 +2,8 @@
     <div class="footer">
         <div class="min-footer">
             <div class="div1">
-                <div class="pic1"></div>
-                <div class="pic2"></div>
+                <div class="pic1"><img src="https://www.beyondsoft.com/images/erweima_50.png" title="公众号关注二维码"></div>
+                <div class="pic2"><img src="../../assets/images/er.png" title="APP下载二维码"></div>
             </div>
             <div class="div2">
                 <p class="p1">产品与服务</p>
@@ -35,7 +35,14 @@
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            // appSrc:'https://www.beyondsoft.com/images/erweima_50.png'
+        }
+    },
+    methods:{
+
+    }
 }
 </script>
 <style lang="less" scoped>
@@ -62,11 +69,26 @@ export default {
                     width: 88px;
                     margin-right:150px;
                     padding-top:12px;
-                    .pic1,.pic2{
+                    .pic1{
                         width:88px;
                         height: 85px;
                         margin:30px 0;
-                        background-color: #4dafde;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        // background-color: #4dafde;
+                    }
+                    .pic2{
+                        width:88px;
+                        height: 85px;
+                        margin:30px 0;
+                        padding:5px;
+                        background-color: #fff;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
                 }
                 .div2,.div3,.div4,.div5{
