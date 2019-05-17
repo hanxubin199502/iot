@@ -122,11 +122,11 @@
             </div>
         </div>
         <footerBar/>
-        <div class="floating">            
+        <div class="floating" @mouseover="hide=true" @mouseout="hide=false">            
             <span>意见 · 反馈</span>
             <i class="i"></i>
-            <div class="float-window">
-                <i class="close el-icon-close"></i>
+            <div class="float-window" v-show="hide">
+                <i @click="hide=false" class="close el-icon-close"></i>
                 <div>
                    <i class="icon icon-dianhuaji"></i>
                    <p class="p1">售前咨询电话</p>
@@ -152,18 +152,28 @@ export default {
     },
     data(){
         return{
-            imgList:[]
+            imgList:[],
+            hide:false,
+            userInfo:{}
             // scrollTag:false
         }
     },
     created(){
         this.getList()
+
+        let url = location.href;
+        if(url.indexOf('bysiot')>0){
+            document.domain = 'bysiot.com'
+            this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
+             console.log(this.userInfo)
+        }
+        
+        console.log(this.userInfo)
     },
     mounted(){     
         window.addEventListener('scroll',this.handleScroll)
     },
-  
-   
+    
     methods:{
         // 获取轮播图
         getList() {
@@ -174,8 +184,7 @@ export default {
                 ),       
             )
             .then(res => {
-                if(res.data){
-               
+                if(res.data){              
                     this.imgList = res.data
                 }
              
@@ -586,13 +595,13 @@ export default {
                 left:-10px;
             }
 
-            &:hover{
-                .float-window{
-                    display: block
-                }
-            }
+            // &:hover{
+            //     .float-window{
+            //         display: block
+            //     }
+            // }
             .float-window{
-                display: none;
+               
                 position: absolute;
                 width: 230px;
                 height: 150px;

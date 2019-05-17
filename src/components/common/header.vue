@@ -32,8 +32,8 @@
       </ul>
       <p style="float:right;color:#fff">
         <span style="margin-right:32px;">开发者社区</span>
-        <span>管理控制台 | 中文站</span>
-        <button class="dl">登录</button>
+        <span><i @click="denglu">管理控制台</i> | <i>中文站</i></span>
+        <button class="dl" @click="denglu">登录</button>
       </p>
     </div>
   </div>
@@ -68,6 +68,22 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
+    denglu(){
+            let url = '';
+            url = location.href;
+            
+            if(url.indexOf('www-dev.iot.com')>-1){
+               window.open('http://saas-dev.iot.com')
+            }else if(url.indexOf('http://localhost')>-1){
+                window.open('http://localhost:8081')
+            }else if(url.indexOf('www-qa.iot.com')>-1){
+                 window.open('http://saas.iot.com')
+            }else if(url.indexOf('www-prod.iot.com')>-1){
+                window.open('http://saas-prod.iot.com')
+            }else if(url.indexOf('www.bysiot.com')>-1) {
+                window.open('http://portal.bysiot.com')
+            } 
+    },
       getProduction () {
       let params = {
         productStatus: 1
@@ -86,14 +102,14 @@ export default {
       },
     // 页面跳转
     jump(num) {
-      switch (num) {
-        case 4:
-          this.$router.push("/news");
-          break;
-        case 0:
-          this.$router.push("/homePage");
-          breakp;
-      }
+        switch (num) {
+            case 4:
+            this.$router.push("/news");
+            break;
+            case 0:
+            this.$router.push("/homePage");
+            break;
+        }
     },
     handleScroll() {
       let top =
@@ -207,6 +223,7 @@ export default {
       background: transparent;
       color: #fff;
       margin-left: 32px;
+      cursor: pointer;
     }
   }
 }
