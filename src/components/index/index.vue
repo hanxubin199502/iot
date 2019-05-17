@@ -3,8 +3,8 @@
         <headerBar/> 
         <div class="swiper">
             <el-carousel>
-                <el-carousel-item v-for="item in imgList" :key="item.id">               
-                    <h3 :style="'background:url('+item.imagesPath+')center center'"></h3>
+                <el-carousel-item v-for="(item,index) in imgList" :key="index" :style="'background:url('+item.imagesPath+')center center'">               
+                    <h3 ></h3>
                 </el-carousel-item>
             </el-carousel>
         </div> 
@@ -37,8 +37,7 @@
                     <el-col :span="8"><div class="grid-content bg3"></div></el-col>             
                 </el-row>
                 <p class="describe">博彦物联致力于打造以人为本、以使用者为核心的万物互联的美好生活应用场景</p>
-            </div>
-           
+            </div>          
         </div> 
         <div class="info3">
             <div class="min-info3">
@@ -123,15 +122,15 @@
             </div>
         </div>
         <footerBar/>
-        <div class="floating">            
+        <div class="floating" @mouseover="hide=true" @mouseout="hide=false">            
             <span>意见 · 反馈</span>
             <i class="i"></i>
-            <div class="float-window">
-                <i class="close el-icon-close"></i>
+            <div class="float-window" v-show="hide">
+                <i @click="hide=false" class="close el-icon-close"></i>
                 <div>
                    <i class="icon icon-dianhuaji"></i>
                    <p class="p1">售前咨询电话</p>
-                   <p class="call">400 000 6262</p>
+                   <p class="call">400 000 6282</p>
                 </div>
                 <div style="margin-top:25px;">
                    <i class="icon icon-yijianfankui-"></i>
@@ -153,12 +152,17 @@ export default {
     },
     data(){
         return{
-            imgList:[]
+            imgList:[],
+            hide:false,
+            userInfo:{}
             // scrollTag:false
         }
     },
     created(){
         this.getList()
+         document.domain = 'bysiot.com'
+         this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
+         console.log(this.userInfo)
     },
     mounted(){     
         window.addEventListener('scroll',this.handleScroll)
@@ -176,7 +180,7 @@ export default {
             )
             .then(res => {
                 if(res.data){
-                
+               
                     this.imgList = res.data
                 }
              
@@ -205,16 +209,15 @@ export default {
     }
     .el-carousel__container{
         width:100%;
-        height: 540px;
+        height: 560px;
         // z-index: 2;
     }
     .el-carousel__item h3 {
         color: #475669;
         font-size: 18px;
-        height: 540px;
-        // background: url(../../assets/images/banner.png) no-repeat center center;
-      
-        background-size:1920px 540px;
+        height: 560px;
+        // background: url(../../assets/images/banner.png) no-repeat center center;     
+        background-size:1920px 560px;
         margin: 0;
         text-align:center;
         position: relative;
@@ -233,7 +236,7 @@ export default {
     .home_page{
         .swiper{
             width:100%;
-            height:540px;
+            height:560px;
             position: relative;
         }
         .info1{
@@ -588,13 +591,13 @@ export default {
                 left:-10px;
             }
 
-            &:hover{
-                .float-window{
-                    display: block
-                }
-            }
+            // &:hover{
+            //     .float-window{
+            //         display: block
+            //     }
+            // }
             .float-window{
-                display: none;
+               
                 position: absolute;
                 width: 230px;
                 height: 150px;

@@ -10,26 +10,14 @@
           <el-popover placement="bottom" width="200" trigger="hover">
             <span slot="reference">产品</span>
             <ul>
-              <li>
+              <li v-for="(item,index) in productList" :key="index">
+                  <!-- :src="../../assets/images/prod_icon1.png"  -->
+                  <!-- :src="'../../assets/images/prod_icon'+item.id+'.png'" -->
                 <img src="../../assets/images/prod_icon1.png" alt>
-                <span class="production">设备接入平台</span>
-                <span>设备入网博彦云平台</span>
+                <span class="production">{{item.productName}}</span>
+                <span>{{item.productBrief}}}</span>
               </li>
-              <li>
-                <img src="../../assets/images/prod_icon2.png" alt>
-                <span class="production">场景应用平台</span>
-                <span>saas系统，支持多个场景</span>
-              </li>
-              <li>
-                <img src="../../assets/images/prod_icon3.png" alt>
-                <span class="production">平台开发</span>
-                <span>面向开发者的二次赋能平台</span>
-              </li>
-              <li>
-                <img src="../../assets/images/prod_icon4.png" alt>
-                <span class="production">数据应用平台</span>
-                <span class>丰富的设备与行为数据</span>
-              </li>
+             
             </ul>
           </el-popover>
         </li>
@@ -44,8 +32,8 @@
       </ul>
       <p style="float:right;color:#fff">
         <span style="margin-right:32px;">开发者社区</span>
-        <span>管理控制台 | 中文站</span>
-        <button class="dl">登录</button>
+        <span><i @click="denglu">管理控制台</i> | <i>中文站</i></span>
+        <button class="dl" @click="denglu">登录</button>
       </p>
     </div>
   </div>
@@ -55,11 +43,13 @@
 export default {
   data() {
     return {
+        productList:[],
       scrollTag: false
     };
   },
   created() {
     // 设置导航栏在非首页停止scoll变化
+    this.getProduction ()
     location.hash == "#/homePage"
       ? (this.scrollTag = false)
       : (this.scrollTag = true);
@@ -78,16 +68,48 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
+    denglu(){
+            let url = '';
+            url = location.href;
+            
+            if(url.indexOf('www-dev.iot.com')>-1){
+                location.href = 'http://saas-dev.iot.com'
+            }else if(url.indexOf('http://localhost')>-1){
+                location.href = 'http://localhost:8081'
+            }else if(url.indexOf('www-qa.iot.com')>-1){
+                location.href = 'http://saas.iot.com'
+            }else if(url.indexOf('www-prod.iot.com')>-1){
+                location.href = 'http://saas-prod.iot.com'
+            }else if(url.indexOf('www.bysiot.com')>-1) {
+                location.href = 'http://portal.bysiot.com'
+            } 
+    },
+      getProduction () {
+      let params = {
+        productStatus: 1
+      }
+      this.$http
+        .get(
+          this.$api.getApiAddress(
+            "/officialwebsite/o/saas/index-product/product-list",
+            "API_ROOT"
+          ),
+          params
+        )
+        .then(res => {
+          this.productList = res.data
+        });
+      },
     // 页面跳转
     jump(num) {
-      switch (num) {
-        case 4:
-          this.$router.push("/news");
-          break;
-        case 0:
-          this.$router.push("/homePage");
-          breakp;
-      }
+        switch (num) {
+            case 4:
+            this.$router.push("/news");
+            break;
+            case 0:
+            this.$router.push("/homePage");
+            break;
+        }
     },
     handleScroll() {
       let top =
@@ -201,6 +223,7 @@ export default {
       background: transparent;
       color: #fff;
       margin-left: 32px;
+      cursor: pointer;
     }
   }
 }
