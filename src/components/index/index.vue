@@ -130,7 +130,7 @@
                 <div>
                    <i class="icon icon-dianhuaji"></i>
                    <p class="p1">售前咨询电话</p>
-                   <p class="call">400 000 6262</p>
+                   <p class="call">400 000 6282</p>
                 </div>
                 <div style="margin-top:25px;">
                    <i class="icon icon-yijianfankui-"></i>
@@ -153,12 +153,16 @@ export default {
     data(){
         return{
             imgList:[],
-            hide:false
+            hide:false,
+            userInfo:{}
             // scrollTag:false
         }
     },
     created(){
         this.getList()
+         document.domain = 'bysiot.com'
+         this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
+         console.log(this.userInfo)
     },
     mounted(){     
         window.addEventListener('scroll',this.handleScroll)
