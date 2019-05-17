@@ -32,33 +32,33 @@ axios.interceptors.response.use(
         }
     },
     err => {
-        if (err.response) {
-        switch (err.response.status) {
-            case 401:
-            store.dispatch('USER_LOGOUT_ACTION').then(() => {
-                Message({message: '系统异常', type: 'error'})
-                appRouters.replace({
-                path: '/login',
-                query: {
-                    redirect: appRouters.currentRoute.fullPath
-                }
-                })
-            })
-            break
-            default :
-            Message({message: err.response.data.message, type: 'error'})
-            break
-        }
-        return Promise.reject(err.response)
-        } else if (err.message && err.message.indexOf('Network Error') > -1) {
-            console.log(appRouters.currentRoute.fullPath)
-        //   If the error occurs on request(401), it would be handled and cleaned by axios,
-        //   and only Network Error is returned( response is null)
-            Message({message:'连接超时', type: 'error'})
+        // if (err.response) {
+        // switch (err.response.status) {
+        //     case 401:
+        //     store.dispatch('USER_LOGOUT_ACTION').then(() => {
+        //         Message({message: '系统异常', type: 'error'})
+        //         appRouters.replace({
+        //         path: '/login',
+        //         query: {
+        //             redirect: appRouters.currentRoute.fullPath
+        //         }
+        //         })
+        //     })
+        //     break
+        //     default :
+        //     // Message({message: err.response.data.message, type: 'error'})
+        //     break
+        // }
+        // return Promise.reject(err.response)
+        // } else if (err.message && err.message.indexOf('Network Error') > -1) {
+        //     console.log(appRouters.currentRoute.fullPath)
+        // //   If the error occurs on request(401), it would be handled and cleaned by axios,
+        // //   and only Network Error is returned( response is null)
+        //     Message({message:'连接超时', type: 'error'})
           
         
-            return Promise.reject(err)
-        }
+        //     return Promise.reject(err)
+        // }
     }
 )
 

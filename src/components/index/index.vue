@@ -160,9 +160,15 @@ export default {
     },
     created(){
         this.getList()
-         document.domain = 'bysiot.com'
-         this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
-         console.log(this.userInfo)
+
+        let url = location.href;
+        if(url.indexOf('bysiot')>0){
+            document.domain = 'bysiot.com'
+            this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
+             console.log(this.userInfo)
+        }
+        
+        console.log(this.userInfo)
     },
     mounted(){     
         window.addEventListener('scroll',this.handleScroll)
