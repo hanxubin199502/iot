@@ -219,6 +219,7 @@ export default {
     .dl {
       width: 57px;
       height: 24px;
+      line-height:24px;
       border: 1px solid #fff;
       background: transparent;
       color: #fff;
