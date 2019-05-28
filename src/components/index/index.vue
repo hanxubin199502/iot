@@ -29,7 +29,7 @@
         </div> 
         <div class="info2">
             <div class="min-info2">
-                <h2>拥抱未来&nbsp&nbsp&nbsp打造智慧物联生态</h2>
+                <h2>拥抱未来&nbsp;&nbsp;&nbsp;打造智慧物联生态</h2>
                 <div class="line"></div>
                  <el-row :gutter="110" class="row-content">
                     <el-col :span="8"><div class="grid-content bg1"></div></el-col>

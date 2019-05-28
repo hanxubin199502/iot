@@ -22,7 +22,7 @@
       <div class="right_newslist">
         <div class="newsitem">
           <h1>{{news.newsTheme}}</h1>
-          <span>发布与</span>
+          <span>发布于</span>
           <span>{{news.newsType == 1?'新闻动态':news.newsType == 2?'产品动态':'合作福利'}}</span>
           <span>发布时间：</span>
           <span>{{$moment(news.updateTime).format('YYYY-MM-DD HH:mm:ss')}}</span>
