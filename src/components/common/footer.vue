@@ -7,23 +7,23 @@
             </div>
             <div class="div2">
                 <p class="p1">产品与服务</p>
-                <p class="p2">设备接入平台</p>
-                <p class="p2">场景应用平台</p>
+                <p class="p2" v-for="(item,index) in productList" :key="index" @click="changeTab(1,item.id)">{{item.productName}}</p>
+                <!-- <p class="p2">场景应用平台</p>
                 <p class="p2">开发平台</p>
-                <p class="p2">数据应用平台</p>               
+                <p class="p2">数据应用平台</p>                -->
             </div>
             <div class="div3">
                 <p class="p1">解决方案</p>
-                <p class="p2">智慧楼宇解决方案</p>
-                <p class="p2">智慧园区解决方案</p>                  
+                <p class="p2"  v-for="(item,index) in solutionList" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p>
+                <!-- <p class="p2">智慧园区解决方案</p>                  
                 <p class="p2">智慧场馆解决方案</p>
                 <p class="p2">智慧地产解决方案</p>
                 <p class="p2">智慧商业解决方案</p>
-                <p class="p2">智慧城市解决方案</p>             
+                <p class="p2">智慧城市解决方案</p>              -->
             </div>
             <div class="div4">
-                <p class="p1">关于我们</p>
-                <p class="p2">关于博彦科技</p>           
+                <p class="p1" @click="aboutUs">关于我们</p>
+                <p class="p2" @click="aboutUs">关于博彦科技</p>           
             </div>
             <div class="div5">
                 <p class="p1">咨询电话</p>
@@ -37,11 +37,68 @@
 export default {
     data(){
         return{
-            // appSrc:'https://www.beyondsoft.com/images/erweima_50.png'
+    productList: [], //产品
+    solutionList: [], //解决方案
         }
     },
+      created() {
+    this.getProduction();
+    this.getSolution();
+  },
     methods:{
+        // 页面跳转
+        changeTab(num, id) {
+            if (num ==1) {
+                 this.$router.push({
+            path: "/products"+id})
+            }
+            else {
+                this.$router.push({
+                path: "/solutions"+id,
+              });
 
+            }
+        },
+         // 获取产品列表
+    getProduction() {
+      let params = {
+        productStatus: 1,
+        productContextType:1
+      };
+      this.$http
+        .get(
+          this.$api.getApiAddress(
+            "/operationplatformmgn/o/saas/platform-productContext/query_productContext_list",
+            "API_ROOT"
+          ),
+          params
+        )
+        .then(res => {
+          this.productList = res.data;
+        });
+    },
+    // 获取解决方案列表
+    getSolution() {
+      let params = {
+        solutionType: 1,
+        solutionStatus: 1
+      };
+      this.$http
+        .get(
+          this.$api.getApiAddress(
+            "/operationplatformmgn/o/saas/platform-solution/query_solution_list",
+            "API_ROOT"
+          ),
+          params
+        )
+        .then(res => {
+          this.solutionList = res.data;
+        });
+    },
+        // 关于我们
+        aboutUs() {
+            window.open("https://www.beyondsoft.com/about/index.html");
+        }
     }
 }
 </script>
@@ -98,8 +155,13 @@ export default {
                         margin-bottom:15px;
                     }
                     .p2{
+                          cursor: pointer;
+
                         margin-bottom:15px;
-                        color:#939793
+                        color:#939793;
+                    &:hover {
+                        color: #228ee8;
+                    }
                     }
                 }
                 .div2{
