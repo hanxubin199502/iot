@@ -3,7 +3,7 @@
         <div class="min-footer">
             <div class="div1">
                 <div class="pic1"><img src="https://www.beyondsoft.com/images/erweima_50.png" title="公众号关注二维码"></div>
-                <div class="pic2"><img src="../../assets/images/er.png" title="APP下载二维码"></div>
+                <div class="pic2"><img src="../../assets/images/er2.png" title="APP下载二维码"></div>
             </div>
             <div class="div2">
                 <p class="p1">产品与服务</p>
@@ -140,7 +140,7 @@ export default {
                         width:88px;
                         height: 85px;
                         margin:30px 0;
-                        padding:5px;
+                        padding:4px;
                         background-color: #fff;
                         img{
                             width: 100%;
