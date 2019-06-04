@@ -32,16 +32,7 @@ export default {
             this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
              console.log(this.userInfo)
         }
-        
-        console.log(this.userInfo)
     },
-    mounted(){     
-        // window.addEventListener('scroll',this.handleScroll)
-    },
-    beforeDestroy() {
-            // window.removeEventListener('scroll', this.handleScroll);
-        },
-    
     methods:{
         //获取产品详情 
         getProductDetail () {

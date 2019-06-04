@@ -178,6 +178,7 @@ export default {
           margin-top: 40px;
           color: #2d2d2d;
           font: 20px bold "MicrosoftYaHei-Bold";
+          cursor: pointer;
           &:hover {
             color: #258ce3;
           }
