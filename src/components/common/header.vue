@@ -7,29 +7,27 @@
       </div>
       <ul>
         <li>
-          <el-popover placement="bottom" width="200" trigger="hover">
+          <!-- 产品下拉框 -->
+          <el-popover placement="bottom" :width="190*prodListNum" trigger="hover">
             <span slot="reference">产品</span>
-            <ul>
-              <li v-for="(item,index) in productList" :key="index" @click="changeTab(1,item.id)">
-                <!-- :src="../../assets/images/prod_icon1.png"  -->
-                <!-- :src="'../../assets/images/prod_icon'+item.id+'.png'" -->
-                <img :src="item.outlineImagesPath" alt>
-                <span class="production">{{item.productName}}</span>
-                <span>{{item.productOutline}}</span>
+            <ul v-for="(item,index) in productList" :key="index">
+              <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
+                <img :src="item1.outlineImagesPath" alt>
+                <span class="production">{{item1.productName}}</span>
+                <span>{{item1.productOutline}}</span>
               </li>
             </ul>
           </el-popover>
         </li>
         <li>
-          <el-popover placement="bottom" width="200" trigger="hover">
+          <!-- 解决方案下拉框 -->
+          <el-popover placement="bottom" :width="190*solutionListNum" trigger="hover">
             <span slot="reference">解决方案</span>
-            <ul>
-              <li v-for="(item,index) in solutionList" :key="index" @click="changeTab(2,item.id)">
-                <!-- :src="../../assets/images/prod_icon1.png"  -->
-                <!-- :src="'../../assets/images/prod_icon'+item.id+'.png'" -->
-                <img :src="item.outlineImagesPath" alt>
-                <span class="production">{{item.solutionName}}</span>
-                <span>{{item.solutionOutline}}</span>
+            <ul v-for="(item,index) in solutionList" :key="index">
+              <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
+                <img :src="item1.outlineImagesPath" alt>
+                <span class="production">{{item1.solutionName}}</span>
+                <span>{{item1.solutionOutline}}</span>
               </li>
             </ul>
           </el-popover>
@@ -51,27 +49,27 @@
 </template>
 
 <script>
+// import eventVue from '../../event.js'
 export default {
   data() {
     return {
-      productList: [], //产品
+      prodListNum:0,
+      productList: [], //产品列表
+      solutionListNum:0,
       solutionList: [], //解决方案
-      scrollTag: false
+      scrollTag: false,
     };
   },
   created() {
     this.getProduction();
     this.getSolution();
+    this.forFooter()
     // 设置导航栏在非开发者停止scoll变化
     location.hash == "#/developer"
       ? (this.scrollTag = true)
       : (this.scrollTag = false)
   },
   mounted() {
-    // setTimeout(()=>{
-    //     this.handleScroll()
-    //     console.log(555)
-    // },10000)
     if (
       location.hash.search("developer") == -1
     ) {
@@ -83,6 +81,12 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
+  // 给footer 传值
+    forFooter() {
+            let busInfo = ['asddasd','asdsdasdsd']
+            this.$bus.$emit("fromHeader",busInfo)
+        },
+
     denglu() {
       let url = "";
       url = location.href;
@@ -102,7 +106,7 @@ export default {
     // 获取产品列表
     getProduction() {
       let params = {
-        productStatus: 1,
+        productStatus: 2,
         productContextType:1
       };
       this.$http
@@ -114,14 +118,21 @@ export default {
           params
         )
         .then(res => {
-          this.productList = res.data;
-        });
+          this.prodListNum = Math.ceil( res.data.length / 6) 
+          if(this.prodListNum>0) {
+            for(var i=1;i<=this.prodListNum;i++) {
+                this.productList.push(res.data.slice((i-1)*6,6*i))
+            }
+          }
+
+          this.$bus.$emit("productList",res.data)
+          })
     },
     // 获取解决方案列表
     getSolution() {
       let params = {
         solutionType: 1,
-        solutionStatus: 1
+        solutionStatus: 2
       };
       this.$http
         .get(
@@ -132,8 +143,13 @@ export default {
           params
         )
         .then(res => {
-          this.solutionList = res.data;
-          // console.log(this.solutionList)
+          this.solutionListNum = Math.ceil( res.data.length / 6) 
+          if(this.solutionListNum>0) {
+            for(var i=1;i<=this.solutionListNum;i++) {
+                this.solutionList.push(res.data.slice((i-1)*6,6*i))
+            }
+          }
+          this.$bus.$emit("solutionList",res.data)
         });
     },
     // 页面跳转
@@ -145,17 +161,11 @@ export default {
         case 1: //产品
           this.$router.push({
             path: "/products"+id,
-            // query: {
-            //   productContextId: id
-            // }
           });
           break;
         case 2: //解决方案
           this.$router.push({
             path: "/solutions"+id,
-            // query: {
-            //   solutionId: id
-            // }
           });
           break;
         case 3: //合作
@@ -189,11 +199,16 @@ export default {
 <style lang="less">
 .el-popover {
   padding: 12px 15px;
+  ul {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 15px;
+
+  }
   li {
       cursor: pointer;
-
-    padding: 13px 10px;
-    // height: 70px;
+    width: 140px;
+    padding: 5px 10px;
     border-bottom: 1px solid #f0f0f0;
     &:last-child {
       border-bottom: none;
