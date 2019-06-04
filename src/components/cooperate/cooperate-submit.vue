@@ -25,43 +25,49 @@
           <div class="cooperate_item">
               <div class="cooperate_item_logo cooperate_item_logo4"></div>
                 <div class="cooperate_item_name">业务系统合作</div>
-
           </div>
         </div>
       </div>
     </div>
 
     <div class="content center">
-      <el-form v-if="editing" label-position="right" label-width="430px" :model="cooperateForm">
+      <el-form v-if="editing" label-position="right" label-width="430px" :model="cooperateForm" :rules="rules" ref="cooperateForm">
         <div style="text-align:center;font-size:30px;">合作信息提交</div>
         <div class="gap"></div>
-        <el-form-item label="合作类型：">
-          <el-checkbox-group size="small">
-            <el-checkbox>市场合作</el-checkbox>
-            <el-checkbox>业态合作</el-checkbox>
-            <el-checkbox>设备供应商合作</el-checkbox>
-            <el-checkbox>业务系统合作</el-checkbox>
+        <el-form-item label="合作类型：" prop="cooperateType">
+          <el-checkbox-group size="small"   v-model="cooperateType">
+            <el-checkbox label="1">市场合作</el-checkbox>
+            <el-checkbox label="2">业态合作</el-checkbox>
+            <el-checkbox label="3">设备供应商合作</el-checkbox>
+            <el-checkbox label="4">业务系统合作</el-checkbox>
           </el-checkbox-group>
         </el-form-item>
-        <el-form-item label="单位名称：">
-          <el-input></el-input>
+        <el-form-item label="单位名称：" prop="cooperateConpanyName">
+          <el-input v-model="cooperateForm.cooperateConpanyName"></el-input>
         </el-form-item>
-        <el-form-item label="联系人：">
-          <el-input></el-input>
+        <el-form-item label="联系人：" prop="cooperateName">
+          <el-input v-model="cooperateForm.cooperateName"></el-input>
         </el-form-item>
-        <el-form-item label="联系电话：">
-          <el-input></el-input>
+        <el-form-item label="联系电话：" prop="cooperatePhone">
+          <el-input v-model="cooperateForm.cooperatePhone"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱地址：">
-          <el-input></el-input>
+        <el-form-item label="邮箱地址：" prop="cooperateEmail">
+          <el-input v-model="cooperateForm.cooperateEmail"></el-input>
         </el-form-item>
-        <el-form-item label="合作说明：">
-          <el-input></el-input>
+        <el-form-item label="合作说明：" prop="cooperateRemark">
+          <el-input v-model="cooperateForm.cooperateRemark" type="textarea"
+  :rows="5" :autosize="{ minRows: 5, maxRows: 15}"></el-input>
         </el-form-item>
         <el-row>
-          <el-button type="primary">提交</el-button>
+          <el-button type="primary" @click="sendForm">提交</el-button>
         </el-row>
       </el-form>
+    <!-- 表单提交成功后提示，并跳转页面 -->
+      <div v-else class="finish center">
+        <div class="finish_info">您的信息已提交，客服人员将在1个工作日内联系您。</div>
+        <div class="finish_countdown">将在&nbsp;<span>{{countDown}}</span>&nbsp;秒后跳转至<span @click="toHomePage" class="finish_countdown_path">&nbsp;&nbsp;首页&nbsp;&nbsp;</span></div>
+      </div>
+
     </div>
     <footerBar/>
   </div>
@@ -77,10 +83,61 @@ export default {
     headerBar
   },
   data() {
+            let email = (rule, value, callback) => {
+            if (!value) {
+                callback()
+            } else {
+                const reg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/      
+                if (reg.test(value)) {
+                    callback();
+                } else {
+                    return callback(new Error('请输入正确的邮箱'));
+                }
+            }
+        }
+        let mobilePhone = (rule, value, callback) => {
+            if (!value) {
+                return callback(new Error('手机号不能为空'));
+            } else {
+                const reg = /^\d{10,11}$/       
+                if (reg.test(value)) {
+                    callback();
+                } else {
+                    return callback(new Error('请输入正确的手机号'));
+                }
+            }
+        }
     return {
       editing: true,
+      countDown:3,
       userInfo: {},
-      cooperateForm: {}
+      cooperateType:[],
+      cooperateForm: {
+        cooperateType:'',
+        cooperateStatus:1
+      },
+      rules: {
+          cooperateType: [
+                { required: true, message: '请选择合作类型', trigger: 'blur' }
+                ],
+          cooperateConpanyName: [
+                { required: true, message: '请填写单位名称', trigger: 'blur' }
+                ],
+          cooperateName: [
+                { required: true, message: '请填写联系人姓名', trigger: 'blur' }
+                ],
+          cooperatePhone: [
+                { required: true, message: '请填写联系电话', trigger: 'blur' },
+                { validator: mobilePhone, trigger: 'blur' }
+                ],
+          cooperateEmail: [
+                { required: true, message: '请填写邮箱地址', trigger: 'blur' },
+                { validator: email, trigger: 'blur' }
+                ],
+          cooperateRemark: [
+                { required: true, message: '请填写合作说明', trigger: 'blur' }
+                ],
+      }
     };
   },
   created() {
@@ -88,19 +145,52 @@ export default {
     if (url.indexOf("bysiot") > 0) {
       document.domain = "bysiot.com";
       this.userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
-      console.log(this.userInfo);
     }
-
-    console.log(this.userInfo);
-  },
-  mounted() {
-    // window.addEventListener('scroll',this.handleScroll)
   },
   beforeDestroy() {
-    // window.removeEventListener('scroll', this.handleScroll);
+    if (!this.editing) {
+      clearInterval(timer)
+    }
   },
-
-  methods: {}
+  methods: {
+    // 发送表单
+    sendForm() {
+      this.$refs['cooperateForm'].validate((valid) => {
+         if (valid) {
+           let params = []
+           for (var i=0;i<this.cooperateType.length;i++) {
+             // 简单深拷贝
+            let obj = JSON.parse(JSON.stringify(this.cooperateForm))
+             params.push(obj)
+             params[i].cooperateType = this.cooperateType[i]
+           }
+           this.$http
+             .post(
+               this.$api.getApiAddress(
+                 "/operationplatformmgn/o/saas/platform-cooperate/add_cooperate",
+                 "API_ROOT"
+               ),
+               params
+             )
+             .then(res => {
+          this.editing =false
+          this.timer = setInterval(() => {
+            if (this.countDown == 0) {
+              this.toHomePage()
+            }
+            this.countDown--
+          }, 1000);
+             });
+         }
+         else {
+           this.$message.error('请完善表单')
+         }
+      })
+    },
+    toHomePage () {
+      this.$router.push("/homePage")
+    }
+   }
 };
 </script>
 <style lang="less">
@@ -108,13 +198,14 @@ export default {
   .el-input {
     width: 60%;
   }
+  .el-textarea {
+    width: 60%;
+  }
   .el-button {
     width: 20%;
     margin: 30px auto;
     transform: translateX(-40%);
-    // position: absolute;
     margin-left: 50%;
-    // bottom: 0;
   }
 }
 </style>
@@ -189,11 +280,6 @@ export default {
         }
       }
     }
-    // .cooperate_area {
-    //     position: absolute;
-    //     bottom: 0;
-
-    // }
   }
   .content {
     padding: 15px 0;
@@ -214,6 +300,22 @@ export default {
       background-color: #003f98;
       margin: 25px auto;
     }
+  }
+  .finish {
+    height: 300px;
+    text-align: center;
+    font-size: 30px;
+    .finish_info {
+      margin-top: 100px;
+    }
+    .finish_countdown {
+      margin-top: 50px;
+      font-size: 24px;
+      .finish_countdown_path {
+        color:blue;
+        cursor: pointer;
+      }
+      }
   }
 }
 </style>
