@@ -25,7 +25,7 @@
       <div class="right_newslist">
         <div class="newsitem" v-for="(item,index) in newsList" :key="index">
           <h1 @click="jump(item.id)">{{item.newsTheme}}</h1>
-          <span>发布与</span>
+          <span>发布于</span>
           <span>{{item.newsType == 1?'新闻动态':item.newsType == 2?'产品动态':'合作福利'}}</span>
           <span>发布时间：</span>
           <span>{{$moment(item.updateTime).format('YYYY-MM-DD HH:mm:ss')}}</span>
@@ -178,6 +178,7 @@ export default {
           margin-top: 40px;
           color: #2d2d2d;
           font: 20px bold "MicrosoftYaHei-Bold";
+          cursor: pointer;
           &:hover {
             color: #258ce3;
           }

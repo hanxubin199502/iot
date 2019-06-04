@@ -15,6 +15,7 @@ Vue.use(ElementUI)
 Vue.prototype.$http = HttpPlugIn
 Vue.prototype.$api = ApiProvider
 Vue.prototype.$moment = moment
+Vue.prototype.$bus=new Vue()
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

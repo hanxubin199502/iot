@@ -1,38 +1,47 @@
 <template>
   <div class="header" :class="{act:scrollTag}">
     <div class="min-header">
-      <div style="float:left;margin-right:38px" @click="jump(0)">
+      <div style="float:left;margin-right:38px" @click="changeTab(0)">
         <span class="logo"></span>
         <span class="logo-text"></span>
       </div>
       <ul>
         <li>
-          <el-popover placement="bottom" width="200" trigger="hover">
+          <!-- 产品下拉框 -->
+          <el-popover placement="bottom" :width="190*prodListNum" trigger="hover">
             <span slot="reference">产品</span>
-            <ul>
-              <li v-for="(item,index) in productList" :key="index">
-                  <!-- :src="../../assets/images/prod_icon1.png"  -->
-                  <!-- :src="'../../assets/images/prod_icon'+item.id+'.png'" -->
-                <img src="../../assets/images/prod_icon1.png" alt>
-                <span class="production">{{item.productName}}</span>
-                <span>{{item.productBrief}}}</span>
+            <ul v-for="(item,index) in productList" :key="index">
+              <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
+                <img :src="item1.outlineImagesPath" alt>
+                <span class="production">{{item1.productName}}</span>
+                <span>{{item1.productOutline}}</span>
               </li>
-             
             </ul>
           </el-popover>
         </li>
         <li>
-          <el-popover placement="bottom" width="200" trigger="hover">
+          <!-- 解决方案下拉框 -->
+          <el-popover placement="bottom" :width="190*solutionListNum" trigger="hover">
             <span slot="reference">解决方案</span>
+            <ul v-for="(item,index) in solutionList" :key="index">
+              <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
+                <img :src="item1.outlineImagesPath" alt>
+                <span class="production">{{item1.solutionName}}</span>
+                <span>{{item1.solutionOutline}}</span>
+              </li>
+            </ul>
           </el-popover>
         </li>
-        <li>合作</li>
-        <li @click="jump(4)">新闻与动态</li>
-        <li>关于我们</li>
+        <li @click="changeTab(3)">合作</li>
+        <li @click="changeTab(4)">新闻与动态</li>
+        <li @click="changeTab(5)">关于我们</li>
       </ul>
       <p style="float:right;color:#fff">
-        <span style="margin-right:32px;">开发者社区</span>
-        <span><i @click="denglu">管理控制台</i> | <i>中文站</i></span>
+        <span style="margin-right:32px;" @click="changeTab(6)">开发者社区</span>
+        <span>
+          <i @click="denglu">管理控制台</i> |
+          <i>中文站</i>
+        </span>
         <button class="dl" @click="denglu">登录</button>
       </p>
     </div>
@@ -40,26 +49,30 @@
 </template>
 
 <script>
+// import eventVue from '../../event.js'
 export default {
   data() {
     return {
-        productList:[],
-      scrollTag: false
+      prodListNum:0,
+      productList: [], //产品列表
+      solutionListNum:0,
+      solutionList: [], //解决方案
+      scrollTag: false,
     };
   },
   created() {
-    // 设置导航栏在非首页停止scoll变化
-    this.getProduction ()
-    location.hash == "#/homePage"
-      ? (this.scrollTag = false)
-      : (this.scrollTag = true);
+    this.getProduction();
+    this.getSolution();
+    this.forFooter()
+    // 设置导航栏在非开发者停止scoll变化
+    location.hash == "#/developer"
+      ? (this.scrollTag = true)
+      : (this.scrollTag = false)
   },
   mounted() {
-    // setTimeout(()=>{
-    //     this.handleScroll()
-    //     console.log(555)
-    // },10000)
-    if (location.hash == "#/homePage") {
+    if (
+      location.hash.search("developer") == -1
+    ) {
       window.addEventListener("scroll", this.handleScroll);
     }
   },
@@ -68,48 +81,106 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-    denglu(){
-            let url = '';
-            url = location.href;
-            
-            if(url.indexOf('www-dev.iot.com')>-1){
-               window.open('http://saas-dev.iot.com')
-            }else if(url.indexOf('http://localhost')>-1){
-                window.open('http://localhost:8081')
-            }else if(url.indexOf('www-qa.iot.com')>-1){
-                 window.open('http://saas.iot.com')
-            }else if(url.indexOf('www-prod.iot.com')>-1){
-                window.open('http://saas-prod.iot.com')
-            }else if(url.indexOf('www.bysiot.com')>-1) {
-                window.open('http://portal.bysiot.com')
-            } 
-    },
-      getProduction () {
-      let params = {
-        productStatus: 1
+  // 给footer 传值
+    forFooter() {
+            let busInfo = ['asddasd','asdsdasdsd']
+            this.$bus.$emit("fromHeader",busInfo)
+        },
+
+    denglu() {
+      let url = "";
+      url = location.href;
+
+      if (url.indexOf("www-dev.iot.com") > -1) {
+        window.open("http://saas-dev.iot.com");
+      } else if (url.indexOf("http://localhost") > -1) {
+        window.open("http://localhost:8081");
+      } else if (url.indexOf("www-qa.iot.com") > -1) {
+        window.open("http://saas.iot.com");
+      } else if (url.indexOf("www-prod.iot.com") > -1) {
+        window.open("http://saas-prod.iot.com");
+      } else if (url.indexOf("www.bysiot.com") > -1) {
+        window.open("http://portal.bysiot.com");
       }
+    },
+    // 获取产品列表
+    getProduction() {
+      let params = {
+        productStatus: 2,
+        productContextType:1
+      };
       this.$http
         .get(
           this.$api.getApiAddress(
-            "/officialwebsite/o/saas/index-product/product-list",
+            "/operationplatformmgn/o/saas/platform-productContext/query_productContext_list",
             "API_ROOT"
           ),
           params
         )
         .then(res => {
-          this.productList = res.data
+          this.prodListNum = Math.ceil( res.data.length / 6) 
+          if(this.prodListNum>0) {
+            for(var i=1;i<=this.prodListNum;i++) {
+                this.productList.push(res.data.slice((i-1)*6,6*i))
+            }
+          }
+
+          this.$bus.$emit("productList",res.data)
+          })
+    },
+    // 获取解决方案列表
+    getSolution() {
+      let params = {
+        solutionType: 1,
+        solutionStatus: 2
+      };
+      this.$http
+        .get(
+          this.$api.getApiAddress(
+            "/operationplatformmgn/o/saas/platform-solution/query_solution_list",
+            "API_ROOT"
+          ),
+          params
+        )
+        .then(res => {
+          this.solutionListNum = Math.ceil( res.data.length / 6) 
+          if(this.solutionListNum>0) {
+            for(var i=1;i<=this.solutionListNum;i++) {
+                this.solutionList.push(res.data.slice((i-1)*6,6*i))
+            }
+          }
+          this.$bus.$emit("solutionList",res.data)
         });
-      },
+    },
     // 页面跳转
-    jump(num) {
-        switch (num) {
-            case 4:
-            this.$router.push("/news");
-            break;
-            case 0:
-            this.$router.push("/homePage");
-            break;
-        }
+    changeTab(num, id) {
+      switch (num) {
+        case 0: //点击logo返回首页
+          this.$router.push("/homePage");
+          break;
+        case 1: //产品
+          this.$router.push({
+            path: "/products"+id,
+          });
+          break;
+        case 2: //解决方案
+          this.$router.push({
+            path: "/solutions"+id,
+          });
+          break;
+        case 3: //合作
+          this.$router.push("/cooperate");
+          break;
+        case 4: //新闻与动态
+          this.$router.push("/news");
+          break;
+        case 5: //关于我们
+          window.open("https://www.beyondsoft.com/about/index.html");
+          break;
+        case 6: //开发者社区
+          this.$router.push("/developer");
+          break;
+      }
     },
     handleScroll() {
       let top =
@@ -128,9 +199,16 @@ export default {
 <style lang="less">
 .el-popover {
   padding: 12px 15px;
+  ul {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 15px;
+
+  }
   li {
-    padding: 13px 10px;
-    // height: 70px;
+      cursor: pointer;
+    width: 140px;
+    padding: 5px 10px;
     border-bottom: 1px solid #f0f0f0;
     &:last-child {
       border-bottom: none;
@@ -170,6 +248,9 @@ export default {
   z-index: 99;
   background: transparent;
   position: fixed;
+  span {
+      cursor: pointer;
+  }
   &:hover {
     background: #053982;
     // z-index: 1;
@@ -199,6 +280,7 @@ export default {
     ul {
       display: inline-block;
       li {
+          cursor: pointer;
         float: left;
         margin: 0 15px;
         color: #fff;
@@ -219,6 +301,7 @@ export default {
     .dl {
       width: 57px;
       height: 24px;
+      line-height:24px;
       border: 1px solid #fff;
       background: transparent;
       color: #fff;
