@@ -34,8 +34,8 @@
       <el-form v-if="editing" label-position="right" label-width="430px" :model="cooperateForm" :rules="rules" ref="cooperateForm">
         <div style="text-align:center;font-size:30px;">合作信息提交</div>
         <div class="gap"></div>
-        <el-form-item label="合作类型：" prop="cooperateType">
-          <el-checkbox-group size="small"   v-model="cooperateType">
+        <el-form-item label="合作类型：" prop="cooperateTypeList">
+          <el-checkbox-group size="small"   v-model="cooperateForm.cooperateTypeList">
             <el-checkbox label="1">市场合作</el-checkbox>
             <el-checkbox label="2">业态合作</el-checkbox>
             <el-checkbox label="3">设备供应商合作</el-checkbox>
@@ -111,13 +111,14 @@ export default {
       editing: true,
       countDown:3,
       userInfo: {},
-      cooperateType:[],
+      timer:null,
       cooperateForm: {
         cooperateType:'',
-        cooperateStatus:1
+        cooperateStatus:1,
+        cooperateTypeList:[]
       },
       rules: {
-          cooperateType: [
+          cooperateTypeList: [
                 { required: true, message: '请选择合作类型', trigger: 'blur' }
                 ],
           cooperateConpanyName: [
@@ -149,7 +150,7 @@ export default {
   },
   beforeDestroy() {
     if (!this.editing) {
-      clearInterval(timer)
+      clearInterval(this.timer)
     }
   },
   methods: {
@@ -158,11 +159,11 @@ export default {
       this.$refs['cooperateForm'].validate((valid) => {
          if (valid) {
            let params = []
-           for (var i=0;i<this.cooperateType.length;i++) {
+           for (var i=0;i<this.cooperateForm.cooperateTypeList.length;i++) {
              // 简单深拷贝
             let obj = JSON.parse(JSON.stringify(this.cooperateForm))
              params.push(obj)
-             params[i].cooperateType = this.cooperateType[i]
+             params[i].cooperateType = this.cooperateForm.cooperateTypeList[i]
            }
            this.$http
              .post(
