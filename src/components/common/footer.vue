@@ -7,7 +7,7 @@
             </div>
             <div :class="solutionListNum==2?'div3':'div2'">
                 <p class="p1">产品与服务</p>
-                <p class="p2" v-for="(item,index) in productList" :key="index" @click="changeTab(1,item.id)">{{item.productName}}</p>
+                <p class="p2" v-for="(item,index) in productList[0]" :key="index" @click="changeTab(1,item.id)">{{item.productName}}</p>
             </div>
             <div :class="solutionListNum==2?'div3':'div2'">
                 <p class="p1">解决方案</p>
@@ -40,20 +40,19 @@ export default {
         }
     },
   mounted() {
+     
+      this.$bus.$off("productList")
       this.$bus.$on("productList",i=> {
+          console.log(i)
           this.productList = i
-          this.solutionListNum = Math.ceil( i / 6)
+          this.prodListNum = i.length
       })
+         this.$bus.$off("solutionList")
       this.$bus.$on("solutionList",itemList=> {
-          this.solutionListNum = Math.ceil( itemList.length / 6)
-            if(this.solutionListNum>1) {
-            for(var i=1;i<=this.solutionListNum;i++) {
-                this.solutionList.push(itemList.slice((i-1)*6,6*i))
-            }
-          }
-          else {
-              this.solutionList[0] = itemList
-          }
+          this.solutionListNum = itemList.length
+          this.solutionList = itemList
+          console.log(this.solutionList)
+          console.log(this.solutionListNum)
       })
   },
     methods:{
@@ -124,9 +123,9 @@ export default {
                 .div2,.div3{
                     float: left;
                     padding-top:50px;
-                    width: 120px;
+                    width: 160px;
                     height: 100%;
-                    margin-right: 140px;
+                    margin-right: 90px;
                     &:last-child {
                         margin-right: 0;
                     }
@@ -146,7 +145,7 @@ export default {
                    }
                 }
                 .div3 {
-                    margin-right: 90px;
+                    margin-right: 40px;
                 }
             }
           
