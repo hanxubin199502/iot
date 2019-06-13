@@ -65,7 +65,7 @@
     <!-- 表单提交成功后提示，并跳转页面 -->
       <div v-else class="finish center">
         <div class="finish_info">您的信息已提交，客服人员将在1个工作日内联系您。</div>
-        <div class="finish_countdown">将在&nbsp;<span>{{countDown}}</span>&nbsp;秒后跳转至<span @click="toHomePage" class="finish_countdown_path">&nbsp;&nbsp;首页&nbsp;&nbsp;</span></div>
+        <div class="finish_countdown">将在&nbsp;<span>{{countDown<0?'0':countDown}}</span>&nbsp;秒后跳转至<span @click="toHomePage" class="finish_countdown_path">&nbsp;&nbsp;首页&nbsp;&nbsp;</span></div>
       </div>
 
     </div>
