@@ -125,7 +125,7 @@ export default {
     getSolution() {
       let params = {
         solutionType: 1,
-        solutionContextStatus: 2
+        solutionStatus: 2
       };
       this.$http
         .get(
