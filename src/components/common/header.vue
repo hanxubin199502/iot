@@ -21,7 +21,7 @@
         </li>
         <li>
           <!-- 解决方案下拉框 -->
-          <el-popover placement="bottom" :width="270*solutionListNum" trigger="hover">
+          <el-popover placement="bottom" :width="275*solutionListNum" trigger="hover">
             <span slot="reference">解决方案</span>
             <ul v-for="(item,index) in solutionList" :key="index">
               <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
