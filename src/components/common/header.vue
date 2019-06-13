@@ -8,7 +8,7 @@
       <ul>
         <li>
           <!-- 产品下拉框 -->
-          <el-popover placement="bottom" :width="270*prodListNum" trigger="click">
+          <el-popover placement="bottom" :width="270*prodListNum" trigger="hover">
             <span slot="reference">产品</span>
             <ul v-for="(item,index) in productList" :key="index">
               <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
@@ -16,17 +16,12 @@
                 <span class="production">{{item1.productName}}</span>
                 <span>{{item1.productOutline}}</span>
               </li>
-              <li>
-                <img >
-                <span class="production">{{"物联网公有云平台产品物联"}}</span>
-                <span>{{"物联网公有云平台产品物联网公有云"}}</span>
-              </li>
             </ul>
           </el-popover>
         </li>
         <li>
           <!-- 解决方案下拉框 -->
-          <el-popover placement="bottom" :width="270*solutionListNum" trigger="click">
+          <el-popover placement="bottom" :width="270*solutionListNum" trigger="hover">
             <span slot="reference">解决方案</span>
             <ul v-for="(item,index) in solutionList" :key="index">
               <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
@@ -104,7 +99,7 @@ export default {
     // 获取产品列表
     getProduction() {
       let params = {
-        productStatus: 2,
+        productContextStatus: 2,
         productContextType:1
       };
       this.$http
@@ -130,7 +125,7 @@ export default {
     getSolution() {
       let params = {
         solutionType: 1,
-        solutionStatus: 2
+        solutionContextStatus: 2
       };
       this.$http
         .get(
