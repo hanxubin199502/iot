@@ -1,14 +1,14 @@
 <template>
   <div class="header" :class="{act:scrollTag}">
     <div class="min-header">
-      <div style="float:left;margin-right:38px" @click="changeTab(0)">
+      <div style="float:left;margin-right:38px;line-height:74px;" @click="changeTab(0)">
         <span class="logo"></span>
-        <span class="logo-text"></span>
+        <span class="logo-text" ></span>
       </div>
       <ul>
         <li>
           <!-- 产品下拉框 -->
-          <el-popover placement="bottom" :width="190*prodListNum" trigger="hover">
+          <el-popover placement="bottom" :width="270*prodListNum" trigger="hover">
             <span slot="reference">产品</span>
             <ul v-for="(item,index) in productList" :key="index">
               <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
@@ -21,7 +21,7 @@
         </li>
         <li>
           <!-- 解决方案下拉框 -->
-          <el-popover placement="bottom" :width="190*solutionListNum" trigger="hover">
+          <el-popover placement="bottom" :width="275*solutionListNum" trigger="hover">
             <span slot="reference">解决方案</span>
             <ul v-for="(item,index) in solutionList" :key="index">
               <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
@@ -63,7 +63,6 @@ export default {
   created() {
     this.getProduction();
     this.getSolution();
-    this.forFooter()
     // 设置导航栏在非开发者停止scoll变化
     location.hash == "#/developer"
       ? (this.scrollTag = true)
@@ -81,12 +80,6 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-  // 给footer 传值
-    forFooter() {
-            let busInfo = ['asddasd','asdsdasdsd']
-            this.$bus.$emit("fromHeader",busInfo)
-        },
-
     denglu() {
       let url = "";
       url = location.href;
@@ -106,7 +99,7 @@ export default {
     // 获取产品列表
     getProduction() {
       let params = {
-        productStatus: 2,
+        productContextStatus: 2,
         productContextType:1
       };
       this.$http
@@ -125,7 +118,7 @@ export default {
             }
           }
 
-          this.$bus.$emit("productList",res.data)
+          this.$bus.$emit("productList",this.productList)
           })
     },
     // 获取解决方案列表
@@ -149,7 +142,10 @@ export default {
                 this.solutionList.push(res.data.slice((i-1)*6,6*i))
             }
           }
-          this.$bus.$emit("solutionList",res.data)
+          else {
+            this.solutionList.push(res.data)
+          }
+          this.$bus.$emit("solutionList",this.solutionList)
         });
     },
     // 页面跳转
@@ -198,7 +194,7 @@ export default {
 </script>
 <style lang="less">
 .el-popover {
-  padding: 12px 15px;
+  padding: 12px 0px;
   ul {
     display: inline-block;
     vertical-align: top;
@@ -207,7 +203,7 @@ export default {
   }
   li {
       cursor: pointer;
-    width: 140px;
+    width: 230px;
     padding: 5px 10px;
     border-bottom: 1px solid #f0f0f0;
     &:last-child {

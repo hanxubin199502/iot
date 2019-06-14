@@ -34,8 +34,8 @@
       <el-form v-if="editing" label-position="right" label-width="430px" :model="cooperateForm" :rules="rules" ref="cooperateForm">
         <div style="text-align:center;font-size:30px;">合作信息提交</div>
         <div class="gap"></div>
-        <el-form-item label="合作类型：" prop="cooperateType">
-          <el-checkbox-group size="small"   v-model="cooperateType">
+        <el-form-item label="合作类型：" prop="cooperateTypeList">
+          <el-checkbox-group size="small"   v-model="cooperateForm.cooperateTypeList">
             <el-checkbox label="1">市场合作</el-checkbox>
             <el-checkbox label="2">业态合作</el-checkbox>
             <el-checkbox label="3">设备供应商合作</el-checkbox>
@@ -65,7 +65,7 @@
     <!-- 表单提交成功后提示，并跳转页面 -->
       <div v-else class="finish center">
         <div class="finish_info">您的信息已提交，客服人员将在1个工作日内联系您。</div>
-        <div class="finish_countdown">将在&nbsp;<span>{{countDown}}</span>&nbsp;秒后跳转至<span @click="toHomePage" class="finish_countdown_path">&nbsp;&nbsp;首页&nbsp;&nbsp;</span></div>
+        <div class="finish_countdown">将在&nbsp;<span>{{countDown<0?'0':countDown}}</span>&nbsp;秒后跳转至<span @click="toHomePage" class="finish_countdown_path">&nbsp;&nbsp;首页&nbsp;&nbsp;</span></div>
       </div>
 
     </div>
@@ -111,13 +111,14 @@ export default {
       editing: true,
       countDown:3,
       userInfo: {},
-      cooperateType:[],
+      timer:null,
       cooperateForm: {
         cooperateType:'',
-        cooperateStatus:1
+        cooperateStatus:1,
+        cooperateTypeList:[]
       },
       rules: {
-          cooperateType: [
+          cooperateTypeList: [
                 { required: true, message: '请选择合作类型', trigger: 'blur' }
                 ],
           cooperateConpanyName: [
@@ -149,7 +150,7 @@ export default {
   },
   beforeDestroy() {
     if (!this.editing) {
-      clearInterval(timer)
+      clearInterval(this.timer)
     }
   },
   methods: {
@@ -158,11 +159,11 @@ export default {
       this.$refs['cooperateForm'].validate((valid) => {
          if (valid) {
            let params = []
-           for (var i=0;i<this.cooperateType.length;i++) {
+           for (var i=0;i<this.cooperateForm.cooperateTypeList.length;i++) {
              // 简单深拷贝
             let obj = JSON.parse(JSON.stringify(this.cooperateForm))
              params.push(obj)
-             params[i].cooperateType = this.cooperateType[i]
+             params[i].cooperateType = this.cooperateForm.cooperateTypeList[i]
            }
            this.$http
              .post(
@@ -254,13 +255,15 @@ export default {
               background: url(../../assets/images/cooperate-item-logo1.png) center center;
           }
           .cooperate_item_logo2 {
-              background: url(../../assets/images/cooperate-item-logo2.png) center center;
+              background: url(../../assets/images/cooperate-item-logo2.png) center center no-repeat;
           }
           .cooperate_item_logo3 {
-              background: url(../../assets/images/cooperate-item-logo3.png) center center;
+              background: url(../../assets/images/cooperate-item-logo3.png) center center no-repeat;
+              background-size:100%;
           }
           .cooperate_item_logo4 {
-              background: url(../../assets/images/cooperate-item-logo4.png) center center;
+              background: url(../../assets/images/cooperate-item-logo4.png) center center no-repeat;
+              background-size:100%;
           }
           .cooperate_item_name {
               position: absolute;

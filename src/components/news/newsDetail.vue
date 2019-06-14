@@ -13,7 +13,7 @@
           <li>公司介绍</li>
           <li @click="jumpBack(1)" :class="{active:newsType=='1'}">新闻动态</li>
           <li @click="jumpBack(2)" :class="{active:newsType=='2'}">产品动态</li>
-          <li @click="jumpBack(2)" :class="{active:newsType=='3'}">合作福利</li>
+          <li @click="jumpBack(3)" :class="{active:newsType=='3'}">合作福利</li>
           <li>生态合作</li>
           <li>联系我们</li>
         </ul>
