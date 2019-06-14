@@ -193,6 +193,9 @@ export default {
 };
 </script>
 <style lang="less">
+    .el-popper[x-placement^=bottom] {
+    margin-top: 38px;
+}
 .el-popover {
   padding: 12px 0px;
   ul {
@@ -201,6 +204,7 @@ export default {
     padding: 0 15px;
 
   }
+
   li {
       cursor: pointer;
     width: 230px;
@@ -280,15 +284,16 @@ export default {
         float: left;
         margin: 0 15px;
         color: #fff;
+        user-select: none;
         .production {
           font: 16px "MicrosoftYaHei";
           color: #2d2d2d;
         }
-        span {
-          display: block;
-          float: left;
-          width: 100%;
-        }
+        // span {
+        //   display: block;
+        //   float: left;
+        //   width: 100%;
+        // }
         &:hover {
           color: #228ee8;
         }

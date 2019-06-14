@@ -267,7 +267,7 @@ export default {
           }
           .cooperate_item_name {
               position: absolute;
-                      bottom: 30px;
+              bottom: 30px;
               left: 50%;
               transform: translateX(-50%) ;
               font-size:20px;
