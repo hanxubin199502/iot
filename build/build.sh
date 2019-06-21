@@ -41,5 +41,5 @@ npm run build
 #yarn
 #yarn build production
 cp -rv $WORKSPACE/dist  $WORKSPACE/build
-docker build --no-cache --rm=true --force-rm=true -f Dockerfile -t bys-cd.chinacloudapp.cn/iotplatform/$NAME:$VERSION  .  &&
-docker push bys-cd.chinacloudapp.cn/iotplatform/$NAME:$VERSION
+docker build --no-cache --rm=true --force-rm=true -f Dockerfile -t bys-iot.chinanorth2.cloudapp.chinacloudapi.cn/iotplatform/$NAME:$VERSION  .  &&
+docker push bys-iot.chinanorth2.cloudapp.chinacloudapi.cn/iotplatform/$NAME:$VERSION
