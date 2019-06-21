@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="content center">
-      <div class="product_content_name">{{productList.productName}}</div>
+      <!-- <div class="product_content_name">{{productList.productName}}</div> -->
       <div class="product_content" v-html="productList.productContext"></div>
     </div>
     <footerBar/>
@@ -116,6 +116,9 @@ export default {
     .product_content {
       margin-top: 35px;
       font-size: 20px;
+      img{
+        width: 1200px;
+      }
     }
   }
 }
