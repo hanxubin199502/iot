@@ -12,7 +12,7 @@
         </div> 
         <div class="content center">
                 
-                       <div class="solution_content_name "> {{solutionList.solutionName}} </div>
+                       <!-- <div class="solution_content_name "> {{solutionList.solutionName}} </div> -->
                        <div class="solution_content" v-html="solutionList.solutionContext">
                       
                 </div>
@@ -124,6 +124,9 @@ export default {
                     .solution_content {
                         margin-top: 35px;
                         font-size: 20px;
+                        img {
+                            width: 1200px;
+                        }
                     }
                 }        
 }
