@@ -116,10 +116,18 @@ export default {
     .product_content {
       margin-top: 35px;
       font-size: 20px;
-      img{
-        width: 1200px;
-      }
+     
     }
   }
 }
 </style>
+<style lang="less">
+.product_detail {
+  .product_content {
+    img{
+           max-width: 1200px !important;
+         }
+  }
+}
+</style>
+

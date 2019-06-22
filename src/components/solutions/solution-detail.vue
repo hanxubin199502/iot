@@ -124,10 +124,19 @@ export default {
                     .solution_content {
                         margin-top: 35px;
                         font-size: 20px;
-                        img {
-                            width: 1200px;
-                        }
+                        // img {
+                        //     width: 1200px;
+                        // }
                     }
                 }        
+}
+</style>
+<style lang="less">
+.solution_detail {
+  .solution_content {
+    img{
+           max-width: 1200px !important;
+         }
+  }
 }
 </style>
