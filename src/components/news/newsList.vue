@@ -22,7 +22,7 @@
         </ul>
       </div>
 
-      <div class="right_newslist">
+      <div v-loading="loading" class="right_newslist" :style="loading?'padding-top:900px;':0">
         <div class="newsitem" v-for="(item,index) in newsList" :key="index">
           <h1 @click="jump(item.id)">{{item.newsTheme}}</h1>
           <span>发布于</span>
@@ -56,6 +56,7 @@ export default {
   },
   data() {
     return {
+      loading:true,
       newsList: [],
       pageSize: 10,
       pageNum: 1,
@@ -91,6 +92,7 @@ export default {
           params
         )
         .then(res => {
+          this.loading = false
           this.newsList = res.data.list;
           this.total = res.data.total;
         });
