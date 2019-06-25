@@ -11,6 +11,12 @@ case "$1" in
 		# sed -i "s#10.26.2.34#192.168.14.127#g"  $WORKSPACE/config/prod.env.js
 		# sed -i "s#10.26.2.34#192.168.14.127#g"  $WORKSPACE/config/prod.env.js
         ;;
+    # dev_balance)
+    #     sed -i "s#10.26.2.29#192.168.7.152#g"  $WORKSPACE/config/prod.env.js
+	# 	sed -i "s#10.26.2.34#192.168.7.152#g"  $WORKSPACE/config/prod.env.js
+	# 	# sed -i "s#10.26.2.34#192.168.14.127#g"  $WORKSPACE/config/prod.env.js
+	# 	# sed -i "s#10.26.2.34#192.168.14.127#g"  $WORKSPACE/config/prod.env.js
+    #     ;;
     qa)
         sed -i "s#10.26.2.29#192.168.7.153#g"  $WORKSPACE/config/prod.env.js
 		sed -i "s#10.26.2.34#192.168.7.153#g"  $WORKSPACE/config/prod.env.js
