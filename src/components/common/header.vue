@@ -10,7 +10,7 @@
           <!-- 产品下拉框 -->
           <el-popover placement="bottom" :width="270*prodListNum" trigger="hover">
             <span slot="reference">产品</span>
-            <ul v-for="(item,index) in productList" :key="index">\
+            <ul v-for="(item,index) in productList" :key="index">
               <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
                 <img :src="item1.outlineImagesPath" alt>
                 <span class="production">{{item1.productName}}</span>
@@ -25,9 +25,9 @@
             <span slot="reference">解决方案</span>
             <ul v-for="(item,index) in solutionList" :key="index">
               <li @click="solutionJump(1)">
-                <img src="" alt>
+                <img src="../../assets/images/prod_icon1.png" alt>
                 <span class="production">{{'智慧楼宇解决方案'}}</span>
-                <span>{{'这是个介绍'}}</span>
+                <span>{{'智慧楼宇解决方案'}}</span>
               </li>
               <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
                 <img :src="item1.outlineImagesPath" alt>

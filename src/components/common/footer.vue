@@ -10,7 +10,7 @@
                 <p class="p2" v-for="(item,index) in productList[0]" :key="index" @click="changeTab(1,item.id)">{{item.productName}}</p>
             </div>
             <div :class="solutionListNum==2?'div3':'div2'">
-                <p class="p1">解决方案</p>
+                <p class="p1">解决方案</p>          
                 <p class="p2"  v-for="(item,index) in solutionList[0]" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p>
             </div>
             <div class="div3" v-if="solutionListNum > 1">
@@ -51,6 +51,10 @@ export default {
       this.$bus.$on("solutionList",itemList=> {
           this.solutionListNum = itemList.length
           this.solutionList = itemList
+          this.solutionList[0].unshift({
+              'solutionId':'0',
+              'solutionName':'智慧楼宇解决方案'
+          })
           console.log(this.solutionList)
           console.log(this.solutionListNum)
       })
