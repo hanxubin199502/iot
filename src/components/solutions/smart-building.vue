@@ -52,7 +52,7 @@
                     <img src="../../assets/images/smartBuliding/solution0.png" style="margin-left:40px;">
                     
                     <div class="title3">
-                        <img src="../../assets/images/smartBuliding/solution6.png" style="margin-left:40px;float:left;">
+                        <img src="../../assets/images/smartBuliding/solution6.png" style="height:550px;margin-left:40px;float:left;">
                         <div class="bgc_color clearfix">打造智慧大脑</div>
                         <div class="title3_content">建筑能耗管理 <br/>建筑体的能耗、环境指标提供用能节能预案</div>
                         <div class="title3_content">设备可视化监控<br/>实时数据一目了然，精准定位故障设备，支持远程控制</div>
@@ -237,10 +237,10 @@ export default {
           line-height:40px;
       }
       .logo_bar {
-          padding:0 200px;
+          padding:0 145px;
           .logo_item {
               float: left;
-              margin-left: 140px;
+              margin-left: 186px;
               &:first-child {
                   margin-left: 0;
               }
@@ -269,17 +269,19 @@ export default {
             text-align: center;
             margin-bottom: 50px;
             color:#FFFFFF;
-            font-size:30px;
+            font-size:25px;
             font-weight: bold;
-            width: 480px;
+            width: 550px;
             height: 56px;
+            line-height:56px;
             background: url(../../assets/images/smartBuliding/solution1.png) no-repeat center;
         }
         .title3_content {
             // text-indent:20px;
+            margin-left: 57.5%;
             padding-left: 20px;
-            margin-top: 40px;
-            font-size :22px;
+            margin-top: 55px;
+            font-size :18px;
             margin-bottom: 43px;
         
             &:first-child {
@@ -314,16 +316,20 @@ export default {
         .percent_row {
             width: 100%;
             height: 268px;
+            padding:0 170px;
             position: relative;
             bottom:-30px;
             .percent_row_item {
                 position: relative;
-                width: 230px;
+                width: 180px;
                 height: 200px;
                 float: left;
                 color:#FFFFFF;
-                margin-left: 12.5%;
+                margin-left: 18.5%;
                 top: 190px;
+                &:first-child {
+                    margin-left: 0;
+                }
                 .percent_row_item1 {
                     font-size:115px;
                     position: relative;
@@ -338,7 +344,7 @@ export default {
                     height: 42px;
                     border-radius:50%;
                     background-color: #FF0000;
-                    right: 44px;
+                    right: 0px;
                     top: 0;
 
                 }
@@ -346,7 +352,7 @@ export default {
                     font-size:58px;
                     position: absolute;
                     top: 50px;
-                    right: 30px;
+                    right: 0px;
 
                 }
                 .percent_row_item4 {
