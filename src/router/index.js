@@ -29,7 +29,12 @@ export default new Router({
             path: '/solutions:id',
             name: 'solutions',
             component:  () => import ('@/components/solutions/solution-detail'),
-            
+        },
+        //智慧楼宇场景
+        {
+            path: '/smart-building',
+            name: 'solutions',
+            component:  () => import ('@/components/solutions/smart-building'),
         },
         // 3=>合作
         {
