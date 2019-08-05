@@ -240,7 +240,7 @@ export default {
           padding:0 145px;
           .logo_item {
               float: left;
-              margin-left: 186px;
+              margin-left: 185px;
               &:first-child {
                   margin-left: 0;
               }
