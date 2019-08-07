@@ -21,9 +21,14 @@
         </li>
         <li>
           <!-- 解决方案下拉框 -->
-          <el-popover placement="bottom" :width="270*solutionListNum" trigger="hover">
+          <el-popover placement="bottom" :width="275*solutionListNum" trigger="hover">
             <span slot="reference">解决方案</span>
             <ul v-for="(item,index) in solutionList" :key="index">
+              <li @click="solutionJump(1)">
+                <img src="../../assets/images/prod_icon1.png" alt>
+                <span class="production">{{'智慧楼宇解决方案'}}</span>
+                <span>{{'智慧楼宇解决方案'}}</span>
+              </li>
               <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
                 <img :src="item1.outlineImagesPath" alt>
                 <span class="production">{{item1.solutionName}}</span>
@@ -145,6 +150,8 @@ export default {
           else {
             this.solutionList.push(res.data)
           }
+          this.solutionList[0].shift(0)
+          console.log(this.solutionList)
           this.$bus.$emit("solutionList",this.solutionList)
         });
     },
@@ -175,6 +182,14 @@ export default {
           break;
         case 6: //开发者社区
           this.$router.push("/developer");
+        break;
+      }
+    },
+    // 解决方案跳转
+    solutionJump (num) {
+      switch(num) {
+        case 1:
+          this.$router.push('/smart-building')
           break;
       }
     },
@@ -248,6 +263,7 @@ export default {
   z-index: 99;
   background: transparent;
   position: fixed;
+  top: 0;
   span {
       cursor: pointer;
   }

@@ -11,6 +11,12 @@ case "$1" in
 		# sed -i "s#10.26.2.34#192.168.14.127#g"  $WORKSPACE/config/prod.env.js
 		# sed -i "s#10.26.2.34#192.168.14.127#g"  $WORKSPACE/config/prod.env.js
         ;;
+    # dev_balance)
+    #     sed -i "s#10.26.2.29#192.168.7.152#g"  $WORKSPACE/config/prod.env.js
+	# 	sed -i "s#10.26.2.34#192.168.7.152#g"  $WORKSPACE/config/prod.env.js
+	# 	# sed -i "s#10.26.2.34#192.168.14.127#g"  $WORKSPACE/config/prod.env.js
+	# 	# sed -i "s#10.26.2.34#192.168.14.127#g"  $WORKSPACE/config/prod.env.js
+    #     ;;
     qa)
         sed -i "s#10.26.2.29#192.168.7.153#g"  $WORKSPACE/config/prod.env.js
 		sed -i "s#10.26.2.34#192.168.7.153#g"  $WORKSPACE/config/prod.env.js
@@ -41,5 +47,5 @@ npm run build
 #yarn
 #yarn build production
 cp -rv $WORKSPACE/dist  $WORKSPACE/build
-docker build --no-cache --rm=true --force-rm=true -f Dockerfile -t bys-cd.chinacloudapp.cn/iotplatform/$NAME:$VERSION  .  &&
-docker push bys-cd.chinacloudapp.cn/iotplatform/$NAME:$VERSION
+docker build --no-cache --rm=true --force-rm=true -f Dockerfile -t bys-iot.chinanorth2.cloudapp.chinacloudapi.cn/iotplatform/$NAME:$VERSION  .  &&
+docker push bys-iot.chinanorth2.cloudapp.chinacloudapi.cn/iotplatform/$NAME:$VERSION
