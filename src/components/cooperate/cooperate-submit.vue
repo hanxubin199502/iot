@@ -67,7 +67,7 @@
         <div class="finish_info">您的信息已提交，客服人员将在1个工作日内联系您。</div>
         <div class="finish_countdown">将在&nbsp;<span>{{countDown<0?'0':countDown}}</span>&nbsp;秒后跳转至<span @click="toHomePage" class="finish_countdown_path">&nbsp;&nbsp;首页&nbsp;&nbsp;</span></div>
       </div>
-
+  
     </div>
     <footerBar/>
   </div>
@@ -267,7 +267,7 @@ export default {
           }
           .cooperate_item_name {
               position: absolute;
-                      bottom: 30px;
+              bottom: 30px;
               left: 50%;
               transform: translateX(-50%) ;
               font-size:20px;
