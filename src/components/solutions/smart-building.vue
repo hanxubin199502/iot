@@ -103,7 +103,7 @@
                         </div>
                         <div class="title5_item">
                             <img src="../../assets/images/smartBuliding/solution7.png">
-                            <div class="title5_item_name">深圳博彦大厦</div>
+                            <div class="title5_item_name">武汉博彦大厦</div>
                         </div>
                     </div>
                 </div>
