@@ -4,7 +4,7 @@
         <div class="header_background">
             <div class="solution_title center clearfix">
                 <div class="solution_name">
-                    {{'智慧楼宇解决方案'}}
+                    {{'智慧场馆解决方案'}}
                 </div>
                 <div class="solution_brief">
                     {{'楼宇管理决策者需要创新的解决方案，以降低能源成本，提高效率，满足企业 可持续发展的目标提高楼宇价值，同时为户保持一个富有成效、舒适宜居的环境'}} </div>
@@ -13,10 +13,17 @@
         <div class="content center clearfix">
                 <div class="solution_content">
                     <div class="title1">
-                        {{'智慧楼宇解决方案'}}
+                        {{'智慧场馆解决方案'}}
                     </div>
                     <div class="sologan">
-                        {{'博彦物联平台通过“物联网+互联网”智慧双平台最快的方式,最低的成本,最专业的顾问完成转型升级。以降低能源成本、提高效率、满足企业可持续发展的目标提供楼宇价值，同时为用户保持一个富有成效、舒适宜居的坏境。在有限空间利用无限的资源引入和整合, 最终实现降本增效。'}}
+                                                
+                            智慧场馆设计从体现以人为本、功能使用、技术先进、运行可靠、经济合理、施工维
+                        修方便、可扩展等各方面考虑，充分满足使用功能要求，并结合场馆智慧化建设总体规划
+                        目标，按照统一规则、安全可靠、资源共享的原则，使场馆智慧化系统具有良好的可扩展
+                        性、可升级性、合理控制投资成本，从而将场馆建设成为基于智慧化基础平台的国内一流
+                        的现代化，生态化，网络化，数字化，信息化的智慧建筑。
+                                                
+                        
                     </div>
                     
                     <div class="logo_bar clearfix">
@@ -229,7 +236,7 @@ export default {
       }
       .sologan {
           width: 100%;
-          text-align: center;
+        //   text-align: center;
           font-size:22px;
           color:#676565;
           padding:0 124px;
