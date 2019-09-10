@@ -199,6 +199,9 @@ export default {
         case 1:
           this.$router.push('/smart-building')
           break;
+        case 2:
+          this.$router.push('/economic-park')
+          break;
       }
     },
     handleScroll() {

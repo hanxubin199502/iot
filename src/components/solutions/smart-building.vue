@@ -21,28 +21,28 @@
                     
                     <div class="logo_bar clearfix">
                         <div class="logo_item"> 
-                        <img src="../../assets/images/smartBuliding/solution3.png" alt>
-                        <div class="logo_item_name">
-                            {{'节能高效'}}
-                        </div>
-                        </div>
-                        <div class="logo_item"> 
-                        <img src="../../assets/images/smartBuliding/solution4.png" alt>
-                        <div class="logo_item_name">
-                            {{'安全智能'}}
-                        </div>
+                            <img src="../../assets/images/smartBuliding/solution3.png" alt>
+                            <div class="logo_item_name">
+                                {{'节能高效'}}
+                            </div>
                         </div>
                         <div class="logo_item"> 
-                        <img src="../../assets/images/smartBuliding/solution5.png" alt>
-                        <div class="logo_item_name">
-                            {{'持续稳定'}}
-                        </div>
+                            <img src="../../assets/images/smartBuliding/solution4.png" alt>
+                            <div class="logo_item_name">
+                                {{'安全智能'}}
+                            </div>
                         </div>
                         <div class="logo_item"> 
-                        <img src="../../assets/images/smartBuliding/solution2.png" alt>
-                        <div class="logo_item_name">
-                            {{'超强兼容'}}
+                            <img src="../../assets/images/smartBuliding/solution5.png" alt>
+                            <div class="logo_item_name">
+                                {{'持续稳定'}}
+                            </div>
                         </div>
+                        <div class="logo_item"> 
+                            <img src="../../assets/images/smartBuliding/solution2.png" alt>
+                            <div class="logo_item_name">
+                                {{'超强兼容'}}
+                            </div>
                         </div>
                         
                     </div>
@@ -129,31 +129,7 @@ export default {
         }
     },
     created(){
-        this.getsolutionDetail   ()
-        let url = location.href;
-        if(url.indexOf('bysiot')>0){
-            document.domain = 'bysiot.com'
-            this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
-             console.log(this.userInfo)
-        }
-        
-        console.log(this.userInfo)
     },
-     watch: {
-    $route() {
-      this.id = this.$route.params.id;
-    },
-    id() {
-      this.getsolutionDetail();
-    }
-  },
-    mounted(){     
-        // window.addEventListener('scroll',this.handleScroll)
-    },
-    beforeDestroy() {
-            // window.removeEventListener('scroll', this.handleScroll);
-        },
-    
     methods:{
         //获取解决详情 
         getsolutionDetail () {
@@ -229,7 +205,7 @@ export default {
       }
       .sologan {
           width: 100%;
-          text-align: center;
+        //   text-align: center;
           font-size:22px;
           color:#676565;
           padding:0 124px;
