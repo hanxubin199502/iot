@@ -46,7 +46,8 @@ case "$1" in
     *)
         echo -e "Invalid parameters"
 esac
-npm i
+# npm i
+npm install electron -g --unsafe-perm=true --allow-root 
 npm run build
 #yarn
 #yarn build production
