@@ -36,6 +36,11 @@ export default new Router({
             name: 'solutions',
             component:  () => import ('@/components/solutions/smart-building'),
         },
+        {
+            path: '/economic-park',
+            name: 'solutions',
+            component:  () => import ('@/components/solutions/E-park'),
+        },
         // 3=>合作
         {
             path: '/cooperate',

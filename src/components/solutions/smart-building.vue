@@ -129,31 +129,7 @@ export default {
         }
     },
     created(){
-        this.getsolutionDetail   ()
-        let url = location.href;
-        if(url.indexOf('bysiot')>0){
-            document.domain = 'bysiot.com'
-            this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
-             console.log(this.userInfo)
-        }
-        
-        console.log(this.userInfo)
     },
-     watch: {
-    $route() {
-      this.id = this.$route.params.id;
-    },
-    id() {
-      this.getsolutionDetail();
-    }
-  },
-    mounted(){     
-        // window.addEventListener('scroll',this.handleScroll)
-    },
-    beforeDestroy() {
-            // window.removeEventListener('scroll', this.handleScroll);
-        },
-    
     methods:{
         //获取解决详情 
         getsolutionDetail () {

@@ -29,6 +29,11 @@
                 <span class="production">{{'智慧楼宇解决方案'}}</span>
                 <span>{{'智慧楼宇解决方案'}}</span>
               </li>
+              <li @click="solutionJump(2)">
+                <img src="../../assets/images/prod_icon1.png" alt>
+                <span class="production">{{'智慧园区解决方案'}}</span>
+                <span>{{'智慧园区解决方案'}}</span>
+              </li>
               <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
                 <img :src="item1.outlineImagesPath" alt>
                 <span class="production">{{item1.solutionName}}</span>
@@ -190,6 +195,9 @@ export default {
       switch(num) {
         case 1:
           this.$router.push('/smart-building')
+          break;
+        case 2:
+          this.$router.push('/economic-park')
           break;
       }
     },
