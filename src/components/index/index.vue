@@ -3,7 +3,8 @@
         <headerBar/> 
         <div class="swiper">
             <el-carousel>
-                <el-carousel-item v-for="(item,index) in imgList" :key="index" :style="'background:url('+item.imagesPath+')center center'">               
+                <el-carousel-item v-for="(item,index) in imgList" 
+                :key="index" :style="'background:url('+item.imagesPath+')center center'">               
                     <h3 ></h3>
                 </el-carousel-item>
             </el-carousel>

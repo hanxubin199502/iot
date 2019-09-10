@@ -6,34 +6,35 @@
         <span class="logo-text" ></span>
       </div>
       <ul>
-        <li>
-          <!-- 产品下拉框 -->
-          <el-popover placement="bottom" :width="270*prodListNum" trigger="hover">
-            <span slot="reference">产品</span>
-            <ul v-for="(item,index) in productList" :key="index">
-              <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
-                <img :src="item1.outlineImagesPath" alt>
-                <span class="production">{{item1.productName}}</span>
-                <span>{{item1.productOutline}}</span>
-              </li>
-            </ul>
-          </el-popover>
+        <li>         
+            <!-- 产品下拉框 -->
+            <el-popover placement="bottom" :width="270*prodListNum" trigger="hover" v-if="productList.length>0">
+                <span slot="reference">产品</span>
+                <ul v-for="(item,index) in productList" :key="index">
+                <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
+                    <img :src="item1.outlineImagesPath" alt>
+                    <span class="production">{{item1.productName}}</span>
+                    <span>{{item1.productOutline}}</span>
+                </li>
+                </ul>
+            </el-popover>
+            <span v-else>产品</span>
         </li>
         <li>
           <!-- 解决方案下拉框 -->
-          <el-popover placement="bottom" :width="275*solutionListNum" trigger="hover">
+          <el-popover placement="bottom" :width="275*solutionListNum" trigger="hover" v-if="solutionList.length>0">
             <span slot="reference">解决方案</span>
-            <ul v-for="(item,index) in solutionList" :key="index">
+            <ul v-for="(item,index) in solutionList" :key="index" >
               <li @click="solutionJump(1)">
                 <img src="../../assets/images/prod_icon1.png" alt>
                 <span class="production">{{'智慧楼宇解决方案'}}</span>
                 <span>{{'智慧楼宇解决方案'}}</span>
               </li>
-              <li @click="solutionJump(2)">
+              <!-- <li @click="solutionJump(1)">
                 <img src="../../assets/images/prod_icon1.png" alt>
                 <span class="production">{{'智慧园区解决方案'}}</span>
                 <span>{{'智慧园区解决方案'}}</span>
-              </li>
+              </li> -->
               <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
                 <img :src="item1.outlineImagesPath" alt>
                 <span class="production">{{item1.solutionName}}</span>
@@ -41,6 +42,7 @@
               </li>
             </ul>
           </el-popover>
+          <span v-else>解决方案</span>
         </li>
         <li @click="changeTab(3)">合作</li>
         <li @click="changeTab(4)">新闻与动态</li>
@@ -146,6 +148,7 @@ export default {
           params
         )
         .then(res => {
+            console.log(res.data)
           this.solutionListNum = Math.ceil( res.data.length / 6) 
           if(this.solutionListNum>0) {
             for(var i=1;i<=this.solutionListNum;i++) {
@@ -155,7 +158,7 @@ export default {
           else {
             this.solutionList.push(res.data)
           }
-          this.solutionList[0].shift(0)
+        //   this.solutionList[0].shift(0)
           console.log(this.solutionList)
           this.$bus.$emit("solutionList",this.solutionList)
         });
@@ -216,14 +219,18 @@ export default {
 };
 </script>
 <style lang="less">
+    .el-popper[x-placement^=bottom] {
+    margin-top: 38px !important;
+}
 .el-popover {
-  padding: 12px 0px;
+//   padding: 12px 0px;
   ul {
     display: inline-block;
     vertical-align: top;
     padding: 0 15px;
 
   }
+
   li {
       cursor: pointer;
     width: 230px;
@@ -304,15 +311,16 @@ export default {
         float: left;
         margin: 0 15px;
         color: #fff;
+        user-select: none;
         .production {
           font: 16px "MicrosoftYaHei";
           color: #2d2d2d;
         }
-        span {
-          display: block;
-          float: left;
-          width: 100%;
-        }
+        // span {
+        //   display: block;
+        //   float: left;
+        //   width: 100%;
+        // }
         &:hover {
           color: #228ee8;
         }
