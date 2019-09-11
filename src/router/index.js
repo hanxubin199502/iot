@@ -36,11 +36,22 @@ export default new Router({
             name: 'solutions',
             component:  () => import ('@/components/solutions/smart-building'),
         },
+        {
+            path: '/economic-park',
+            name: 'solutions',
+            component:  () => import ('@/components/solutions/E-park'),
+        },
           //智慧场馆场景
         {
             path: '/smart-stadium',
             name: 'solutions11',
             component:  () => import ('@/components/solutions/smart-stadium'),
+        },
+           //智慧城市场景
+           {
+            path: '/smart-city',
+            name: 'solutions11',
+            component:  () => import ('@/components/solutions/smart-city'),
         },
         // 3=>合作
         {
