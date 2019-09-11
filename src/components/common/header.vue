@@ -22,24 +22,32 @@
         </li>
         <li>
           <!-- 解决方案下拉框 -->
-          <el-popover placement="bottom" :width="275*solutionListNum" trigger="hover" v-if="solutionList.length>0">
+          <!-- :width="275*solutionListNum"  -->
+          <el-popover placement="bottom" trigger="hover" v-if="solutionList.length>0">
             <span slot="reference">解决方案</span>
-            <ul v-for="(item,index) in solutionList" :key="index" >
-              <li @click="solutionJump(1)">
-                <img src="../../assets/images/prod_icon1.png" alt>
-                <span class="production">{{'智慧楼宇解决方案'}}</span>
-                <span>{{'智慧楼宇解决方案'}}</span>
-              </li>
-              <!-- <li @click="solutionJump(1)">
-                <img src="../../assets/images/prod_icon1.png" alt>
-                <span class="production">{{'智慧园区解决方案'}}</span>
-                <span>{{'智慧园区解决方案'}}</span>
-              </li> -->
-              <li v-for="(item1,index1) in solutionList[index]" :key="index1" @click="changeTab(2,item1.id)">
-                <img :src="item1.outlineImagesPath" alt>
-                <span class="production">{{item1.solutionName}}</span>
-                <span>{{item1.solutionOutline}}</span>
-              </li>
+            <!-- <ul v-for="(item,index) in solutionList" :key="index" > -->
+            <ul>
+                <li @click="solutionJump(1)">
+                    <img src="../../assets/images/prod_icon1.png" alt>
+                    <span class="production">{{'智慧楼宇解决方案'}}</span>
+                    <span>{{'智慧楼宇一体化解决方案'}}</span>
+                </li>
+                  <li @click="$router.push('/smart-city')">
+                    <img src="../../assets/images/prod_icon3.png" alt>
+                    <span class="production">智慧城市解决方案</span>
+                    <span>{{'智慧城市一体化解决方案'}}</span>
+                </li>
+                <li @click="$router.push('/smart-stadium')">
+                    <img src="../../assets/images/prod_icon2.png" alt>
+                    <span class="production">智慧场馆解决方案</span>
+                    <span>{{'智慧场馆一体化解决方案'}}</span>
+                </li>
+               
+                <li v-for="(item1,index1) in solutionLists" :key="index1" @click="changeTab(2,item1.id)">
+                    <img :src="item1.outlineImagesPath">
+                    <span class="production">{{item1.solutionName}}</span>
+                    <span>{{item1.solutionOutline}}</span>
+                </li>
             </ul>
           </el-popover>
           <span v-else>解决方案</span>
@@ -70,6 +78,7 @@ export default {
       solutionListNum:0,
       solutionList: [], //解决方案
       scrollTag: false,
+      solutionLists:[]
     };
   },
   created() {
@@ -149,18 +158,19 @@ export default {
         )
         .then(res => {
             console.log(res.data)
-          this.solutionListNum = Math.ceil( res.data.length / 6) 
-          if(this.solutionListNum>0) {
-            for(var i=1;i<=this.solutionListNum;i++) {
-                this.solutionList.push(res.data.slice((i-1)*6,6*i))
+            this.solutionLists = res.data
+            this.solutionListNum = Math.ceil( res.data.length / 6) 
+            if(this.solutionListNum>0) {
+                for(var i=1;i<=this.solutionListNum;i++) {
+                    this.solutionList.push(res.data.slice((i-1)*6,6*i))
+                }
             }
-          }
-          else {
-            this.solutionList.push(res.data)
-          }
+            else {
+                this.solutionList.push(res.data)
+            }
         //   this.solutionList[0].shift(0)
-          console.log(this.solutionList)
-          this.$bus.$emit("solutionList",this.solutionList)
+    
+            this.$bus.$emit("solutionList",this.solutionLists)
         });
     },
     // 页面跳转

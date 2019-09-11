@@ -249,9 +249,6 @@ export default {
                  font-size:22px;
                  text-align: center;
              }
-             img {
-                 
-             }
           }
       }
       .title2 {
