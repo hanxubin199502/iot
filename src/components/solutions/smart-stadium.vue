@@ -304,63 +304,11 @@
 <script>
 import footerBar from '../common/footer'
 import headerBar from '../common/header'
+
 export default {
     components:{
         footerBar,
         headerBar
-    },
-    data(){
-        return{
-            userInfo:{},
-            solutionList: [],
-            id: ''
-        }
-    },
-    created(){
-        this.getsolutionDetail   ()
-        let url = location.href;
-        if(url.indexOf('bysiot')>0){
-            document.domain = 'bysiot.com'
-            this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
-             console.log(this.userInfo)
-        }
-        
-        console.log(this.userInfo)
-    },
-     watch: {
-    $route() {
-      this.id = this.$route.params.id;
-    },
-    id() {
-      this.getsolutionDetail();
-    }
-  },
-    mounted(){     
-        // window.addEventListener('scroll',this.handleScroll)
-    },
-    beforeDestroy() {
-            // window.removeEventListener('scroll', this.handleScroll);
-        },
-    
-    methods:{
-        //获取解决详情 
-        getsolutionDetail () {
-            let params = {
-        solutionId: this.$route.params.id
-      };
-      this.$http
-        .get(
-          this.$api.getApiAddress(
-            "operationplatformmgn/o/saas/platform-solution/query_solution",
-            "API_ROOT"
-          ),
-          params
-        )
-        .then(res => {
-          this.solutionList = res.data;
-          // console.log(this.solutionList)
-        });
-        }
     },
 
 }
