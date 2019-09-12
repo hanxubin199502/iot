@@ -8,15 +8,8 @@
                 <div class="title tit1">
                     {{'智慧场馆解决方案'}}
                 </div>
-                <div class="sologan">
-                                            
-                        智慧场馆设计从体现以人为本、功能使用、技术先进、运行可靠、经济合理、施工维
-                    修方便、可扩展等各方面考虑，充分满足使用功能要求，并结合场馆智慧化建设总体规划
-                    目标，按照统一规则、安全可靠、资源共享的原则，使场馆智慧化系统具有良好的可扩展
-                    性、可升级性、合理控制投资成本，从而将场馆建设成为基于智慧化基础平台的国内一流
-                    的现代化，生态化，网络化，数字化，信息化的智慧建筑。
-                                            
-                    
+                <div class="sologan">                                           
+                    智慧场馆设计从体现以人为本、功能使用、技术先进、运行可靠、经济合理、施工维修方便、可扩展等各方面考虑，充分满足使用功能要求，并结合场馆智慧化建设总体规划 目标，按照统一规则、安全可靠、资源共享的原则，使场馆智慧化系统具有良好的可扩展性、可升级性、合理控制投资成本，从而将场馆建设成为基于智慧化基础平台的国内一流的现代化，生态化，网络化，数字化，信息化的智慧建筑。
                 </div>
                 <div class="title tit1">
                     {{'智慧场馆方案应用场景'}}
@@ -34,17 +27,17 @@
                         <el-col :span="8">
                             <div class="grid-content bg1">
                                 <h3>大型赛事</h3>
-                                <p>1、大数据运维场馆设施和馆内人群即时感知</p>
+                                <p>1、IoT设备神经硬件设施全渠道调控</p>
                                 <p>2、智能危机疏散实时最优疏散方案规划</p>
-                                <p>3、人群分布感知精准匹配参展商和参会者</p>
+                                <p>3、票房分析预测观众画像精准定位</p>
                             </div>
                         </el-col>
                         <el-col :span="8">
                             <div class="grid-content bg1">
                                 <h3>交通枢纽</h3>
-                                <p>1、大数据运维场馆设施和馆内人群即时感知</p>
+                                <p>1、数字化室内模型馆内动态全局洞察</p>
                                 <p>2、智能危机疏散实时最优疏散方案规划</p>
-                                <p>3、人群分布感知精准匹配参展商和参会者</p>
+                                <p>3、智能反恐机制高危人员预警和实时定位</p>
                             </div>
                         </el-col>   
                                   
@@ -65,7 +58,7 @@
                     <div class="logo_item"> 
                         <img src="../../assets/images/zhcg/2.png">
                         <div class="logo_item_name">
-                            场景定制化
+                            提升运维效率
                         </div>
                     </div>
                     <div class="logo_item"> 
@@ -101,7 +94,7 @@
                             <el-col :span="8">
                             <div class="grid-content box1">
                                 <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao7.png">
+                                    <img src="../../assets/images/zhcg/tubiao1.png">
                                 </div>
                                 <div class="info">
                                     <h3>(一）场馆系统监控</h3>
@@ -120,7 +113,7 @@
                         <el-col :span="8">
                             <div class="grid-content box1">
                                 <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao8.png">
+                                    <img src="../../assets/images/zhcg/tubiao2.png">
                                 </div>
                                 <div class="info">
                                     <h3>(二）智慧照明控制系统</h3>
@@ -138,7 +131,7 @@
                         <el-col :span="8">
                             <div class="grid-content box1">
                                <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao9.png">
+                                    <img src="../../assets/images/zhcg/tubiao3.png">
                                 </div>
                                 <div class="info">
                                     <h3>(三）防盗报警系统</h3>
@@ -155,7 +148,7 @@
                         <el-col :span="8">
                             <div class="grid-content">
                                 <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao1.png">
+                                    <img src="../../assets/images/zhcg/tubiao4.png">
                                 </div>
                                 <div class="info">
                                     <h3>(四）身份核验系统</h3>
@@ -173,7 +166,7 @@
                           <el-col :span="8">
                             <div class="grid-content">
                                 <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao2.png">
+                                    <img src="../../assets/images/zhcg/tubiao5.png">
                                 </div>
                                 <div class="info">
                                     <h3>(五）保安电子巡更系统</h3>
@@ -189,7 +182,7 @@
                         <el-col :span="8">
                             <div class="grid-content">
                                 <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao4.png">
+                                    <img src="../../assets/images/zhcg/tubiao6.png">
                                 </div>
                                 <div class="info">
                                     <h3>(六）应急指挥调度管理</h3>
@@ -208,16 +201,15 @@
                         <el-col :span="8">
                             <div class="grid-content">
                                 <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao3.png">
+                                    <img src="../../assets/images/zhcg/tubiao7.png">
                                 </div>
                                 <div class="info">
                                     <h3>(七）智能停车场管理系统</h3>
                                     <div class="text">
                                         
-                                    智能场馆采用数字化监控+智能分析预警系
-                                    统更方便快捷，智能停车场所提供了车辆识
-                                    别停车导航，以及智能车闸帮助社区停车场
-                                    实现无人化管理，充分提高大楼的运转效率。
+                                    智能场馆采用数字化监控+智能分析预警系统
+                                    更方便快捷，智能停车场所提供了车辆识别
+                                    停车导航，以及智能车闸帮助社区停车场实现无人化管理，充分提高大楼的运转效率。
                         
                                     </div>
                                 </div>
@@ -227,7 +219,7 @@
                         <el-col :span="8">
                             <div class="grid-content">
                                 <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao5.png">
+                                    <img src="../../assets/images/zhcg/tubiao8.png">
                                 </div>
                                 <div class="info">
                                     <h3>(八）电梯控制系统</h3>
@@ -244,7 +236,7 @@
                         <el-col :span="8">
                             <div class="grid-content">
                                 <div class="img_box">
-                                    <img src="../../assets/images/zhcg/tubiao6.png">
+                                    <img src="../../assets/images/zhcg/tubiao9.png">
                                 </div>
                                 <div class="info">
                                     <h3>(九）入侵侦测管理</h3>
@@ -349,10 +341,11 @@ export default {
             margin-bottom:45px;
         }   
         .sologan {
+            text-indent: 50px;
             width: 100%;
             font-size:24px;
             color:#676565;
-            padding:0 50px;
+            padding:0 58px;
             line-height:40px;
         }
         .info1{
