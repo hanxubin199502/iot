@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="logo_item"> 
-                        <img src="../../assets/images/zhcs/5.png">
+                        <img src="../../assets/images/zhcs/img5.png">
                         <div class="logo_item_name">
                             公共资源挑战
                         </div>
@@ -44,17 +44,8 @@
                 <div class="title tit1">
                     智慧城市物联网解决方案
                 </div>
-                <div class="sologan">
-                                            
-                     
-                         在城市发展过程中，充分利用物联网、互联网、云计算、高性能计算、智能科学等新
-                        兴技术手段，对城市居民生活工作、企业经营发展和政府行使职能过程中的相关活动和需
-                        求，进行智慧的感知、互联、处理和协调，是城市构建成为一个由新技术涵盖的新城市生
-                        态系统，为市民提供一个美好的生活和工作环境为企业创造一个可持续发展的商业环境，
-                        为政府构建一个高效的城市运营管理环境。
-                                                
-                                            
-                    
+                <div class="sologan">                                                                
+                    在城市发展过程中，充分利用物联网、互联网、云计算、高性能计算、智能科学等新兴技术手段，对城市居民生活工作、企业经营发展和政府行使职能过程中的相关活动和需求，进行智慧的感知、互联、处理和协调，是城市构建成为一个由新技术涵盖的新城市生态系统，为市民提供一个美好的生活和工作环境为企业创造一个可持续发展的商业环境，为政府构建一个高效的城市运营管理环境。                         
                 </div>
                 <div class="fzt">
                     <img src="../../assets/images/zhcs/fzt.png">
@@ -111,7 +102,7 @@
                                     <!-- <img src="../../assets/images/zhcg/tubiao7.png"> -->
                                 </div>
                                 <div class="info">
-                                    <h3>(一）场馆系统监控</h3>
+                                    <h3>(一）让基础设施智能化</h3>
                                     <div class="text">
                                      
                                         一是开展环保设施建设、二是能源设施绿色节能、三是监控设施组网互联。
@@ -126,7 +117,7 @@
                                     <!-- <img src="../../assets/images/zhcg/tubiao8.png"> -->
                                 </div>
                                 <div class="info">
-                                    <h3>(二）智慧照明控制系统</h3>
+                                    <h3>(二）让社会管理精细化</h3>
                                     <div class="text">
                                         
                                   
@@ -143,7 +134,7 @@
                                     <!-- <img src="../../assets/images/zhcg/tubiao9.png"> -->
                                 </div>
                                 <div class="info">
-                                    <h3 class="h3">(三）防盗报警系统</h3>
+                                    <h3 class="h3">(三）统筹各产业发展</h3>
                                     <div class="text">
                                         
                                 
@@ -171,7 +162,7 @@
                 </div>
                <div class="title tit2">                 
                    <div class="title tit2">                 
-                    “智慧城市”的解决方案            
+                    智慧城市物联网场景说明          
                     </div> 
                     <div class="fzt">
                         <img src="../../assets/images/zhcs/cjsm.png">
