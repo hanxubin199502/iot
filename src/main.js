@@ -4,14 +4,22 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import HttpPlugIn from './plugins/http.js'
+import ApiProvider from './services/api.provider.js'
 import 'element-ui/lib/theme-chalk/index.css';
+import moment from 'moment'
+
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.prototype.$http = HttpPlugIn
+Vue.prototype.$api = ApiProvider
+Vue.prototype.$moment = moment
+Vue.prototype.$bus=new Vue()
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
 })
