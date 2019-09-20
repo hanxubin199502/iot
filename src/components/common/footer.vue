@@ -11,7 +11,8 @@
             </div>
             <div :class="solutionListNum==2?'div3':'div2'">
                 <p class="p1">解决方案</p> 
-                <p class="p2">智慧楼宇解决方案</p> 
+                <p class="p2">智慧楼宇解决方案</p>
+                <p class="p2">智慧园区解决方案</p>               
                 <p class="p2">智慧城市解决方案</p> 
                 <p class="p2">智慧场馆解决方案</p>         
                 <p class="p2" v-for="(item,index) in solutionList" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p>
