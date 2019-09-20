@@ -29,7 +29,30 @@ export default new Router({
             path: '/solutions:id',
             name: 'solutions',
             component:  () => import ('@/components/solutions/solution-detail'),
-            
+        },
+        //智慧楼宇场景
+        {
+            path: '/smart-building',
+            name: 'solutions',
+            component:  () => import ('@/components/solutions/smart-building'),
+        },
+        //智慧园区
+        {
+            path: '/economic-park',
+            name: 'solutions',
+            component:  () => import ('@/components/solutions/E-park'),
+        },
+          //智慧场馆场景
+        {
+            path: '/smart-stadium',
+            name: 'solutions11',
+            component:  () => import ('@/components/solutions/smart-stadium'),
+        },
+           //智慧城市场景
+           {
+            path: '/smart-city',
+            name: 'solutions11',
+            component:  () => import ('@/components/solutions/smart-city'),
         },
         // 3=>合作
         {

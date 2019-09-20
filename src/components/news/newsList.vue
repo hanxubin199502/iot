@@ -4,7 +4,7 @@
     <!-- 头部banner -->
     <div class="news_banner">
       <div class="center">
-        <div class="news_banner_title">新闻动态</div>
+        <div class="news_banner_title">{{newsType=='1'?"新闻动态":newsType=='2'?"产品动态":"合作福利"}}</div>
         <div class="new_menuhead">News</div>
       </div>
     </div>
@@ -14,15 +14,15 @@
       <div class="left_nav">
         <ul>
           <li style="cursor: not-allowed;">公司介绍</li>
-          <li @click="newsType=1" :class="{active:newsType=='1'}">新闻动态</li>
-          <li @click="newsType=2" :class="{active:newsType=='2'}">产品动态</li>
-          <li @click="newsType=3" :class="{active:newsType=='3'}">合作福利</li>
+          <li style="cursor: pointer;" @click="newsType=1" :class="{active:newsType=='1'}">新闻动态</li>
+          <li style="cursor: pointer;" @click="newsType=2" :class="{active:newsType=='2'}">产品动态</li>
+          <li style="cursor: pointer;" @click="newsType=3" :class="{active:newsType=='3'}">合作福利</li>
           <li style="cursor: not-allowed;">生态合作</li>
           <li style="cursor: not-allowed;">联系我们</li>
         </ul>
       </div>
 
-      <div class="right_newslist">
+      <div v-loading="loading" class="right_newslist" :style="loading?'padding-top:900px;':0">
         <div class="newsitem" v-for="(item,index) in newsList" :key="index">
           <h1 @click="jump(item.id)">{{item.newsTheme}}</h1>
           <span>发布于</span>
@@ -56,20 +56,20 @@ export default {
   },
   data() {
     return {
+      loading:true,
       newsList: [],
       pageSize: 10,
       pageNum: 1,
       total: null,
       newsType: "1",
       newsStatus: "1"
-      // scrollTag:false
     };
   },
   created() {
-    this.getList();
     if(this.$route.query.newsType) {
       this.newsType = this.$route.query.newsType;
     }
+    this.getList();
     
   },
   watch: {
@@ -92,6 +92,7 @@ export default {
           params
         )
         .then(res => {
+          this.loading = false
           this.newsList = res.data.list;
           this.total = res.data.total;
         });
@@ -178,6 +179,7 @@ export default {
           margin-top: 40px;
           color: #2d2d2d;
           font: 20px bold "MicrosoftYaHei-Bold";
+          cursor: pointer;
           &:hover {
             color: #258ce3;
           }

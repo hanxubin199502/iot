@@ -1,38 +1,61 @@
 <template>
   <div class="header" :class="{act:scrollTag}">
     <div class="min-header">
-      <div style="float:left;margin-right:38px" @click="changeTab(0)">
+      <div style="float:left;margin-right:38px;line-height:74px;" @click="changeTab(0)">
         <span class="logo"></span>
-        <span class="logo-text"></span>
+        <span class="logo-text" ></span>
       </div>
       <ul>
-        <li>
-          <el-popover placement="bottom" width="200" trigger="hover">
-            <span slot="reference">产品</span>
-            <ul>
-              <li v-for="(item,index) in productList" :key="index" @click="changeTab(1,item.id)">
-                <!-- :src="../../assets/images/prod_icon1.png"  -->
-                <!-- :src="'../../assets/images/prod_icon'+item.id+'.png'" -->
-                <img :src="item.outlineImagesPath" alt>
-                <span class="production">{{item.productName}}</span>
-                <span>{{item.productOutline}}</span>
-              </li>
-            </ul>
-          </el-popover>
+        <li>         
+            <!-- 产品下拉框 -->
+            <el-popover placement="bottom" :width="270*prodListNum" trigger="hover" v-if="productList.length>0">
+                <span slot="reference">产品</span>
+                <ul v-for="(item,index) in productList" :key="index">
+                <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
+                    <img :src="item1.outlineImagesPath" alt>
+                    <span class="production">{{item1.productName}}</span>
+                    <span>{{item1.productOutline}}</span>
+                </li>
+                </ul>
+            </el-popover>
+            <span v-else>产品</span>
         </li>
         <li>
-          <el-popover placement="bottom" width="200" trigger="hover">
+          <!-- 解决方案下拉框 -->
+          <!-- :width="275*solutionListNum"  -->
+          <el-popover placement="bottom" trigger="hover" v-if="solutionList.length>0">
             <span slot="reference">解决方案</span>
+            <!-- <ul v-for="(item,index) in solutionList" :key="index" > -->
             <ul>
-              <li v-for="(item,index) in solutionList" :key="index" @click="changeTab(2,item.id)">
-                <!-- :src="../../assets/images/prod_icon1.png"  -->
-                <!-- :src="'../../assets/images/prod_icon'+item.id+'.png'" -->
-                <img :src="item.outlineImagesPath" alt>
-                <span class="production">{{item.solutionName}}</span>
-                <span>{{item.solutionOutline}}</span>
-              </li>
+                <li @click="$router.push('/smart-city')">
+                    <img src="../../assets/images/prod_icon1.png" alt>
+                    <span class="production">{{'智慧楼宇解决方案'}}</span>
+                    <span>{{'智慧楼宇一体化解决方案'}}</span>
+                </li>
+                <li @click="$router.push('/economic-park')">
+                    <img src="../../assets/images/prod_icon4.png" alt>
+                    <span class="production">{{'智慧园区解决方案'}}</span>
+                    <span>{{'智慧园区一体化解决方案'}}</span>
+                </li>
+                  <li @click="$router.push('/smart-city')">
+                    <img src="../../assets/images/prod_icon3.png" alt>
+                    <span class="production">智慧城市解决方案</span>
+                    <span>{{'智慧城市一体化解决方案'}}</span>
+                </li>
+                <li @click="$router.push('/smart-stadium')">
+                    <img src="../../assets/images/prod_icon2.png" alt>
+                    <span class="production">智慧场馆解决方案</span>
+                    <span>{{'智慧场馆一体化解决方案'}}</span>
+                </li>
+               
+                <li v-for="(item1,index1) in solutionLists" :key="index1" @click="changeTab(2,item1.id)">
+                    <img :src="item1.outlineImagesPath">
+                    <span class="production">{{item1.solutionName}}</span>
+                    <span>{{item1.solutionOutline}}</span>
+                </li>
             </ul>
           </el-popover>
+          <span v-else>解决方案</span>
         </li>
         <li @click="changeTab(3)">合作</li>
         <li @click="changeTab(4)">新闻与动态</li>
@@ -51,12 +74,16 @@
 </template>
 
 <script>
+// import eventVue from '../../event.js'
 export default {
   data() {
     return {
-      productList: [], //产品
+      prodListNum:0,
+      productList: [], //产品列表
+      solutionListNum:0,
       solutionList: [], //解决方案
-      scrollTag: false
+      scrollTag: false,
+      solutionLists:[]
     };
   },
   created() {
@@ -68,10 +95,6 @@ export default {
       : (this.scrollTag = false)
   },
   mounted() {
-    // setTimeout(()=>{
-    //     this.handleScroll()
-    //     console.log(555)
-    // },10000)
     if (
       location.hash.search("developer") == -1
     ) {
@@ -102,7 +125,7 @@ export default {
     // 获取产品列表
     getProduction() {
       let params = {
-        productStatus: 1,
+        productContextStatus: 2,
         productContextType:1
       };
       this.$http
@@ -114,14 +137,21 @@ export default {
           params
         )
         .then(res => {
-          this.productList = res.data;
-        });
+          this.prodListNum = Math.ceil( res.data.length / 6) 
+          if(this.prodListNum>0) {
+            for(var i=1;i<=this.prodListNum;i++) {
+                this.productList.push(res.data.slice((i-1)*6,6*i))
+            }
+          }
+
+          this.$bus.$emit("productList",this.productList)
+          })
     },
     // 获取解决方案列表
     getSolution() {
       let params = {
         solutionType: 1,
-        solutionStatus: 1
+        solutionStatus: 2
       };
       this.$http
         .get(
@@ -132,8 +162,20 @@ export default {
           params
         )
         .then(res => {
-          this.solutionList = res.data;
-          // console.log(this.solutionList)
+            console.log(res.data)
+            this.solutionLists = res.data
+            this.solutionListNum = Math.ceil( res.data.length / 6) 
+            if(this.solutionListNum>0) {
+                for(var i=1;i<=this.solutionListNum;i++) {
+                    this.solutionList.push(res.data.slice((i-1)*6,6*i))
+                }
+            }
+            else {
+                this.solutionList.push(res.data)
+            }
+          // this.solutionList[0].shift(0)
+    
+            this.$bus.$emit("solutionList",this.solutionLists)
         });
     },
     // 页面跳转
@@ -145,17 +187,11 @@ export default {
         case 1: //产品
           this.$router.push({
             path: "/products"+id,
-            // query: {
-            //   productContextId: id
-            // }
           });
           break;
         case 2: //解决方案
           this.$router.push({
             path: "/solutions"+id,
-            // query: {
-            //   solutionId: id
-            // }
           });
           break;
         case 3: //合作
@@ -169,6 +205,17 @@ export default {
           break;
         case 6: //开发者社区
           this.$router.push("/developer");
+        break;
+      }
+    },
+    // 解决方案跳转
+    solutionJump (num) {
+      switch(num) {
+        case 1:
+          this.$router.push('/smart-building')
+          break;
+        case 2:
+          this.$router.push('/economic-park')
           break;
       }
     },
@@ -187,13 +234,22 @@ export default {
 };
 </script>
 <style lang="less">
+    .el-popper[x-placement^=bottom] {
+    margin-top: 38px !important;
+}
 .el-popover {
-  padding: 12px 15px;
+//   padding: 12px 0px;
+  ul {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 15px;
+
+  }
+
   li {
       cursor: pointer;
-
-    padding: 13px 10px;
-    // height: 70px;
+    width: 230px;
+    padding: 5px 10px;
     border-bottom: 1px solid #f0f0f0;
     &:last-child {
       border-bottom: none;
@@ -230,9 +286,10 @@ export default {
 .header {
   width: 100%;
   height: 78px;
-  z-index: 99;
+  z-index: 300;
   background: transparent;
   position: fixed;
+  top: 0;
   span {
       cursor: pointer;
   }
@@ -269,15 +326,16 @@ export default {
         float: left;
         margin: 0 15px;
         color: #fff;
+        user-select: none;
         .production {
           font: 16px "MicrosoftYaHei";
           color: #2d2d2d;
         }
-        span {
-          display: block;
-          float: left;
-          width: 100%;
-        }
+        // span {
+        //   display: block;
+        //   float: left;
+        //   width: 100%;
+        // }
         &:hover {
           color: #228ee8;
         }
@@ -286,6 +344,7 @@ export default {
     .dl {
       width: 57px;
       height: 24px;
+      line-height:24px;
       border: 1px solid #fff;
       background: transparent;
       color: #fff;

@@ -3,29 +3,29 @@
         <div class="min-footer">
             <div class="div1">
                 <div class="pic1"><img src="https://www.beyondsoft.com/images/erweima_50.png" title="公众号关注二维码"></div>
-                <div class="pic2"><img src="../../assets/images/er.png" title="APP下载二维码"></div>
+                <div class="pic2"><img src="../../assets/images/er2.png" title="APP下载二维码"></div>
             </div>
-            <div class="div2">
+            <div :class="solutionListNum==2?'div3':'div2'">
                 <p class="p1">产品与服务</p>
-                <p class="p2" v-for="(item,index) in productList" :key="index" @click="changeTab(1,item.id)">{{item.productName}}</p>
-                <!-- <p class="p2">场景应用平台</p>
-                <p class="p2">开发平台</p>
-                <p class="p2">数据应用平台</p>                -->
+                <p class="p2" v-for="(item,index) in productList[0]" :key="index" @click="changeTab(1,item.id)">{{item.productName}}</p>
             </div>
-            <div class="div3">
-                <p class="p1">解决方案</p>
-                <p class="p2"  v-for="(item,index) in solutionList" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p>
-                <!-- <p class="p2">智慧园区解决方案</p>                  
-                <p class="p2">智慧场馆解决方案</p>
-                <p class="p2">智慧地产解决方案</p>
-                <p class="p2">智慧商业解决方案</p>
-                <p class="p2">智慧城市解决方案</p>              -->
+            <div :class="solutionListNum==2?'div3':'div2'">
+                <p class="p1">解决方案</p> 
+                <p class="p2">智慧楼宇解决方案</p>
+                <p class="p2">智慧园区解决方案</p>               
+                <p class="p2">智慧城市解决方案</p> 
+                <p class="p2">智慧场馆解决方案</p>         
+                <p class="p2" v-for="(item,index) in solutionList" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p>
             </div>
-            <div class="div4">
-                <p class="p1" @click="aboutUs">关于我们</p>
+            <div class="div3" v-if="solutionListNum > 1">
+                <p class="p1" style="text-indent:-99999px;">1</p>
+                <p class="p2"  v-for="(item,index) in solutionList[1]" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p>
+            </div>
+            <div :class="solutionListNum==2?'div3':'div2'">
+                <p class="p1">关于我们</p>
                 <p class="p2" @click="aboutUs">关于博彦科技</p>           
             </div>
-            <div class="div5">
+            <div :class="solutionListNum==2?'div3':'div2'">
                 <p class="p1">咨询电话</p>
                 <p class="p2">400 000 6282</p>                                 
             </div>
@@ -37,13 +37,31 @@
 export default {
     data(){
         return{
+    prodListNum:0,
     productList: [], //产品
+    solutionListNum:0,
     solutionList: [], //解决方案
         }
     },
-      created() {
-    this.getProduction();
-    this.getSolution();
+  mounted() {
+     
+        this.$bus.$off("productList")
+        this.$bus.$on("productList",i=> {
+            console.log(i)
+            this.productList = i
+            this.prodListNum = i.length
+        })
+        this.$bus.$off("solutionList")
+        this.$bus.$on("solutionList",itemList=> {
+            // this.solutionListNum = itemList.length
+            this.solutionList = itemList
+            //   this.solutionList[0].unshift({
+            //       'solutionId':'0',
+            //       'solutionName':'智慧楼宇解决方案'
+            //   })
+            // console.log(this.solutionList)
+            // console.log(this.solutionListNum)
+        })
   },
     methods:{
         // 页面跳转
@@ -56,45 +74,8 @@ export default {
                 this.$router.push({
                 path: "/solutions"+id,
               });
-
             }
         },
-         // 获取产品列表
-    getProduction() {
-      let params = {
-        productStatus: 1,
-        productContextType:1
-      };
-      this.$http
-        .get(
-          this.$api.getApiAddress(
-            "/operationplatformmgn/o/saas/platform-productContext/query_productContext_list",
-            "API_ROOT"
-          ),
-          params
-        )
-        .then(res => {
-          this.productList = res.data;
-        });
-    },
-    // 获取解决方案列表
-    getSolution() {
-      let params = {
-        solutionType: 1,
-        solutionStatus: 1
-      };
-      this.$http
-        .get(
-          this.$api.getApiAddress(
-            "/operationplatformmgn/o/saas/platform-solution/query_solution_list",
-            "API_ROOT"
-          ),
-          params
-        )
-        .then(res => {
-          this.solutionList = res.data;
-        });
-    },
         // 关于我们
         aboutUs() {
             window.open("https://www.beyondsoft.com/about/index.html");
@@ -134,13 +115,12 @@ export default {
                             width: 100%;
                             height: 100%;
                         }
-                        // background-color: #4dafde;
                     }
                     .pic2{
                         width:88px;
                         height: 85px;
                         margin:30px 0;
-                        padding:5px;
+                        padding:4px;
                         background-color: #fff;
                         img{
                             width: 100%;
@@ -148,7 +128,16 @@ export default {
                         }
                     }
                 }
-                .div2,.div3,.div4,.div5{
+                .div2,.div3{
+                    float: left;
+                    padding-top:50px;
+                    width: 160px;
+                    height: 320px;
+                    overflow:hidden; 
+                    margin-right: 90px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
                     .p1{
                         color:#fff;
                         font-size:14px;
@@ -162,31 +151,10 @@ export default {
                     &:hover {
                         color: #228ee8;
                     }
-                    }
+                   }
                 }
-                .div2{
-                    float: left;
-                    padding-top:50px;
-                    width: 120px;
-                    margin-right: 140px;
-                  
-                }
-                .div3{
-                    float: left;
-                    padding-top:50px;
-                    width: 120px;
-                    margin-right: 140px;
-                }
-                .div4{
-                    float: left;
-                    padding-top:50px;
-                    width: 120px;
-                    margin-right: 140px;
-                }
-                .div5{
-                    float: left;
-                    padding-top:50px;
-                    width: 120px;
+                .div3 {
+                    margin-right: 40px;
                 }
             }
           
