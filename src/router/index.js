@@ -36,6 +36,7 @@ export default new Router({
             name: 'solutions',
             component:  () => import ('@/components/solutions/smart-building'),
         },
+        //智慧园区
         {
             path: '/economic-park',
             name: 'solutions',
