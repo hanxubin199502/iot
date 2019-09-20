@@ -27,10 +27,15 @@
             <span slot="reference">解决方案</span>
             <!-- <ul v-for="(item,index) in solutionList" :key="index" > -->
             <ul>
-                <li @click="solutionJump(1)">
+                <li @click="$router.push('/smart-city')">
                     <img src="../../assets/images/prod_icon1.png" alt>
                     <span class="production">{{'智慧楼宇解决方案'}}</span>
                     <span>{{'智慧楼宇一体化解决方案'}}</span>
+                </li>
+                <li @click="$router.push('/economic-park')">
+                    <img src="../../assets/images/prod_icon4.png" alt>
+                    <span class="production">{{'智慧园区解决方案'}}</span>
+                    <span>{{'智慧园区一体化解决方案'}}</span>
                 </li>
                   <li @click="$router.push('/smart-city')">
                     <img src="../../assets/images/prod_icon3.png" alt>
@@ -168,7 +173,7 @@ export default {
             else {
                 this.solutionList.push(res.data)
             }
-        //   this.solutionList[0].shift(0)
+          // this.solutionList[0].shift(0)
     
             this.$bus.$emit("solutionList",this.solutionLists)
         });
@@ -281,7 +286,7 @@ export default {
 .header {
   width: 100%;
   height: 78px;
-  z-index: 99;
+  z-index: 300;
   background: transparent;
   position: fixed;
   top: 0;
