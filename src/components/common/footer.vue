@@ -11,8 +11,11 @@
             </div>
             <div :class="solutionListNum==2?'div3':'div2'">
                 <p class="p1">解决方案</p> 
-                <p class="p2">智慧楼宇解决方案</p>         
-                <p class="p2" v-for="(item,index) in solutionList[0]" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p>
+                <p class="p2">智慧楼宇解决方案</p>
+                <p class="p2">智慧园区解决方案</p>               
+                <p class="p2">智慧城市解决方案</p> 
+                <p class="p2">智慧场馆解决方案</p>         
+                <p class="p2" v-for="(item,index) in solutionList" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p>
             </div>
             <div class="div3" v-if="solutionListNum > 1">
                 <p class="p1" style="text-indent:-99999px;">1</p>
@@ -42,23 +45,23 @@ export default {
     },
   mounted() {
      
-      this.$bus.$off("productList")
-      this.$bus.$on("productList",i=> {
-          console.log(i)
-          this.productList = i
-          this.prodListNum = i.length
-      })
-         this.$bus.$off("solutionList")
-      this.$bus.$on("solutionList",itemList=> {
-          this.solutionListNum = itemList.length
-          this.solutionList = itemList
-        //   this.solutionList[0].unshift({
-        //       'solutionId':'0',
-        //       'solutionName':'智慧楼宇解决方案'
-        //   })
-          console.log(this.solutionList)
-          console.log(this.solutionListNum)
-      })
+        this.$bus.$off("productList")
+        this.$bus.$on("productList",i=> {
+            console.log(i)
+            this.productList = i
+            this.prodListNum = i.length
+        })
+        this.$bus.$off("solutionList")
+        this.$bus.$on("solutionList",itemList=> {
+            // this.solutionListNum = itemList.length
+            this.solutionList = itemList
+            //   this.solutionList[0].unshift({
+            //       'solutionId':'0',
+            //       'solutionName':'智慧楼宇解决方案'
+            //   })
+            // console.log(this.solutionList)
+            // console.log(this.solutionListNum)
+        })
   },
     methods:{
         // 页面跳转
@@ -129,7 +132,8 @@ export default {
                     float: left;
                     padding-top:50px;
                     width: 160px;
-                    height: 100%;
+                    height: 320px;
+                    overflow:hidden; 
                     margin-right: 90px;
                     &:last-child {
                         margin-right: 0;
