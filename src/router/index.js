@@ -4,7 +4,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export default new Router({
+const appRouter = new Router({
     routes: [ 
         // 0=>首页
         {
@@ -54,6 +54,12 @@ export default new Router({
             name: 'solutions11',
             component:  () => import ('@/components/solutions/smart-city'),
         },
+           //智慧商业场景
+           {
+            path: '/smart-commerce',
+            name: 'smart-commerce',
+            component:  () => import ('@/components/solutions/smart-commerce'),
+        },
         // 3=>合作
         {
             path: '/cooperate',
@@ -81,3 +87,9 @@ export default new Router({
         },
     ]
 })
+appRouter.afterEach((to,from,next) => {
+
+    window.scrollTo(0,0);
+    
+});
+export default appRouter

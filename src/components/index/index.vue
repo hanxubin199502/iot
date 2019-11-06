@@ -456,7 +456,7 @@ export default {
             .info1_title {
                 float: left;
                 margin-left: 20px;
-                font-size: 48px;
+                font-size: 40px;
                 color: #2D2D2D;
             }
             .info1_sologan {
@@ -466,7 +466,7 @@ export default {
             }
             p {
                 color: #5B5A5A;
-                font-size: 22px;
+                font-size: 17px;
                 line-height: 37px;
                 width: 620px;
                 margin-top: 23px;
@@ -479,7 +479,7 @@ export default {
                 height: 506px;
                 position: absolute;
                 right: 0;
-                top: 200px;
+                top: 160px;
             }
         }
 
