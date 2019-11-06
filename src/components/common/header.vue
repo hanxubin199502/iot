@@ -27,7 +27,7 @@
             <span slot="reference">解决方案</span>
             <!-- <ul v-for="(item,index) in solutionList" :key="index" > -->
             <ul>
-                <li @click="$router.push('/smart-city')">
+                <li @click="$router.push('/smart-building')">
                     <img src="../../assets/images/prod_icon1.png" alt>
                     <span class="production">{{'智慧楼宇解决方案'}}</span>
                     <span>{{'智慧楼宇一体化解决方案'}}</span>
@@ -47,12 +47,17 @@
                     <span class="production">智慧场馆解决方案</span>
                     <span>{{'智慧场馆一体化解决方案'}}</span>
                 </li>
+                <li @click="$router.push('/smart-commerce')">
+                    <img src="../../assets/images/prod_icon2.png" alt>
+                    <span class="production">智慧商业解决方案</span>
+                    <span>{{'智慧商业一体化解决方案'}}</span>
+                </li>
                
-                <li v-for="(item1,index1) in solutionLists" :key="index1" @click="changeTab(2,item1.id)">
+                <!-- <li v-for="(item1,index1) in solutionLists" :key="index1" @click="changeTab(2,item1.id)">
                     <img :src="item1.outlineImagesPath">
                     <span class="production">{{item1.solutionName}}</span>
                     <span>{{item1.solutionOutline}}</span>
-                </li>
+                </li> -->
             </ul>
           </el-popover>
           <span v-else>解决方案</span>
