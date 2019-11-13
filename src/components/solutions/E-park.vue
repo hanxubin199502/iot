@@ -156,7 +156,7 @@ export default {
     .header_background {
         // position: relative;
         width:100%;
-        height:560px;
+        height:514px;
         background: url(../../assets/images/e-park/banner.png) center center;
         .solution_title {
         position: relative;
