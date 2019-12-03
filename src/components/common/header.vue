@@ -8,59 +8,87 @@
       <ul>
         <li>         
             <!-- 产品下拉框 -->
-            <el-popover placement="bottom" :width="270*prodListNum" trigger="hover" v-if="productList.length>0">
+            <!-- :width="270*prodListNum" -->
+            <el-popover placement="bottom"  trigger="hover" v-if="productList.length>=0">
                 <span slot="reference">产品</span>
-                <ul v-for="(item,index) in productList" :key="index">
-                <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
-                    <img :src="item1.outlineImagesPath" alt>
-                    <span class="production">{{item1.productName}}</span>
-                    <span>{{item1.productOutline}}</span>
-                </li>
+                <ul>
+                    <li @click="$router.push('/security-platform?showflag')">
+                        <img src="../../assets/images/prod_icon1.png" alt>
+                        <span class="production">{{'安防管理平台'}}</span>
+                        <span>{{'安防管理平台'}}</span>
+                    </li>
+                    <li @click="$router.push('/trip-platform?showflag')">
+                        <img src="../../assets/images/prod_icon1.png" alt>
+                        <span class="production">{{'出行管理平台'}}</span>
+                        <span>{{'出行管理平台'}}</span>
+                    </li>
+                    <li @click="$router.push('/energy-platform?showflag')">
+                        <img src="../../assets/images/prod_icon1.png" alt>
+                        <span class="production">{{'能源管理平台'}}</span>
+                        <span>{{'能源管理平台'}}</span>
+                    </li>
+                    <li @click="$router.push('/enterprise-platform?showflag')">
+                        <img src="../../assets/images/prod_icon1.png" alt>
+                        <span class="production">{{'企业管理平台'}}</span>
+                        <span>{{'企业管理平台'}}</span>
+                    </li>
+                    <li @click="$router.push('/asset-platform?showflag')">
+                        <img src="../../assets/images/prod_icon1.png" alt>
+                        <span class="production">{{'资产管理平台'}}</span>
+                        <span>{{'资产管理平台'}}</span>
+                    </li>
                 </ul>
+                <!-- <ul v-for="(item,index) in productList" :key="index">
+                    <li v-for="(item1,index1) in productList[index]" :key="index1" @click="changeTab(1,item1.id)">
+                        <img :src="item1.outlineImagesPath" alt>
+                        <span class="production">{{item1.productName}}</span>
+                        <span>{{item1.productOutline}}</span>
+                    </li>
+                </ul> -->
             </el-popover>
             <span v-else>产品</span>
         </li>
         <li>
-          <!-- 解决方案下拉框 -->
-          <!-- :width="275*solutionListNum"  -->
-          <el-popover placement="bottom" trigger="hover" v-if="solutionList.length>0">
-            <span slot="reference">解决方案</span>
-            <!-- <ul v-for="(item,index) in solutionList" :key="index" > -->
-            <ul>
-                <li @click="$router.push('/smart-building')">
-                    <img src="../../assets/images/prod_icon1.png" alt>
-                    <span class="production">{{'智慧楼宇解决方案'}}</span>
-                    <span>{{'智慧楼宇一体化解决方案'}}</span>
-                </li>
-                <li @click="$router.push('/economic-park')">
-                    <img src="../../assets/images/prod_icon4.png" alt>
-                    <span class="production">{{'智慧园区解决方案'}}</span>
-                    <span>{{'智慧园区一体化解决方案'}}</span>
-                </li>
-                  <li @click="$router.push('/smart-city')">
-                    <img src="../../assets/images/prod_icon3.png" alt>
-                    <span class="production">智慧城市解决方案</span>
-                    <span>{{'智慧城市一体化解决方案'}}</span>
-                </li>
-                <li @click="$router.push('/smart-stadium')">
-                    <img src="../../assets/images/prod_icon2.png" alt>
-                    <span class="production">智慧场馆解决方案</span>
-                    <span>{{'智慧场馆一体化解决方案'}}</span>
-                </li>
-                <li @click="$router.push('/smart-commerce')">
-                    <img src="../../assets/images/prod_icon2.png" alt>
-                    <span class="production">智慧商业解决方案</span>
-                    <span>{{'智慧商业一体化解决方案'}}</span>
-                </li>
-               
-                <!-- <li v-for="(item1,index1) in solutionLists" :key="index1" @click="changeTab(2,item1.id)">
-                    <img :src="item1.outlineImagesPath">
-                    <span class="production">{{item1.solutionName}}</span>
-                    <span>{{item1.solutionOutline}}</span>
-                </li> -->
-            </ul>
-          </el-popover>
-          <span v-else>解决方案</span>
+            <!-- 解决方案下拉框 -->
+            <!-- :width="275*solutionListNum"  -->
+            <el-popover placement="bottom" trigger="hover" v-if="solutionList.length>=0">
+                <span slot="reference">解决方案</span>
+                <!-- <ul v-for="(item,index) in solutionList" :key="index" >
+                    <li v-for="(item1,index1) in solutionLists" :key="index1" @click="changeTab(2,item1.id)">
+                        <img :src="item1.outlineImagesPath">
+                        <span class="production">{{item1.solutionName}}</span>
+                        <span>{{item1.solutionOutline}}</span>
+                    </li>
+                </ul> -->
+                <ul>
+                    <li @click="$router.push('/smart-building')">
+                        <img src="../../assets/images/prod_icon1.png" alt>
+                        <span class="production">{{'智慧楼宇解决方案'}}</span>
+                        <span>{{'智慧楼宇一体化解决方案'}}</span>
+                    </li>
+                    <li @click="$router.push('/economic-park')">
+                        <img src="../../assets/images/prod_icon4.png" alt>
+                        <span class="production">{{'智慧园区解决方案'}}</span>
+                        <span>{{'智慧园区一体化解决方案'}}</span>
+                    </li>
+                    <li @click="$router.push('/smart-city')">
+                        <img src="../../assets/images/prod_icon3.png" alt>
+                        <span class="production">智慧城市解决方案</span>
+                        <span>{{'智慧城市一体化解决方案'}}</span>
+                    </li>
+                    <li @click="$router.push('/smart-stadium')">
+                        <img src="../../assets/images/prod_icon2.png" alt>
+                        <span class="production">智慧场馆解决方案</span>
+                        <span>{{'智慧场馆一体化解决方案'}}</span>
+                    </li>
+                    <li @click="$router.push('/smart-commerce')">
+                        <img src="../../assets/images/prod_icon2.png" alt>
+                        <span class="production">智慧商业解决方案</span>
+                        <span>{{'智慧商业一体化解决方案'}}</span>
+                    </li>                              
+                </ul>
+            </el-popover>
+            <span v-else>解决方案</span>
         </li>
         <li @click="changeTab(3)">合作</li>
         <li @click="changeTab(4)">新闻与动态</li>
@@ -91,151 +119,147 @@ export default {
       solutionLists:[]
     };
   },
-  created() {
-    this.getProduction();
-    this.getSolution();
-    // 设置导航栏在非开发者停止scoll变化
-    location.hash == "#/developer"
-      ? (this.scrollTag = true)
-      : (this.scrollTag = false)
-  },
-  mounted() {
-    if (
-      location.hash.search("developer") == -1
-    ) {
-      window.addEventListener("scroll", this.handleScroll);
-    }
-  },
+    created() {
+        // this.getProduction();
+        // this.getSolution();
 
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    denglu() {
-      let url = "";
-      url = location.href;
-
-      if (url.indexOf("www-dev.iot.com") > -1) {
-        window.open("http://saas-dev.iot.com");
-      } else if (url.indexOf("http://localhost") > -1) {
-        window.open("http://localhost:8081");
-      } else if (url.indexOf("www-qa.iot.com") > -1) {
-        window.open("http://saas.iot.com");
-      } else if (url.indexOf("www-prod.iot.com") > -1) {
-        window.open("http://saas-prod.iot.com");
-      } else if (url.indexOf("www.bysiot.com") > -1) {
-        window.open("http://portal.bysiot.com");
-      }
+        // 根据flag判断头部导航class
+        location.hash.search(/showflag/) != -1 ? (this.scrollTag = true) : (this.scrollTag = false)
     },
-    // 获取产品列表
-    getProduction() {
-      let params = {
-        productContextStatus: 2,
-        productContextType:1
-      };
-      this.$http
-        .get(
-          this.$api.getApiAddress(
-            "/operationplatformmgn/o/saas/platform-productContext/query_productContext_list",
-            "API_ROOT"
-          ),
-          params
-        )
-        .then(res => {
-          this.prodListNum = Math.ceil( res.data.length / 6) 
-          if(this.prodListNum>0) {
-            for(var i=1;i<=this.prodListNum;i++) {
-                this.productList.push(res.data.slice((i-1)*6,6*i))
-            }
-          }
-
-          this.$bus.$emit("productList",this.productList)
-          })
+    mounted() {
+        if (location.hash.search(/showflag/) == -1) {
+            window.addEventListener("scroll", this.handleScroll);
+        }
     },
-    // 获取解决方案列表
-    getSolution() {
-      let params = {
-        solutionType: 1,
-        solutionStatus: 2
-      };
-      this.$http
-        .get(
-          this.$api.getApiAddress(
-            "/operationplatformmgn/o/saas/platform-solution/query_solution_list",
-            "API_ROOT"
-          ),
-          params
-        )
-        .then(res => {
-            console.log(res.data)
-            this.solutionLists = res.data
-            this.solutionListNum = Math.ceil( res.data.length / 6) 
-            if(this.solutionListNum>0) {
-                for(var i=1;i<=this.solutionListNum;i++) {
-                    this.solutionList.push(res.data.slice((i-1)*6,6*i))
+
+    beforeDestroy() {
+        window.removeEventListener("scroll", this.handleScroll);
+    },
+    methods: {
+        denglu() {
+        let url = "";
+        url = location.href;
+
+        if (url.indexOf("www-dev.iot.com") > -1) {
+            window.open("http://saas-dev.iot.com");
+        } else if (url.indexOf("http://localhost") > -1) {
+            window.open("http://localhost:8081");
+        } else if (url.indexOf("www-qa.iot.com") > -1) {
+            window.open("http://saas.iot.com");
+        } else if (url.indexOf("www-prod.iot.com") > -1) {
+            window.open("http://saas-prod.iot.com");
+        } else if (url.indexOf("www.bysiot.com") > -1) {
+            window.open("http://portal.bysiot.com");
+        }
+        },
+        // 获取产品列表
+        getProduction() {
+        let params = {
+            productContextStatus: 2,
+            productContextType:1
+        };
+        this.$http
+            .get(
+            this.$api.getApiAddress(
+                "/operationplatformmgn/o/saas/platform-productContext/query_productContext_list",
+                "API_ROOT"
+            ),
+            params
+            )
+            .then(res => {
+            this.prodListNum = Math.ceil( res.data.length / 6) 
+            if(this.prodListNum>0) {
+                for(var i=1;i<=this.prodListNum;i++) {
+                    this.productList.push(res.data.slice((i-1)*6,6*i))
                 }
             }
-            else {
-                this.solutionList.push(res.data)
+
+            this.$bus.$emit("productList",this.productList)
+            })
+        },
+        // 获取解决方案列表
+        getSolution() {
+        let params = {
+            solutionType: 1,
+            solutionStatus: 2
+        };
+        this.$http
+            .get(
+            this.$api.getApiAddress(
+                "/operationplatformmgn/o/saas/platform-solution/query_solution_list",
+                "API_ROOT"
+            ),
+            params
+            )
+            .then(res => {
+            
+                this.solutionLists = res.data
+                this.solutionListNum = Math.ceil( res.data.length / 6) 
+                if(this.solutionListNum>0) {
+                    for(var i=1;i<=this.solutionListNum;i++) {
+                        this.solutionList.push(res.data.slice((i-1)*6,6*i))
+                    }
+                }
+                else {
+                    this.solutionList.push(res.data)
+                }
+        
+                this.$bus.$emit("solutionList",this.solutionLists)
+            });
+        },
+        // 页面跳转
+        changeTab(num, id) {
+            switch (num) {
+                case 0: //点击logo返回首页
+                this.$router.push("/homePage");
+                break;
+                case 1: //产品
+                this.$router.push({
+                    path: "/products"+id,
+                });
+                break;
+                case 2: //解决方案
+                this.$router.push({
+                    path: "/solutions"+id,
+                });
+                break;
+                case 3: //合作
+                this.$router.push("/cooperate");
+                break;
+                case 4: //新闻与动态
+                this.$router.push("/news");
+                break;
+                case 5: //关于我们
+                window.open("https://www.beyondsoft.com/about/index.html");
+                break;
+                case 6: //开发者社区
+                this.$router.push("/developer?showflag");
+                break;
             }
-          // this.solutionList[0].shift(0)
-    
-            this.$bus.$emit("solutionList",this.solutionLists)
-        });
-    },
-    // 页面跳转
-    changeTab(num, id) {
-      switch (num) {
-        case 0: //点击logo返回首页
-          this.$router.push("/homePage");
-          break;
-        case 1: //产品
-          this.$router.push({
-            path: "/products"+id,
-          });
-          break;
-        case 2: //解决方案
-          this.$router.push({
-            path: "/solutions"+id,
-          });
-          break;
-        case 3: //合作
-          this.$router.push("/cooperate");
-          break;
-        case 4: //新闻与动态
-          this.$router.push("/news");
-          break;
-        case 5: //关于我们
-          window.open("https://www.beyondsoft.com/about/index.html");
-          break;
-        case 6: //开发者社区
-          this.$router.push("/developer");
-        break;
-      }
-    },
-    // 解决方案跳转
-    solutionJump (num) {
-      switch(num) {
-        case 1:
-          this.$router.push('/smart-building')
-          break;
-        case 2:
-          this.$router.push('/economic-park')
-          break;
-      }
-    },
-    handleScroll() {
-      let top =
-        document.documentElement.scrollTop ||
-        document.body.scrollTop ||
-        window.pageYOffset;
-      if (top > 0) {
-        this.scrollTag = true;
-      } else {
-        this.scrollTag = false;
-      }
+        },
+        // 解决方案跳转
+        solutionJump (num) {
+            switch(num) {
+                case 1:
+                this.$router.push('/smart-building')
+                break;
+                case 2:
+                this.$router.push('/economic-park')
+                break;
+            }
+        },
+        handleScroll() {
+            let top =
+                document.documentElement.scrollTop ||
+                document.body.scrollTop ||
+                window.pageYOffset;
+            if (top > 0) {
+                this.scrollTag = true;
+            } else {
+                this.scrollTag = false;
+            }
+        }
     }
-  }
 };
 </script>
 <style lang="less">
