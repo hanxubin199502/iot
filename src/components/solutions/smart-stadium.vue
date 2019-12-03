@@ -163,7 +163,7 @@
                                 </div>
                             </div>
                         </el-col>
-                          <el-col :span="8">
+                        <el-col :span="8">
                             <div class="grid-content">
                                 <div class="img_box">
                                     <img src="../../assets/images/zhcg/tubiao5.png">
@@ -249,9 +249,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </el-col> 
-                      
-                         
+                        </el-col>                         
                     </el-row>
                 </div>
                 <div class="head_line">
@@ -393,8 +391,7 @@ export default {
                     border:1px solid #0754B7;
                 }
             }
-        }          
-        
+        }                 
         .head_line{
             >span{
                 font-size: 27px;
@@ -490,9 +487,6 @@ export default {
                
             }
         }
-           
-        
-  
      
     }
 }
