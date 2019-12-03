@@ -33,25 +33,25 @@ const appRouter = new Router({
         //智慧楼宇场景
         {
             path: '/smart-building',
-            name: 'solutions',
+            name: 'smart-building',
             component:  () => import ('@/components/solutions/smart-building'),
         },
         //智慧园区
         {
             path: '/economic-park',
-            name: 'solutions',
+            name: 'economic-park',
             component:  () => import ('@/components/solutions/E-park'),
         },
           //智慧场馆场景
         {
             path: '/smart-stadium',
-            name: 'solutions11',
+            name: 'smart-stadium',
             component:  () => import ('@/components/solutions/smart-stadium'),
         },
            //智慧城市场景
            {
             path: '/smart-city',
-            name: 'solutions11',
+            name: 'smart-city',
             component:  () => import ('@/components/solutions/smart-city'),
         },
            //智慧商业场景
@@ -83,6 +83,42 @@ const appRouter = new Router({
             path: '/developer',
             name: 'developerCommunity',
             component:  () => import ('@/components/developerCommunity/developerCommunity'),
+            
+        },
+        // 产品
+        // 安防管理平台
+        {
+            path: '/security-platform',
+            name: 'security-platform',
+            component:  () => import ('@/components/products/security-platform'),
+            
+        },
+        // 出行管理
+        {
+            path: '/trip-platform',
+            name: 'trip-platform',
+            component:  () => import ('@/components/products/trip-platform'),
+            
+        },
+         // 能源管理
+        {
+            path: '/energy-platform',
+            name: 'energy-platform',
+            component:  () => import ('@/components/products/energy-platform'),
+            
+        },
+        //企业管理平台
+        {
+            path: '/enterprise-platform',
+            name: 'enterprise-platform',
+            component:  () => import ('@/components/products/enterprise-platform'),
+            
+        },
+        //资产管理平台
+        {
+            path: '/asset-platform',
+            name: 'asset-platform',
+            component:  () => import ('@/components/products/asset-platform'),
             
         },
     ]
