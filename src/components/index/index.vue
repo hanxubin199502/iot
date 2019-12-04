@@ -18,8 +18,6 @@
             <p v-for="(item,index) in info1Content" :key="index" style="">{{item}}</p>
             <img src="../../../static/images/homepage/p1-finger.png" alt="">
         </div> 
-
-
         <div class="info2_1 clearfix center"> 
             <div v-for="(item,index) in info2Content" :key="index" class="info2_item" >
                 <img :src="item.img" alt="">
@@ -27,7 +25,6 @@
                 <div class="info2_item_content">{{item.content}}</div>
             </div>
         </div>
-
         <div class="info3_1 clearfix">
             <div class="center">
                 <div class="title_name">物联网一站式服务</div>
