@@ -20,38 +20,14 @@ export default {
     },
     data(){
         return{
-            userInfo:{},
-            productList: []
+         
         }
     },
     created(){
-        this.getProductDetail   ()
-        let url = location.href;
-        if(url.indexOf('bysiot')>0){
-            document.domain = 'bysiot.com'
-            this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
-             console.log(this.userInfo)
-        }
+      
     },
     methods:{
-        //获取产品详情 
-        getProductDetail () {
-            let params = {
-        productContextId: this.$route.query.productContextId
-      };
-      this.$http
-        .get(
-          this.$api.getApiAddress(
-            "operationplatformmgn/o/saas/platform-productContext/query_productContext",
-            "API_ROOT"
-          ),
-          params
-        )
-        .then(res => {
-          this.productList = res.data;
-          // console.log(this.solutionList)
-        });
-        }
+      
     },
 
 }
