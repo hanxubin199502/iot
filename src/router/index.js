@@ -121,6 +121,12 @@ const appRouter = new Router({
             component:  () => import ('@/components/products/asset-platform'),
             
         },
+        {
+            path: '/loan-platform',
+            name: 'loan-platform',
+            component:  () => import ('@/components/products/loan-platform'),   
+        },
+
     ]
 })
 appRouter.afterEach((to,from,next) => {
