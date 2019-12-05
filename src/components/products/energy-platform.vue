@@ -21,22 +21,19 @@
                     <div class="name">痛点分析</div>
                     <div class="item_box">
                         <img src="../../assets/images/anfang/one.png" >
-                        <h4>融合难</h4>
-                        <p>传统安防体系各个平台系统数据开放性低，彼此之间共享度低，所以很难开展多维数据融合分析</p>
+                        <h4>解决困难</h4>
+                        <p>传统静态报表楼宇能源分析报告，无法找到能效问题的关键与解决问题的方案</p>
                     </div>
                     <div class="item_box">
                         <img src="../../assets/images/anfang/two.png" >
-                        <h4>人员复杂</h4>
-                        <p>城镇化率加大，城市人口流动量大，人员结构复杂</p>
-
+                        <h4>效率低</h4>
+                        <p>监控系统庞大，故障预警人工巡检工作量大，排查困难、纸质数据记录效率低</p>
                     </div>
                     <div class="item_box">
                         <img src="../../assets/images/anfang/three.png" >
-                        <h4>安全性低</h4>
-                        <p>开放式小区安全性低，商业住宅区人流量、车流量大，停车问题凸显</p>
-
-                    </div>
-                
+                        <h4>能源浪费</h4>
+                        <p>温度、照明等调控不均，导致能源浪费</p>
+                    </div>               
                 </div>
                 <div class="row3 clearfix">
                     <div class="name"></div>
@@ -47,20 +44,16 @@
                 <div class="row2 clearfix">
                     <div class="name">需求分析</div>
                     <div class="item_box">
-                        <img src="../../assets/images/anfang/tu1.png" >
-                     
-                        <p>提高人脸识别的准确率，提高算法算力，扩充分析数据的纬度</p>
+                        <img src="../../assets/images/anfang/tu1.png" >                    
+                        <p>实时掌握楼宇运维情况、故障信息，并给出可行性解决措施</p>
                     </div>
                     <div class="item_box">
-                        <img src="../../assets/images/anfang/tu2.png" >
-                     
-                        <p>智慧安防、停车、门禁等系统提升开放性建筑群安全保障</p>
-
+                        <img src="../../assets/images/anfang/tu2.png" >                    
+                        <p class="p1">解放人力，提高建筑运维效率</p>
                     </div>
                     <div class="item_box">
-                        <img src="../../assets/images/anfang/tu3.png" >
-                     
-                        <p>全面升级安防核心技术，实现进一步得高清化、技术化、网络化</p>
+                        <img src="../../assets/images/anfang/tu3.png" >                
+                        <p class="p1">降低能耗、缩减成本、提升利润</p>
                     </div>               
                 </div>
                 <div class="title">
@@ -309,6 +302,9 @@ export default {
                         position: absolute;
                         top:-32px;
                         left:115px;
+                    }
+                    .p1{
+                        margin-top:40px;
                     }
                 }
             }  
