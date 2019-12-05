@@ -124,7 +124,7 @@
                             <li @mouseover="changeActive(5)" :class="{'active':activeTab==5}">
                                 <span>租赁管理平台</span>
                                 <div class="info_box" v-show="activeTab==5">
-                                    <h3>租赁管理平台<span class="dayu">&nbsp;></span></h3>
+                                    <h3 @click="$router.push('/loan-platform?showflag')">租赁管理平台<span class="dayu">&nbsp;></span></h3>
                                     <div class="div1">
                                         <p class="p1">物业租赁</p>
                                         <p>物业创建</p>

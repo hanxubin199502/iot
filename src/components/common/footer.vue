@@ -11,15 +11,15 @@
                     <p class="p1" style="text-align:center;">产品与服务</p>
                 <div style="float:left;">
                     <p class="p2">建筑管理平台</p>
-                    <p class="p2">资产管理平台</p>
+                    <p class="p2" @click="$router.push('/asset-platform?showflag')">资产管理平台</p>
                     <p class="p2">物业管理平台</p>
-                    <p class="p2">能源管理平台</p>
-                    <p class="p2">租赁管理平台</p>
-                    <p class="p2">出行管理平台</p>
+                    <p class="p2" @click="$router.push('/energy-platform?showflag')">能源管理平台</p>
+                    <p class="p2" @click="$router.push('/loan-platform?showflag')">租赁管理平台</p>
+                    <p class="p2" @click="$router.push('/trip-platform?showflag')">出行管理平台</p>
                 </div>
                 <div style="float:left;margin-left:40px;">
-                    <p class="p2">安防管理平台</p>
-                    <p class="p2">企业管理平台</p>
+                    <p class="p2" @click="$router.push('/security-platform?showflag')">安防管理平台</p>
+                    <p class="p2" @click="$router.push('/enterprise-platform?showflag')">企业管理平台</p>
                     <p class="p2">商圈管理平台</p>
                     <p class="p2">应急管理平台</p>
                     <p class="p2">数据管理平台</p>
