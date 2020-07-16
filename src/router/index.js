@@ -87,6 +87,13 @@ const appRouter = new Router({
       component: () =>
         import("@/components/developerCommunity/developerCommunity")
     },
+    // 7=>产品与方案
+    {
+      path: "/solutions",
+      name: "产品与方案",
+      component: () =>
+        import("@/components/productsSolutions/solutions")
+    },
     // 产品
     // 安防管理平台
     {

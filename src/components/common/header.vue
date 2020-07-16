@@ -439,6 +439,7 @@
             </div>
           </div>
         </li>
+         <li @click="changeTab(7)">产品与方案</li>
         <li>
           <!-- 解决方案下拉框 -->
           <!-- :width="275*solutionListNum"  -->
@@ -646,6 +647,9 @@ export default {
           break;
         case 6: //开发者社区
           this.$router.push("/developer?showflag");
+          break;
+        case 7: //产品与方案
+          this.$router.push("/solutions");
           break;
       }
     },
