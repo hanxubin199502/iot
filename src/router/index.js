@@ -94,6 +94,13 @@ const appRouter = new Router({
       component: () =>
         import("@/components/productsSolutions/solutions")
     },
+    //8=>案例分析
+    {
+      path: "/caseAnalysis",
+      name: "案例分析",
+      component: () =>
+        import("@/components/caseAnalysis/caseanalysis")
+    },
     // 产品
     // 安防管理平台
     {

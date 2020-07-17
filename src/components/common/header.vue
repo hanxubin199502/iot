@@ -440,6 +440,7 @@
           </div>
         </li>
          <li @click="changeTab(7)">产品与方案</li>
+         <li @click="changeTab(8)">案例分析</li>
         <li>
           <!-- 解决方案下拉框 -->
           <!-- :width="275*solutionListNum"  -->
@@ -650,6 +651,9 @@ export default {
           break;
         case 7: //产品与方案
           this.$router.push("/solutions");
+          break;
+        case 8: //案例分析
+          this.$router.push("/caseAnalysis");
           break;
       }
     },

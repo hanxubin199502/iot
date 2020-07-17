@@ -4,7 +4,7 @@
     <div class="header_background">
       <div class="solution_title center clearfix">
         <div class="cooperate_slogan">
-          <p>{{'产品与方案'}}</p>
+          <p>{{'案例分析'}}</p>
           <p class="span"></p>
         </div>
       </div>
