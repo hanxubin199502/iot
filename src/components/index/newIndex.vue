@@ -21,7 +21,8 @@
                 <span @click.prevent="custormAnchor('box4')">案例与客户</span>
             </div>
         </div>
-        <div class="box1" id="box1">
+        <div class="box1">
+            <div id="box1"></div>
             <div class="min">
                 <div class="tit"></div>
                 <div>
@@ -80,7 +81,8 @@
                 </div>
             </div>
         </div>
-        <div class="box2" id="box2">
+        <div class="box2">
+            <div id="box2"></div>
             <div class="min">
                 <div class="tit"></div>
                 <div>
@@ -151,7 +153,8 @@
                 </div>
             </div>
         </div> 
-        <div class="box3" id="box3">
+        <div class="box3">
+            <div id="box3"></div>
             <div class="min">
                 <div class="tit"></div>
                 <div class="div1">
@@ -181,7 +184,8 @@
             </div>
 
         </div>
-        <div class="box4" id="box4">
+        <div class="box4">
+            <div id="box4"></div>
             <div class="min">
                 <div class="tit"></div>
                 <div class="left">
@@ -630,8 +634,15 @@ export default {
             }
         }
         .box1{
+            position: relative;
             height: 695px;
             padding-top:65px;
+            #box1{
+                position: absolute;
+                top:-78px;
+                left:0;
+                height: 1px;
+            }
             .tit{
               
                 height: 65px;
@@ -697,10 +708,17 @@ export default {
 
         }
         .box2{
+            position: relative;
             height:837px;
             background: url(../../assets/images/newindex/mengban1.png) center center;         
             padding-top:0.1px;
             color:#fff;
+            #box2{
+                position: absolute;
+                top:-78px;
+                left:0;
+                height: 1px;
+            }
             .tit{
                 
                 height: 65px;
@@ -796,8 +814,15 @@ export default {
                 }
         }
         .box3{
+            position: relative;
             height: 718px;
             padding-top:65px;
+            #box3{
+                position: absolute;
+                top:-78px;
+                left:0;
+                height: 1px;
+            }
             .tit{
                 height: 65px;
                 width:386px;
@@ -844,10 +869,18 @@ export default {
 
         }
         .box4{
+            position: relative;
             height:846px;
             background: url(../../assets/images/newindex/mengban2.png) center center;         
             padding-top:65px;
             color:#fff;
+            margin-bottom:80px;
+            #box4{
+                position: absolute;
+                top:-78px;
+                left:0;
+                height: 1px;
+            }
             .tit{
                 height: 65px;
                 width:386px;

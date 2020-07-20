@@ -23,6 +23,62 @@
                         <img src="../../assets/images/aboutus/you.png" class="you2">
                         <img src="../../assets/images/aboutus/you.png" class="you3">
                         <img src="../../assets/images/aboutus/you.png" class="you4">
+                        <div class="l-div1">
+                            <h5>2019年4月</h5>
+                            <div class="info_box">
+                                博彦科技与中国金茂绿建签署战略合作协议，共同打造数字化城市
+                            </div>
+
+                        </div>
+                        <div class="l-div2">
+                            <h5>2019年8月</h5>
+                            <div class="info_box">
+                                博彦科技携“智慧楼宇、智慧生活、区域经济”三大业务板块亮相智博会
+                            </div>
+                        </div>
+                        <div class="l-div3">
+                            <h5>2019年10月</h5>
+                            <div class="info_box">
+                                博彦科技“智慧楼宇操作系统”首发路演
+                            </div>
+                        </div>
+                        <div class="l-div4">
+                            <h5>2019年12月</h5>
+                            <div class="info_box">
+                                <p><span>●</span>博彦科技受邀参编国内首部建筑数据健康度标准</p>
+                                <p><span>●</span>博彦科技与河北国康签订战略合作协议</p>
+                                <p><span>●</span>博彦科技与东软集团签订战略合作协议</p>
+                                
+                            </div>
+                        </div>
+                        <div class="r-div1">
+                            <h5>2019年5月</h5>
+                            <div class="info_box">
+                                <p><span>●</span>博彦科技参加京交会，国务院副总理胡春华、北京市委书
+                                记蔡奇莅临体验博彦智慧生活展区</p>
+                                <p><span>●</span>主办京交会-科技展业融合互联论坛，并在会上发布：博彦云物联平台、AAIoT教育产品</p>                            
+                            </div>
+                        </div>
+                        <div class="r-div2">
+                            <h5>2019年9月</h5>
+                            <div class="info_box">
+                                <p><span>●</span>博彦科技携手蓝景丽家打造“智慧生活科技体验中心”亮相15届海淀品牌消费节</p>
+                                <p><span>●</span>博彦智慧楼宇操作系统荣获“数交会”最具竞争力产品奖</p>                            
+                            </div>
+                        </div>
+                        <div class="r-div3">
+                            <h5>2019年11月</h5>
+                            <div class="info_box">
+                                <p><span>●</span>博彦科技“智慧空间-万物互联”2019产品分享会在北京泰富酒店举行</p>
+                                <p><span>●</span>博彦科技受邀参与中国工程建设标准化协会《既有公共建筑机电系统调试标准》编制</p>                            
+                            </div>
+                        </div>
+                        <div class="r-div4">
+                            <h5>2020年4月</h5>
+                            <div class="info_box">
+                                <p>博彦科技参编《高效制冷机房系统应用技术规程》</p>
+                            </div>
+                        </div>
                         
                     </div>
 
@@ -139,6 +195,127 @@ export default {
                         .you4{
                             left:0;
                             bottom:92px;
+                        }
+                        .l-div1,.l-div2,.l-div3,.l-div4{
+                            position:absolute;
+                            left:-595px;
+                            height: 160px;
+                            h5{
+                                font-size: 24px;
+                                color:#000;
+                                font-weight: normal;
+                                letter-spacing: 2.2px;
+                                font-family:MicrosoftYaHei;
+                                background: url(../../assets/images/aboutus/bg.png) no-repeat left 16px;;
+
+                            }
+                            .info_box{
+                                box-shadow:0px 2px 5px 5px rgba(126,176,211,0.04);
+                                border-left:4px solid #fff;
+                                border-image: linear-gradient(#68BEFB, #378AF5) 20 20;
+                                height: 103px;
+                                width: 416px;
+                                background: #fff;
+                                margin-top:24px;
+                                letter-spacing:1px;
+                                padding:26px 25px 0 35px;
+                                font-size: 16px;
+                                color:#333;
+                                line-height: 26px;;
+                            }
+
+                        }
+                        .l-div1{
+                            top:12px;
+                        }
+                        .l-div2{
+                            top:262px;                           
+                        }
+                        .l-div3{
+                            top:559px;
+                        }
+                        .l-div4{                         
+                            width:416px;
+                            height: 240px;
+                            top:837px;
+                     
+                            .info_box{
+                                width: 416px;
+                                height: 184px;
+                                padding-top:11px;                               
+                                p{
+                                    margin-top:15px;
+                                    span{
+                                        color:#70AFFE;
+                                        padding-right:10px;
+                                    }
+                                }
+                            }
+
+                        }
+                        .r-div1,.r-div2,.r-div3,.r-div4{
+                            position:absolute;
+                            right:-595px;
+                            width: 416px;                       
+                            h5{
+                                font-size: 24px;
+                                color:#000;
+                                font-weight: normal;
+                                letter-spacing: 2.2px;
+                                font-family:MicrosoftYaHei;
+                                background: url(../../assets/images/aboutus/bg.png) no-repeat left 16px;;
+
+                            }
+                            .info_box{
+                                box-shadow:0px 2px 5px 5px rgba(126,176,211,0.04);
+                                border-left:4px solid #fff;
+                                border-image: linear-gradient(#68BEFB, #378AF5) 20 20;
+                                width: 416px;
+                                background: #fff;
+                                margin-top:24px;
+                                letter-spacing:1px;
+                                padding:26px 25px 0 35px;
+                                font-size: 16px;
+                                color:#333;
+                                line-height: 26px;       
+                                padding-top:11px;                               
+                                p{
+                                    margin-top:15px;
+                                    span{
+                                        color:#70AFFE;
+                                        padding-right:10px;
+                                    }
+                                }
+                            }
+
+                        }
+                        .r-div1{
+                            height: 250px;
+                            top:83px;
+                            .info_box{
+                               height: 197px; 
+                            }
+                        }
+                        .r-div2{
+                            height: 223px;
+                            top:404px;
+                            .info_box{
+                               height: 170px; 
+                            }
+                        }
+                        .r-div3{
+                            height: 223px;
+                            top:698px;
+                            .info_box{
+                               height: 170px; 
+                            }
+                        }
+                        .r-div4{
+                            height: 160px;
+                            top:999px;
+                            .info_box{
+                               height: 103px; 
+                            }
                         }
                     }
                 }

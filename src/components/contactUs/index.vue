@@ -2,45 +2,43 @@
   <div class="contactUs">
     
     <headerBar />
-      <div class="banner">
-          <h4>联系我们
-              <span></span>
-          </h4>
+        <div class="banner">
+            <h4>联系我们
+                <span></span>
+            </h4>
 
-      </div>
-      <div class="main">
-         
-              <div class="box1">
-                  <div class="tit"></div>
-                  <div>
-                      <img src="../../assets/images/contactus/ditu.png">
-                  </div>
+        </div>
+        <div class="main">      
+            <div class="box1">
+                <div class="tit"></div>
+                <div>
+                    <img src="../../assets/images/contactus/ditu.png">
+                </div>
+            </div>
+            <div class="box2 min">
+                
+                <div class="left">
+                    <h4>华北区</h4>
+                    <span>地址：</span>
+                    <p>北京市海淀区西北旺东路10号院东区7号楼博彦科技大厦</p>
+                    <span>电话：</span>
+                    <p>400 000 6282</p>
+                    <p>159 1046 2778</p>
+                    <span>邮箱：</span>
+                    <p>bys_Iot_yy@beyondsoft.com</p>
+                </div>
+                <div class="right">
+                    <h4>华东区</h4>
+                    <span>地址：</span>
+                    <p>上海市浦东新区学林路36弄11号楼</p>
+                    <span>电话：</span>
+                    <p>(021) 6165 6766</p>
+                    
+                    <span class="last">邮箱：</span>
+                    <p>bys_Iot_yy@beyondsoft.com</p>
+                </div>
 
-              </div>
-              <div class="box2 min">
-                  
-                  <div class="left">
-                      <h4>华北区</h4>
-                      <span>地址：</span>
-                      <p>北京市海淀区西北旺东路10号院东区7号楼博彦科技大厦</p>
-                      <span>电话：</span>
-                      <p>400 000 6282</p>
-                      <p>159 1046 2778</p>
-                      <span>邮箱：</span>
-                      <p>bys_Iot_yy@beyondsoft.com</p>
-                  </div>
-                  <div class="right">
-                      <h4>华东区</h4>
-                      <span>地址：</span>
-                      <p>上海市浦东新区学林路36弄11号楼</p>
-                      <span>电话：</span>
-                      <p>(021) 6165 6766</p>
-                     
-                      <span class="last">邮箱：</span>
-                      <p>bys_Iot_yy@beyondsoft.com</p>
-                  </div>
-
-              </div>
+            </div>
 
       </div>
       <footerBar/>
