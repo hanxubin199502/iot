@@ -497,14 +497,14 @@
         <li @click="changeTab(4)">新闻与动态</li>
         <li @click="changeTab(5)">关于我们</li>
       </ul>
-      <p class="right_p">
+      <!-- <p class="right_p">
         <span style="margin-right:32px;" @click="changeTab(6)">开发者社区</span>
         <span>
           <i @click="denglu">管理控制台</i> |
           <i>中文站</i>
         </span>
         <button class="dl" @click="denglu">登录</button>
-      </p>
+      </p> -->
     </div>
   </div>
 </template>

@@ -13,7 +13,25 @@ const appRouter = new Router({
     {
       path: "/homePage",
       name: "homePage",
-      component: () => import("@/components/index/index")
+      component: () => import("@/components/index/newIndex")
+    },
+    // 关于我们
+    {
+        path: "/aboutUs",
+        name: "aboutUs",
+        component: () => import("@/components/aboutUs/index")
+    },
+    // 关于我们
+    {
+        path: "/contactUs",
+        name: "contactUs",
+        component: () => import("@/components/contactUs/index")
+    },
+      // 平台入口
+      {
+        path: "/platformEntrance",
+        name: "platformEntrance",
+        component: () => import("@/components/platformEntrance/index")
     },
     // 1=>产品
     {
