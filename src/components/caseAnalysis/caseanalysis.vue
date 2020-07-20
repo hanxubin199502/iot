@@ -248,7 +248,7 @@
 
 <script>
 import footerBar from "../common/footer";
-import headerBar from "../common/header";
+import headerBar from "../common/header1";
 export default {
   components: {
     footerBar,

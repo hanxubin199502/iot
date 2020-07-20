@@ -750,7 +750,7 @@
 
 <script>
 import footerBar from "../common/footer";
-import headerBar from "../common/header";
+import headerBar from "../common/header1";
 export default {
   components: {
     footerBar,
@@ -918,7 +918,7 @@ export default {
       height: 56px;
       background: #f3f6fc;
       .table_top{
-        margin: 0 26%;
+        margin: 0 20%;
         height: 56px;
         display: flex;
         justify-content: space-between;

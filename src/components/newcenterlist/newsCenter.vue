@@ -64,7 +64,7 @@
                 <p class="date_year">{{($moment(item.updateTime).format('YYYY-MM-DD')).slice(0,-6)}}</p>
               </div>
               <div class="list_middle">
-                <p class="title_l">{{item.newsTheme}}</p>
+                <p class="title_l" @click='jump(item.id)'>{{item.newsTheme}}</p>
                 <p class="title_e">{{item.newsAbstract}}</p>
               </div>
               <div class="list_right">
@@ -96,7 +96,7 @@
 
 <script>
 import footerBar from "../common/footer";
-import headerBar from "../common/header";
+import headerBar from "../common/header1";
 export default {
   components: {
     footerBar,
@@ -160,6 +160,10 @@ export default {
     currentPage() {
       this.getList();
     },
+    //详情
+    jump(id){
+      console.log(id)
+    }
    }
 };
 </script>
