@@ -261,6 +261,7 @@ export default {
   },
  
   created() {
+      this.newList = this.$route.query.type || '1'
   },
   methods: {
    },
