@@ -176,26 +176,26 @@
             <div class="min">
                 <div class="tit"></div>
                 <div class="left">
-                    <div class="div1">
+                    <div class="div1" @click="$router.push('/caseAnalysis?type=1')">
                         <p>中国石油大厦</p>
                     </div>
-                    <div class="div2">
+                    <div class="div2" @click="$router.push('/caseAnalysis?type=4')">
                         <p>上海-连城集团</p>
                     </div>
-                    <div class="div3">
+                    <div class="div3" @click="$router.push('/caseAnalysis?type=5')">
                         <p>北京-博彦科技大厦</p>
                     </div>
 
                 </div>
                 <div class="right">
-                    <div class="div1">
+                    <div class="div1" @click="$router.push('/caseAnalysis?type=2')">
                         <p>张江-张润大厦</p>
                     </div>
-                    <div class="div2">
+                    <div class="div2" @click="$router.push('/caseAnalysis?type=3')">
                         <p>山东-济宁创意大厦</p>
 
                     </div>
-                    <div class="div3">
+                    <div class="div3" @click="$router.push('/caseAnalysis?type=6')">
                         <p>北京-生命科学园</p>
 
                     </div>
@@ -880,6 +880,7 @@ export default {
             }
             .left,.right{
                  >div{
+                     cursor: pointer;
                      overflow: hidden;
                     >p{
                         width:100%;

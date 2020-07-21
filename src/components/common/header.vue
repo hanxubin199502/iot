@@ -155,17 +155,15 @@ export default {
             path: '/aboutUs'
           });
           break;
-        // case 2: //解决方案
-        //   this.$router.push({
-        //     path: "/solutions" + id
-        //   });
-        //   break;
-        // case 3: //合作
-        //   this.$router.push("/cooperate");
-        //   break;
-        // case 4: //新闻与动态
-        //   this.$router.push("/news");
-        //   break;
+        case 2: //产品与方案
+          this.$router.push("/solutions");
+          break;
+        case 3: //新闻中心
+          this.$router.push("/newsCenter");
+          break;
+        case 4: //案例分析
+          this.$router.push("/caseAnalysis");
+          break;
         case 5: //联系我们
         this.$router.push("/contactUs");
         break;

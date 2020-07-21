@@ -630,22 +630,20 @@ export default {
             path: "/products" + id
           });
           break;
-        case 2: //解决方案
-          this.$router.push({
-            path: "/solutions" + id
-          });
+        case 2: //产品与方案
+          this.$router.push("/solutions");
           break;
-        case 3: //合作
-          this.$router.push("/cooperate");
+        case 3: //新闻中心
+          this.$router.push("/newsCenter");
           break;
-        case 4: //新闻与动态
-          this.$router.push("/news");
+        case 4: //案例分析
+          this.$router.push("/caseAnalysis");
           break;
-        case 5: //关于我们
-          window.open("https://www.beyondsoft.com/about/index.html");
-          break;
-        case 6: //开发者社区
-          this.$router.push("/developer?showflag");
+        case 5: //联系我们
+        this.$router.push("/contactUs");
+        break;
+        case 6: //物联平台入口
+          this.$router.push("/platformEntrance");
           break;
       }
     },
@@ -727,7 +725,7 @@ export default {
   width: 100%;
   height: 78px;
   z-index: 300;
-  background: transparent;
+  background: #053982;
   position: fixed;
   top: 0;
   span {
