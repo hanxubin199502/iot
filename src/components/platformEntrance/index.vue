@@ -40,7 +40,7 @@
 </template>
 <script>
 import footerBar from "../common/footer";
-import headerBar from "../common/header1";
+import headerBar from "../common/header";
 
 export default {
   components: {
@@ -144,6 +144,24 @@ export default {
                 .right{
                     float: right;
                      background:url(../../assets/images/contactus/bg2.png);
+                }
+                .left:hover{
+                    // box-shadow:2px -1px 24px 0px rgba(180,187,195,0.14);
+                    h4{
+                        color:#33C8CD;
+                        span{
+                            background:#33C8CD;
+                        }
+                    }
+                }
+                .right:hover{
+                    // box-shadow:2px -1px 24px 0px rgba(180,187,195,0.14);
+                    h4{
+                        color:#33C8CD;
+                        span{
+                            background:#33C8CD;
+                        }
+                    }
                 }
             }
             .enter{

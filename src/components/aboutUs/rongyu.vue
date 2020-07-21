@@ -147,41 +147,39 @@ export default {
 </style>
 <style lang="less" scoped>
 .rongyu{
-     .box1{
-                height: 588px;
-                padding-top:72px;
-                .tit{          
-                    height: 40px;
-                    width:194px;
-                    margin:0 auto;
-                    background:url(../../assets/images/aboutus/biaoti2-1.png);
-                    margin-bottom:60px;
+    .box1{
+        height: 588px;
+        padding-top:72px;
+        .tit{          
+            height: 40px;
+            width:194px;
+            margin:0 auto;
+            background:url(../../assets/images/aboutus/biaoti2-1.png);
+            margin-bottom:60px;
 
+        }
+        .info{
+            >div{
+                height: 340px;
+                float: left;
+                margin-right:18px;
+                p{
+                    text-align: center;
+                    font-size: 16px;
+                    margin-top:5px;
                 }
-               .info{
-                   >div{
-                       height: 340px;
-                       float: left;
-                       margin-right:18px;
-                       p{
-                           text-align: center;
-                           font-size: 16px;
-                           margin-top:5px;
-                       }
 
-                   }
-                    div:last-child{
-                           margin-right: 0;
-                       }
-                //    img{
-                //        display: block;
-                //        float: left;
-                //        margin-right:14px;
-                      
-                //    }
-
-               }
             }
+            img:hover{
+                box-shadow:-2px 4px 25px 4px rgba(186,187,187,0.19);
+            }
+            div:last-child{
+                margin-right: 0;
+            }
+     
+
+        }
+    }
             .box2{
                 height: 585px;
                 background: #F7F8FA;

@@ -86,7 +86,7 @@
             <div class="min">
                 <div class="tit"></div>
                 <div>
-                    <div class="left">                  
+                    <div class="left" @click="$router.push('/smart-city')">                  
                         <div class="text">
                             <span>智慧城市</span>
                             <p>共享亿万智能城市项目商机，抢占产业红利，加速实现合作伙伴商业化</p>
@@ -94,61 +94,48 @@
                         <img src="../../assets/images/newindex/tu1.png">
                     </div>
                     <div class="right">
-                        <div class="div1">                          
+                        <div class="div1" @click="$router.push('/economic-park')">                          
                             <div class="text">
-                                <span>智慧城市</span>
-                                <p>共享亿万智能城市项目商机，抢占产业红利，加速实现合作伙伴商业化</p>
+                                <span>智慧园区</span>
+                                <p>以信用体系优化资源共享，以开放平台共建园区服务体系</p>
                             </div>
                              <img src="../../assets/images/newindex/tu2.png">
-                            
-
                         </div>
-                        <div class="div2">
-                            
+                        <div class="div2" @click="$router.push('/smart-stadiumg')">                            
                             <div class="text">
-                                <span>智慧城市</span>
-                                <p>共享亿万智能城市项目商机，抢占产业红利，加速实现合作伙伴商业化</p>
+                                <span>智慧场馆</span>
+                                <p>有整体营销、综合运营、整合产品与商务服务，接入等一整套智慧场馆综合服务体系</p>
                             </div>
                             <img src="../../assets/images/newindex/tu3.png">
-
                         </div>
-                        <div class="div3">
-                            
+                        <div class="div3" @click="$router.push('/smart-building')">                         
                             <div class="text">
-                                <span>智慧城市</span>
-                                <p>共享亿万智能城市项目商机，抢占产业红利，加速实现合作伙伴商业化</p>
+                                <span>智慧楼宇</span>
+                                <p>以降低能源成本、提高效率、满足企业可持续发展的目标提供楼宇价值</p>
                             </div>
                             <img src="../../assets/images/newindex/tu4.png">
-
                         </div>
-                        <div class="div4">
-                           
+                        <div class="div4" @click="$router.push('/jizhi-commerce')">                          
                             <div class="text">
-                                <span>智慧城市</span>
-                                <p>共享亿万智能城市项目商机，抢占产业红利，加速实现合作伙伴商业化</p>
+                                <span>智慧家居</span>
+                                <p>有整体营销、综合运营、整合产品与商务服务，接入等一整套智慧场馆综合服务体系</p>
                             </div>
-                             <img src="../../assets/images/newindex/tu5.png">
-
+                            <img src="../../assets/images/newindex/tu5.png">
                         </div>
-                        <div class="div5">
-                            
+                        <div class="div5"  @click="$router.push('/smart-commerce')">                          
                             <div class="text">
-                                <span>智慧城市</span>
-                                <p>共享亿万智能城市项目商机，抢占产业红利，加速实现合作伙伴商业化</p>
+                                <span>智慧商业</span>
+                                <p> 细分化商业娱乐场景解决方案，助力零售餐饮门店智慧化</p>
                             </div>
                             <img src="../../assets/images/newindex/tu6.png">
-
                         </div>
-                        <div class="div6">
-                            
+                        <div class="div6">                          
                             <div class="text">
-                                <span>智慧城市</span>
-                                <p>共享亿万智能城市项目商机，抢占产业红利，加速实现合作伙伴商业化</p>
+                                <span>智慧运营</span>
+                                <p>有整体营销、综合运营、整合产品与商务服务，接入等一整套智慧场馆综合服务体系</p>
                             </div>
                             <img src="../../assets/images/newindex/tu7.png">
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -224,7 +211,7 @@
 <script>
 import Velocity from "velocity-animate";
 import footerBar from "../common/footer";
-import headerBar from "../common/header1";
+import headerBar from "../common/header";
 export default {
   components: {
     footerBar,
@@ -734,6 +721,7 @@ export default {
                 float: left;
                 position: relative;
                 overflow: hidden;
+                cursor: pointer;
                 .text:hover+img {                  
                     transform:scale(1.3,1.3);                   
                 }
@@ -769,6 +757,7 @@ export default {
                 width:calc(100% - 310px);
                 float: right;
                 >div{
+                    cursor: pointer;
                     width: 415px;
                     height: 160px;
                     // padding:17px 25px;
