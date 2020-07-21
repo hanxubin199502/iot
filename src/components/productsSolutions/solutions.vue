@@ -977,8 +977,8 @@ export default {
         height: 130px;
         border: 1px solid #5CACF5;
         position: relative;
-        left: 1px;
-        top: 56px;
+        left: -5px;
+        top: 57px;
         .pc_l{
           text-align: left;
           margin: 15px 10px;
