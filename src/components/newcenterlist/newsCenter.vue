@@ -25,7 +25,7 @@
           <div class="programme_one">
              <div class="num_1" v-for='(item,index) in setnews' :key='index' v-if='index<1'>
                <div class="title_img">
-                 <div class="title_text">{{item.newsTheme}}</div>
+                 <div class="title_text" @click='detail(item.id)'>{{item.newsTheme}}</div>
                </div>
                <div class="brief">
                  <div class="brief_top">
@@ -36,7 +36,7 @@
              </div>
              <div class="num_1">
                <div class="title_img1">
-                 <div class="title_text">{{mouthnews.newsTheme || ''}}</div>
+                 <div class="title_text" @click='detailq(mouthnews.id)'>{{mouthnews.newsTheme}}</div>
                </div>
                <div class="brief">
                  <div class="brief_top">
@@ -47,7 +47,7 @@
              </div>
              <div class="num_1">
                <div class="title_img2">
-                 <div class="title_text">{{setnewstr.newsTheme}}</div>
+                 <div class="title_text" @click='detailw(setnewstr.id)'>{{setnewstr.newsTheme}}</div>
                </div>
                <div class="brief">
                  <div class="brief_top">
@@ -58,17 +58,18 @@
              </div>
           </div>
           <div class="programme_two" v-loading="loading">
-            <div class="list_box" v-for="(item,index) in newsList" :key="index" v-if='index>2'>
+            
+              <div class="list_box" v-for="(item,index) in newsList" :key="index" v-if='index>2'>
               <div class="list_left">
                 <p class="date_lite">{{($moment(item.updateTime).format('YYYY-MM-DD')).slice(5)}}</p>
                 <p class="date_year">{{($moment(item.updateTime).format('YYYY-MM-DD')).slice(0,-6)}}</p>
               </div>
               <div class="list_middle">
-                <p class="title_l">{{item.newsTheme}}</p>
+                <p class="title_l" @click='jump(item.id)'>{{item.newsTheme}}</p>
                 <p class="title_e">{{item.newsAbstract}}</p>
               </div>
               <div class="list_right">
-                <img src="../../assets/images/right.png" alt="">
+                <img src="../../assets/images/right.png" alt="" @click='jump(item.id)'>
               </div>
             </div>
 
@@ -87,7 +88,73 @@
 
       </div>
       <!-- 行业资讯 -->
-  
+      <div class="sceneList" v-if="this.tableStatus==2">
+        <img src="../../assets/images/title_c.png" alt="">
+        <div class="programmeList">
+          <div class="programme_one">
+             <div class="num_1">
+               <div class="title_img">
+                 <div class="title_text" @click='detaile(industry.id)'>{{industry.newsTheme}}</div>
+               </div>
+               <div class="brief">
+                 <div class="brief_top">
+                   {{industry.newsAbstract}}
+                 </div>
+                 <div class="brief_date">{{$moment(industry.updateTime).format('YYYY-MM-DD')}}</div>
+               </div>
+             </div>
+             <div class="num_1">
+               <div class="title_img1">
+                 <div class="title_text" @click='detailr(industryone.id)'>{{industryone.newsTheme}}</div>
+               </div>
+               <div class="brief">
+                 <div class="brief_top">
+                   {{industryone.newsAbstract}}
+                 </div>
+                 <div class="brief_date">{{$moment(industryone.updateTime).format('YYYY-MM-DD')}}</div>
+               </div>
+             </div>
+             <div class="num_1">
+               <div class="title_img2">
+                 <div class="title_text" @click='detailt(industrytwo.id)'>{{industrytwo.newsTheme}}</div>
+               </div>
+               <div class="brief">
+                 <div class="brief_top">
+                   {{industrytwo.newsAbstract}}
+                 </div>
+                 <div class="brief_date">{{$moment(industrytwo.updateTime).format('YYYY-MM-DD')}}</div>
+               </div>
+             </div>
+          </div>
+          <div class="programme_two" v-loading="loading">
+            <div class="list_box" v-for="(item,index) in industryList" :key="index" v-if='index>2'>
+              <div class="list_left">
+                <p class="date_lite">{{($moment(item.updateTime).format('YYYY-MM-DD')).slice(5)}}</p>
+                <p class="date_year">{{($moment(item.updateTime).format('YYYY-MM-DD')).slice(0,-6)}}</p>
+              </div>
+              <div class="list_middle">
+                <p class="title_l" @click='jumpid(item.id)'>{{item.newsTheme}}</p>
+                <p class="title_e">{{item.newsAbstract}}</p>
+              </div>
+              <div class="list_right">
+                <img src="../../assets/images/right.png" alt="" @click='jumpid(item.id)'>
+              </div>
+            </div>
+
+            <el-pagination
+              style="margin:20px 0"
+              background
+              layout="prev, pager, next"
+              :total="Number(totals)"
+              :page-size="pagesize"
+              :current-page.sync="pageNo"
+              @current-change="currentPage1"
+              v-show="totals !== 0"
+            ></el-pagination>
+          </div>
+        </div>
+
+      </div>
     </div>
     <footerBar/>
   </div>
@@ -108,8 +175,12 @@ export default {
       tableStatus:1,
       pageSize: 10,
       pageNum: 1,
+      pageNo:1,
+      pagesize:10,
+      totals:null,
       total: null,
       newsType:'1',
+      IndustType:'4',
       newsStatus: "1",
       newsList:[],
       setnews:[],
@@ -119,10 +190,17 @@ export default {
       setnewstr:[],
       setnewstd:[],
       setnewsts:[],
+      //行业资讯
+      industryList:[],
+      industry:[]
     };
   },
   created() {
+    if(this.$route.query.newsType) {
+      this.tableStatus = this.$route.query.newsType;
+    }
     this.getList()
+    this.getindustList()
   },
   methods: {
     //table切换
@@ -154,12 +232,106 @@ export default {
             this.mouthnews = this.mouthnTime = this.mouthract = res.data.list[1];
             this.setnewstr = this.setnewstd = this.setnewsts = res.data.list[2];
           }
-        });
+      });
     },
     //分页
     currentPage() {
       this.getList();
     },
+    getindustList(){
+      let params = {
+        pageSize: this.pagesize,
+        pageNum: this.pageNo,
+        newsType: this.IndustType,
+        newsStatus: this.newsStatus
+      };
+      this.$http
+        .get(
+          this.$api.getApiAddress(
+            "/operationplatformmgn/o/saas/platform-news/query_news_all",
+            "API_ROOT"
+          ),
+          params
+        )
+        .then(res => {
+          this.loading = false
+          this.industryList = res.data.list;
+          this.totals = res.data.total;
+          this.industry = res.data.list[0];
+          this.industryone = res.data.list[1];
+          this.industrytwo = res.data.list[2];
+      });
+    },
+    //行业资讯分页
+    currentPage1(){
+      this.getindustList()
+    },
+    //新闻中心查看详情特殊处理
+    jump(id){
+      this.$router.push({
+        path: "/inlineDetail" + id,
+        query:{
+          newsType:this.tableStatus
+        }
+      });
+    },
+    detail(id){
+      this.$router.push({
+        path: "/inlineDetail" + id,
+        query:{
+          newsType:this.tableStatus
+        }
+      });
+    },
+    detailq(id){
+      this.$router.push({
+        path: "/inlineDetail" + id,
+        query:{
+          newsType:this.tableStatus
+        }
+      });
+    },
+    detailw(id){
+      this.$router.push({
+        path: "/inlineDetail" + id,
+        query:{
+          newsType:this.tableStatus
+        }
+      });
+    },
+    //行业资讯查看详情特殊处理
+    detaile(id){
+      this.$router.push({
+        path: "/inlineDetail" + id,
+        query:{
+          newsType:this.tableStatus
+        }
+      });
+    },
+    detailr(id){
+      this.$router.push({
+        path: "/inlineDetail" + id,
+        query:{
+          newsType:this.tableStatus
+        }
+      });
+    },
+    detailt(id){
+      this.$router.push({
+        path: "/inlineDetail" + id,
+        query:{
+          newsType:this.tableStatus
+        }
+      });
+    },
+    jumpid(id){
+      this.$router.push({
+        path: "/inlineDetail" + id,
+        query:{
+          newsType:this.tableStatus
+        }
+      });
+    }
    }
 };
 </script>
@@ -358,14 +530,14 @@ export default {
           margin-top: 47px;
           .list_box{
             width: 100%;
-            height: 120px;
+            height: 95px;
             margin-top: 25px;
             border-bottom: 1px solid #D6D9DC;
             display: flex;
             justify-content: space-between;
             .list_left{
               width: 117px;
-              height: 120px;
+              height: 95px;
               text-align: left;
               .date_lite{
                 margin-top: -8px;
@@ -380,7 +552,7 @@ export default {
             }
             .list_middle{
               width: 960px;
-              height: 120px;
+              height: 95px;
               .title_l{
                 font-size: 22px;
                 color: #000;
@@ -411,10 +583,10 @@ export default {
             }
             .list_right{
               width: 117px;
-              height: 120px;
+              height: 95px;
               text-align: right;
               img{
-                margin-top: 45px;
+                margin-top: 30px;
                 cursor: pointer;
               }
             }

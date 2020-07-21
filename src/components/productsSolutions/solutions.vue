@@ -17,7 +17,29 @@
         <div :class="{active:tableStatus==3}" @click="tableClick(3)">{{'硬件(一体化产品)'}}</div>
       </div>
     </div>
-
+    <div class="contact_box">
+        <div>
+          <transition name="el-zoom-in-right">
+            <div v-show="show2" class="transition-box">
+               <div class="pc_l">
+                 <img src="../../assets/images/pc1.png" alt="">
+                 <span>400 000 6282</span>
+               </div>
+               <div class="pc_l" style="margin-left:18px">
+                 <img src="../../assets/images/pc2.png" alt="">
+                 <span>159 1046 2778</span>
+               </div>
+               <div class="pc_l">
+                 <img src="../../assets/images/pc3.png" alt="">
+                 <span>bys_Iot_yy@beyondsoft.com</span>
+               </div>
+            </div>
+          </transition>
+        </div>
+        <div class="contact" @click="show2 = !show2">
+          <span>资询方式</span>
+        </div>
+    </div>
     <div class="content center">
       <!-- 场景化列表 -->
       <div class="sceneList" v-if="this.tableStatus==1">
@@ -771,6 +793,7 @@ export default {
       showhide9:false,
       showhide10:false,
       showhide11:false,
+      show2:false
     };
   },
   created() {
@@ -918,7 +941,7 @@ export default {
       height: 56px;
       background: #f3f6fc;
       .table_top{
-        margin: 0 26%;
+        margin: 0 20%;
         height: 56px;
         display: flex;
         justify-content: space-between;
@@ -938,6 +961,54 @@ export default {
   .active{
     color: #1A66FF;
     border-bottom: 2px solid #1A66FF;
+  }
+  .contact_box{
+      width: 300px;
+      height: 200px;
+      text-align: right;
+      position: fixed;
+      top: 65%;
+      right: 0;
+      display: flex;
+      .transition-box{
+        background: #fff;
+        color: black;
+        width: 225px;
+        height: 130px;
+        border: 1px solid #5CACF5;
+        position: relative;
+        left: 1px;
+        top: 56px;
+        .pc_l{
+          text-align: left;
+          margin: 15px 10px;
+          span{
+            color: #000;
+            font-size: 12px;
+            margin-left: 10px;
+          }
+        }
+      }
+    .contact{
+      width: 100px;
+      height: 200px;
+      text-align: right;
+      position: fixed;
+      top: 65%;
+      right: 0;
+      cursor: pointer;
+      background: url(../../assets/images/information.png) no-repeat center center;
+      span{
+        width: 20px;
+        writing-mode:vertical-lr;
+        position: relative;
+        right: 41px;
+        top: 80px;
+        padding-top: 10px;  
+        font-size: 16px;
+        color: #000;
+      }
+    }
   }
   .content {
     padding: 15px 0;

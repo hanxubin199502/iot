@@ -26,7 +26,7 @@
 </template>
 <script>
 import footerBar from "../common/footer";
-import headerBar from "../common/header1";
+import headerBar from "../common/header";
 import qiye from "./qiye";
 import rongyu from "./rongyu";
 export default {

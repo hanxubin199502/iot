@@ -40,7 +40,7 @@
 </template>
 <script>
 import footerBar from "../common/footer";
-import headerBar from "../common/header1";
+import headerBar from "../common/header";
 
 export default {
   components: {

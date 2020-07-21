@@ -237,9 +237,8 @@
             </div>
           </div>
         </div>
-
       </div>
-  
+   
     </div>
     <footerBar/>
   </div>
