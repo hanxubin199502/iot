@@ -25,7 +25,7 @@
                  <img src="../../assets/images/pc1.png" alt="" >
                  <span>400 000 6282</span>
                </div>
-               <div class="pc_l" style="margin-left:18px">
+               <div class="pc_l" style="margin-left:15px">
                  <img src="../../assets/images/pc2.png" alt="">
                  <span>159 1046 2778</span>
                </div>
