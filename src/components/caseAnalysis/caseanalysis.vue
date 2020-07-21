@@ -335,7 +335,7 @@ export default {
     }
   
   .content {
-    padding: 15px 0;
+    // padding: 15px 0;
     color: #3f3f3f;
     .sceneList{
       width: 100%;

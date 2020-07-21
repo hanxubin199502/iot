@@ -22,7 +22,7 @@
           <transition name="el-zoom-in-right">
             <div v-show="show2" class="transition-box">
                <div class="pc_l">
-                 <img src="../../assets/images/pc1.png" alt="">
+                 <img src="../../assets/images/pc1.png" alt="" >
                  <span>400 000 6282</span>
                </div>
                <div class="pc_l" style="margin-left:18px">
@@ -1011,7 +1011,7 @@ export default {
     }
   }
   .content {
-    padding: 15px 0;
+    // padding: 15px 0;
     color: #3f3f3f;
     .sceneList{
       width: 100%;

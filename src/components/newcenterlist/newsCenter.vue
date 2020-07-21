@@ -20,7 +20,7 @@
     <div class="content center">
       <!-- 新闻中心 -->
       <div class="sceneList" v-if="this.tableStatus==1">
-        <img src="../../assets/images/title_b.png" alt="">
+        <img src="../../assets/images/title_b.png" alt="" style="margin-bottom:56px">
         <div class="programmeList">
           <div class="programme_one">
              <div class="num_1" v-for='(item,index) in setnews' :key='index' v-if='index<1'>
@@ -89,7 +89,7 @@
       </div>
       <!-- 行业资讯 -->
       <div class="sceneList" v-if="this.tableStatus==2">
-        <img src="../../assets/images/title_c.png" alt="">
+        <img src="../../assets/images/title_c.png" alt="" style="margin-bottom:56px">
         <div class="programmeList">
           <div class="programme_one">
              <div class="num_1">
@@ -407,7 +407,7 @@ export default {
     border-bottom: 2px solid #1A66FF;
   }
   .content {
-    padding: 15px 0;
+    // padding: 15px 0;
     color: #3f3f3f;
     .sceneList{
       width: 100%;
@@ -588,6 +588,9 @@ export default {
               img{
                 margin-top: 30px;
                 cursor: pointer;
+              }
+              img:hover{
+                opacity: 0.5;
               }
             }
           }
