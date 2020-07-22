@@ -202,6 +202,16 @@ export default {
     this.getList()
     this.getindustList()
   },
+    watch:{      
+        // 监听type变化
+        $route() {
+            if(this.$route.query.newsType){
+                this.tableStatus = this.$route.query.newsType;
+               
+            }
+            
+        }
+  },
   methods: {
     //table切换
     tableClick(val){

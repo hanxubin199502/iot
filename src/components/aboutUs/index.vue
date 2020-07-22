@@ -47,8 +47,17 @@ export default {
     };
   },
   created() {
-      this.act=this.$route.query.type || 1
-  
+      this.act=this.$route.query.type || 1  
+  },
+  watch:{      
+        // 监听type变化
+        $route() {
+            if(this.$route.query.type){
+                this.act = this.$route.query.type;
+               
+            }
+            
+        }
   },
   methods: {
       changeTab(n){
