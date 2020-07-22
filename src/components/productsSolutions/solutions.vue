@@ -797,6 +797,7 @@ export default {
     };
   },
   created() {
+      this.tableStatus = this.$route.query.type || 1
   },
   methods: {
     tableClick(val){

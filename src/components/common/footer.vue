@@ -24,39 +24,38 @@
       <div class="right">
           <div class="div1">
               <p class="p1">关于我们</p>
-              <p>企业简介</p>
-              <p>企业动态</p>
-              <p>荣誉资质</p>
-              <p>合作伙伴</p>
+              <p @click="$router.push('/aboutUs?type=1')">企业简介</p>
+              <p @click="$router.push('/aboutUs?type=2')">荣誉资质</p>
+              <p @click="$router.push('/aboutUs?type=3')">合作伙伴</p>
           </div>
           <div class="div2">
-               <p class="p1">产品与方案</p>
-              <p>场景化</p>
-              <p>功能服务</p>
-              <p>硬件</p>
+              <p class="p1">产品与方案</p>
+              <p @click="$router.push('/solutions?type=1')">场景化</p>
+              <p @click="$router.push('/solutions?type=2')">功能服务</p>
+              <p @click="$router.push('/solutions?type=3')">硬件</p>
               
 
           </div>
            <div class="div3">
               <p class="p1">新闻中心</p>
-              <p>公司动态</p>
-              <p>行业咨询</p>
+              <p @click="$router.push('/newsCenter?newsType=1')">公司动态</p>
+              <p @click="$router.push('/newsCenter?newsType=2')">行业资讯</p>
             
           </div>
            <div class="div4">
               <p class="p1">案例分析</p>
-              <p>案例</p>
+              <p @click="$router.push('/caseAnalysis')">案例</p>
             
           </div>
            <div class="div5">
               <p class="p1">联系我们</p>
-              <p>联系方式</p>
+              <p @click="$router.push('/contactUs')">联系方式</p>
               
           </div>
            <div class="div6">
               <p class="p1">物联平台入口</p>
-              <p>BY OS</p>
-              <p>设备接入平台</p>
+              <p @click="$router.push('/platformEntrance')">BY OS</p>
+              <p @click="$router.push('/platformEntrance')">设备接入平台</p>
             
           </div>
 
@@ -179,8 +178,10 @@ export default {
                 color:#E8E9E9;
                 font-size: 14px;
                 margin-top:20px;
+                cursor: pointer;
             }
             .p1{
+                cursor:default ;
                 margin-top:0;
                 font-size: 16px;
                 color:#fff;

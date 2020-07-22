@@ -46,7 +46,8 @@ export default {
    
     };
   },
-  mounted() {
+  created() {
+      this.act=this.$route.query.type || 1
   
   },
   methods: {
