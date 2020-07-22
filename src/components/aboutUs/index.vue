@@ -17,6 +17,7 @@
         </div>
         <qiye v-show="act==1" />
         <rongyu v-show="act==2" />
+        <hezuo v-show="act==3" />
         
 
       </div>
@@ -29,12 +30,14 @@ import footerBar from "../common/footer";
 import headerBar from "../common/header";
 import qiye from "./qiye";
 import rongyu from "./rongyu";
+import hezuo from "./hezuo";
 export default {
   components: {
     footerBar,
     headerBar,
     qiye,
-    rongyu
+    rongyu,
+    hezuo
   },
 
   data() {
