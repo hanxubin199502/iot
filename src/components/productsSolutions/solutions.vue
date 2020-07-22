@@ -974,6 +974,7 @@ export default {
     border-bottom: 2px solid #1A66FF;
   }
   .contact_box{
+      z-index: 2;
       width: 300px;
       height: 200px;
       text-align: right;

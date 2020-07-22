@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="min-footer">
+    <div class="min-footer clearfix">
       <div class="left">
         <div class="pic1">
           <img
@@ -121,6 +121,7 @@ export default {
   height: 328px;
   background-color: #363636;
   position: relative;
+  z-index: 1;
   .footer-bottom {
     width: 100%;
     height: 38px;
