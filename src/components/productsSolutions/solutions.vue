@@ -22,10 +22,10 @@
           <transition name="el-zoom-in-right">
             <div v-show="show2" class="transition-box">
                <div class="pc_l">
-                 <img src="../../assets/images/pc1.png" alt="">
+                 <img src="../../assets/images/pc1.png" alt="" >
                  <span>400 000 6282</span>
                </div>
-               <div class="pc_l" style="margin-left:18px">
+               <div class="pc_l" style="margin-left:15px">
                  <img src="../../assets/images/pc2.png" alt="">
                  <span>159 1046 2778</span>
                </div>
@@ -37,7 +37,7 @@
           </transition>
         </div>
         <div class="contact" @click="show2 = !show2">
-          <span>资询方式</span>
+          <span>咨 询 方 式</span>
         </div>
     </div>
     <div class="content center">
@@ -77,7 +77,7 @@
                   <div class="copywriting">
                     <p>1.降低办公成本：对工位分类灵活管理，利用有限的空间安排更多工作人员使用，降低租赁费用；</p>
                     <p>2.提升办公空间效率：最大化的办公室空间利用，满足企业对工位资源的需求；</p>
-                    <p>3 办公室资源精细化管理：办公室空间内集成智能化硬件与智慧管理平台，实现办公资源精细化管理</p>
+                    <p>3 办公室资源精细化管理：办公室空间内集成智能化硬件与智慧管理平台，实现办公资源精细化管理。</p>
                   </div>
                   <div class="slutionmode_log">
                     <img src="../../assets/images/icon1.png" alt="">
@@ -118,7 +118,7 @@
                 </div>
                 <div class="copywriting">
                   博彦智慧家居解决方案从消费者的实际应用场景出发，具体到每一个生活细节，集成家居生活的所需的12大智能生活系列产品，为消费者打造以住
-                  宅为平台的智能化住宅设施与家庭日程事务的管理系统，提升家居安全性、便利性、舒适性、艺术性，并实现环保节能的居住环境
+                  宅为平台的智能化住宅设施与家庭日程事务的管理系统，提升家居安全性、便利性、舒适性、艺术性，并实现环保节能的居住环境。
                 </div>
                 <div class="slutionmode_log">
                   <img src="../../assets/images/icon1.png" alt="">
@@ -136,7 +136,7 @@
                     <span>解决方案优点</span>
                   </div>
                   <div class="copywriting">
-                    <p>1.场景化：充分考虑业主的每一种应用场景，并将设备使用设定为不同的模式，业主一键式操控，避免多次、重复的操作</p>
+                    <p>1.场景化：充分考虑业主的每一种应用场景，并将设备使用设定为不同的模式，业主一键式操控，避免多次、重复的操作；</p>
                     <p>2.安全性：根据住宅整体安防需求，囊括人员安全、隐私安全、环境安全、设备安全等诸多维度，为业主打造万无一失的住宅环境；</p>
                     <p>3 远程操作：通过智能终端与设备联网，实现对住宅的远程管理，让自己的家时刻都在掌握之中。</p>
                   </div>
@@ -185,7 +185,7 @@
                 <div class="copywriting">
                   教室的发展经历了“传统教室——电子教室——多媒体教室——多媒体网络教室——智慧教室”的过程，随着电子信息技术的发展，各种电子信息
                   设备也应用到传统教室帮助教学工作，但经过多年发展，“教室的演进”走入一个瓶颈，而物联网技术的兴趣，则将教室提升到一个新的层面，
-                  在帮助教学的同时重构了教室环境，创建了适合学生学习和教师教学的新型教室环境
+                  在帮助教学的同时重构了教室环境，创建了适合学生学习和教师教学的新型教室环境。
                 </div>
                 <div v-show="showhide2">
                   <div class="slutionmode_log">
@@ -518,7 +518,7 @@
                 <span class="label">指标</span>
                 <span class="label">数据</span>
                 <span class="label">企业风险</span>
-                <span class="label">产行形式</span>
+                <span class="label">产行形势</span>
               </span>
             </div>
           </div>
@@ -570,7 +570,7 @@
                     <p>1.能源管理、故障诊断分析、节能优化控制等相关项目；</p>
                     <p>2.中小型楼宇项目子系统独立控制；</p>
                     <p>3.对接各种规模楼宇的现有楼控系统；</p>
-                    <p>4.大型楼宇项目的综合能源管理与优化控制</p>
+                    <p>4.大型楼宇项目的综合能源管理与优化控制。</p>
                   </div>
                 </div>
               </div>
@@ -612,7 +612,7 @@
                 <div class="copywriting">
                   近些年来随着各类流行性传染疾病，如SARS、禽流感、甲型H1N1等病毒的频繁来袭，使得人们对室内空气质量越来越关注。作为新兴技术，低温等离
                   子体技术在空气治理方面具有高效、清洁、低能耗等独特优势，博彦正是基于此项技术的多重优势，研发低温等离子体消毒灭菌系统解决方案，作为
-                  BY OS的重要组成部分，保障建筑物空间内的空气质量，提升建筑物的运营服务水平
+                  BY OS的重要组成部分，保障建筑物空间内的空气质量，提升建筑物的运营服务水平。
                 </div>
                 <div v-show="showhide9">
                   <div class="slutionmode_log">
@@ -667,7 +667,7 @@
                   <span>开发背景</span>
                 </div>
                 <div class="copywriting">
-                  面对新型冠状病毒带来的威胁，如何高效监测、识别、追踪、过滤复工复产人员信息，使企业、社区等实现精准管控，高效运行，成为智慧卫士需要解决的基本痛点
+                  面对新型冠状病毒带来的威胁，如何高效监测、识别、追踪、过滤复工复产人员信息，使企业、社区等实现精准管控，高效运行，成为智慧卫士需要解决的基本痛点。
                 </div>
                 <div v-show="showhide10">
                   <div class="slutionmode_log">
@@ -675,7 +675,7 @@
                     <span>解决方案优点</span>
                   </div>
                   <div class="copywriting">
-                    <p>1.部署便捷：采用航空箱、便携电脑、超高精多感探头、数据采集器等多种硬件设备、搭配集智智慧物联管控平台，为用户安防布控、人员出入核验、处理突发应急情况提供多方位的辅助和保障</p>
+                    <p>1.部署便捷：采用航空箱、便携电脑、超高精多感探头、数据采集器等多种硬件设备、搭配集智智慧物联管控平台，为用户安防布控、人员出入核验、处理突发应急情况提供多方位的辅助和保障；</p>
                     <p>2.智能识别：集成大数据分析系统、监测日志管理系统、动态监测系统、人员信息采集系统，实现不停留体温检测、人员身份识别、人员特征分析等多重功能。</p>
                   </div>
                   <div class="slutionmode_log">
@@ -765,7 +765,7 @@
       </div>
   
     </div>
-    <footerBar/>
+    <footerBar style="z-index:-1" />
   </div>
 </template>
 
@@ -989,8 +989,8 @@ export default {
         height: 130px;
         border: 1px solid #5CACF5;
         position: relative;
-        left: 1px;
-        top: 56px;
+        left: -5px;
+        top: 57px;
         .pc_l{
           text-align: left;
           margin: 15px 10px;
@@ -1015,7 +1015,7 @@ export default {
         writing-mode:vertical-lr;
         position: relative;
         right: 41px;
-        top: 80px;
+        top: 75px;
         padding-top: 10px;  
         font-size: 16px;
         color: #000;
@@ -1023,7 +1023,8 @@ export default {
     }
   }
   .content {
-    padding: 15px 0;
+    // padding: 15px 0;
+    padding-bottom: 105px;
     color: #3f3f3f;
     .sceneList{
       width: 100%;

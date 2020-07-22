@@ -229,9 +229,7 @@
               <div class="table_title" style="margin-top:34px">
                 <img src="../../assets/images/blackmore.png" alt=""><span class="table_obj">方案亮点与价值</span>
                 <div class="obj_text">
-                  对中央空调全空气系统控制逻辑优化升级，国内第一个应用TR算法的智能楼宇，保证相同风量的状态下，改造后能耗低于原管理
-                  算法；对中央空调水系统控制逻辑优化升级，提升环境和舒适地并降低客户投诉率，保证供热效果不降低的情况下，降低水温、
-                  水压能耗，实现供水温度与压强设定的配合优化。
+                 ...
                 </div>
               </div>
             </div>
@@ -336,7 +334,7 @@ export default {
     }
   
   .content {
-    padding: 15px 0;
+    // padding: 15px 0;
     color: #3f3f3f;
     .sceneList{
       width: 100%;
