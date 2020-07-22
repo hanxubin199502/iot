@@ -525,7 +525,7 @@ export default {
                 display:-webkit-box;
                 -webkit-box-orient:vertical;
                 -webkit-line-clamp:2;
-                white-space: nowrap;
+                // white-space: nowrap;
               }
               .brief_date{
                 color: #999;
@@ -593,7 +593,7 @@ export default {
                 display:-webkit-box;
                 -webkit-box-orient:vertical;
                 -webkit-line-clamp:2;
-                white-space: nowrap;
+                // white-space: nowrap;
                 margin-bottom: 28px;
               }
             }
