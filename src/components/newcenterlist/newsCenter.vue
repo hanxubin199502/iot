@@ -520,12 +520,17 @@ export default {
                 text-align: left;
                 font-size: 16px;
                 color: #333;
-                overflow:hidden;
-                text-overflow:ellipsis;
-                display:-webkit-box;
-                -webkit-box-orient:vertical !important;
-                -webkit-line-clamp:2;
-                // white-space: nowrap;
+                // overflow:hidden;
+                // text-overflow:ellipsis;
+                // display:-webkit-box;
+                // -webkit-box-orient:vertical !important;
+                // -webkit-line-clamp:2;
+                text-overflow: -o-ellipsis-lastline;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
               }
               .brief_date{
                 color: #999;
