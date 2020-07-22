@@ -192,7 +192,8 @@ export default {
       setnewsts:[],
       //行业资讯
       industryList:[],
-      industry:[]
+      industry:[],
+      industryone:[]
     };
   },
   created() {
