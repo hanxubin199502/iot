@@ -16,7 +16,7 @@
           
         </div>
         <div class="pic2">
-          <img src="www.bysiot.com/qrcode/jizhi.png" title="超哥APP" />
+          <img src="../../assets/images/app.png" title="超哥APP" />
           <p>超哥APP</p>
           
         </div>
