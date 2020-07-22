@@ -101,7 +101,7 @@
                             </div>
                              <img src="../../assets/images/newindex/tu2.png">
                         </div>
-                        <div class="div2" @click="$router.push('/smart-stadiumg')">                            
+                        <div class="div2" @click="$router.push('/smart-stadium')">                            
                             <div class="text">
                                 <span>智慧场馆</span>
                                 <p>有整体营销、综合运营、整合产品与商务服务，接入等一整套智慧场馆综合服务体系</p>

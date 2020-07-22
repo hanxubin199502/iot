@@ -797,6 +797,17 @@ export default {
     };
   },
   created() {
+      this.tableStatus = this.$route.query.type || 1
+  },
+    watch:{      
+        // 监听type变化
+        $route() {
+            if(this.$route.query.type){
+                this.tableStatus = this.$route.query.type;
+               
+            }
+            
+        }
   },
   methods: {
     tableClick(val){

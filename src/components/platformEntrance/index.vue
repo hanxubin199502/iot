@@ -169,9 +169,15 @@ export default {
                 color:#1A66FF;
                 font-size: 20px;
                 text-align: right;
-                text-decoration:underline;
+                
+                letter-spacing:2px;
                 span{
+                    text-decoration:underline;
                     cursor: pointer;
+                    margin-right: 10px;
+                }
+                img{
+                    width:30px;
                 }
 
             }
