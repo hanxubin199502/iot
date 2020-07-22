@@ -515,7 +515,7 @@ export default {
               margin-top: -30px;
               .brief_top{
                 width: 100%;
-                height: 52px;
+                height: 46px;
                 border: 1px solid #fff;
                 text-align: left;
                 font-size: 16px;
@@ -523,13 +523,17 @@ export default {
                 overflow:hidden;
                 text-overflow:ellipsis;
                 display:-webkit-box;
-                -webkit-box-orient:vertical;
                 -webkit-line-clamp:2;
+                /* ! autoprefixer: off */  
+                -webkit-box-orient: vertical; 
+                /* autoprefixer: on */ 
+               
               }
               .brief_date{
                 color: #999;
                 font-size: 14px;
                 text-align: left;
+                margin-top: 10px;
               }
             }
           }
@@ -590,7 +594,9 @@ export default {
                 overflow:hidden;
                 text-overflow:ellipsis;
                 display:-webkit-box;
-                -webkit-box-orient:vertical;
+                /* ! autoprefixer: off */  
+                -webkit-box-orient: vertical; 
+                /* autoprefixer: on */ 
                 -webkit-line-clamp:2;
                 margin-bottom: 28px;
               }
