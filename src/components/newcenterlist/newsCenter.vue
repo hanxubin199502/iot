@@ -515,8 +515,9 @@ export default {
               margin-top: -30px;
               .brief_top{
                 width: 100%;
-                height: 52px;
+                height: 46px;
                 border: 1px solid #fff;
+                border:1px solid red;
                 text-align: left;
                 font-size: 16px;
                 color: #333;
