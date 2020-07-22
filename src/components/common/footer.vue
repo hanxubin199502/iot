@@ -16,7 +16,7 @@
           
         </div>
         <div class="pic2">
-          <img src="../../assets/images/logo-footer.png" title="超哥APP" />
+          <img src="www.bysiot.com/qrcode/jizhi.png" title="超哥APP" />
           <p>超哥APP</p>
           
         </div>
@@ -121,7 +121,7 @@ export default {
   height: 328px;
   background-color: #363636;
   position: relative;
-  z-index: 1;
+  z-index: 1 !important;
   .footer-bottom {
     width: 100%;
     height: 38px;
