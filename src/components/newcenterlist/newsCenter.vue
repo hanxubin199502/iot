@@ -520,17 +520,14 @@ export default {
                 text-align: left;
                 font-size: 16px;
                 color: #333;
-                // overflow:hidden;
-                // text-overflow:ellipsis;
-                // display:-webkit-box;
-                // -webkit-box-orient:vertical !important;
-                // -webkit-line-clamp:2;
-                text-overflow: -o-ellipsis-lastline;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                display:-webkit-box;
+                -webkit-line-clamp:2;
+                /* ! autoprefixer: off */  
+                -webkit-box-orient: vertical; 
+                /* autoprefixer: on */ 
+               
               }
               .brief_date{
                 color: #999;
@@ -597,9 +594,10 @@ export default {
                 overflow:hidden;
                 text-overflow:ellipsis;
                 display:-webkit-box;
-                -webkit-box-orient:vertical;
+                /* ! autoprefixer: off */  
+                -webkit-box-orient: vertical; 
+                /* autoprefixer: on */ 
                 -webkit-line-clamp:2;
-                // white-space: nowrap;
                 margin-bottom: 28px;
               }
             }
