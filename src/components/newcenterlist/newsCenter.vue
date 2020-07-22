@@ -74,7 +74,7 @@
             </div>
 
             <el-pagination
-              style="margin:20px 0"
+              style="margin:85px 0"
               background
               layout="prev, pager, next"
               :total="Number(total)"
@@ -142,7 +142,7 @@
             </div>
 
             <el-pagination
-              style="margin:20px 0"
+              style="margin:85px 0"
               background
               layout="prev, pager, next"
               :total="Number(totals)"
@@ -537,10 +537,10 @@ export default {
           width: 100%;
           // height: 300px;
           // border: 1px solid red;
-          margin-top: 47px;
+          margin-top: 72px;
           .list_box{
             width: 100%;
-            height: 95px;
+            height: 110px;
             margin-top: 25px;
             border-bottom: 1px solid #D6D9DC;
             display: flex;
@@ -562,7 +562,8 @@ export default {
             }
             .list_middle{
               width: 960px;
-              height: 95px;
+              height: 110px;
+              // border: 1px solid red;
               .title_l{
                 font-size: 22px;
                 color: #000;
@@ -583,12 +584,14 @@ export default {
                 font-size: 16px;
                 color: #333;
                 border: 1px solid #fff;
+                // border: 1px solid red;
                 text-align: left;
                 overflow:hidden;
                 text-overflow:ellipsis;
                 display:-webkit-box;
                 -webkit-box-orient:vertical;
                 -webkit-line-clamp:2;
+                margin-bottom: 28px;
               }
             }
             .list_right{
@@ -596,8 +599,10 @@ export default {
               height: 95px;
               text-align: right;
               img{
-                margin-top: 30px;
+                margin-top: 42px;
                 cursor: pointer;
+                width: 34px;
+                height: 19px;
               }
               img:hover{
                 opacity: 0.5;
