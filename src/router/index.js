@@ -13,7 +13,25 @@ const appRouter = new Router({
     {
       path: "/homePage",
       name: "homePage",
-      component: () => import("@/components/index/index")
+      component: () => import("@/components/index/newIndex")
+    },
+    // 关于我们
+    {
+        path: "/aboutUs",
+        name: "aboutUs",
+        component: () => import("@/components/aboutUs/index")
+    },
+    // 关于我们
+    {
+        path: "/contactUs",
+        name: "contactUs",
+        component: () => import("@/components/contactUs/index")
+    },
+      // 平台入口
+      {
+        path: "/platformEntrance",
+        name: "platformEntrance",
+        component: () => import("@/components/platformEntrance/index")
     },
     // 1=>产品
     {
@@ -87,6 +105,38 @@ const appRouter = new Router({
       component: () =>
         import("@/components/developerCommunity/developerCommunity")
     },
+    // 7=>产品与方案
+    {
+      path: "/solutions",
+      name: "产品与方案",
+      component: () =>
+        import("@/components/productsSolutions/solutions")
+    },
+    //8=>案例分析
+    {
+      path: "/caseAnalysis",
+      name: "案例分析",
+      component: () =>
+        import("@/components/caseAnalysis/caseanalysis")
+    },
+    //9=>新闻中心
+    {
+      path: "/newsCenter",
+      name: "新闻中心",
+      component: () =>
+        import("@/components/newcenterlist/newsCenter")
+    },
+    {
+      path: "/inlineDetail:id",
+      name: "新闻详情",
+      component: () => import("@/components/newcenterlist/inlineDetail")
+    },
+    // {
+    //   path: "/caseAnalysis",
+    //   name: "案例分析",
+    //   component: () =>
+    //     import("@/components/caseAnalysis/caseanalysis")
+    // },
     // 产品
     // 安防管理平台
     {

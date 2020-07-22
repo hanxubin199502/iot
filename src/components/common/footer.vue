@@ -1,88 +1,66 @@
 <template>
   <div class="footer">
-    <div class="min-footer">
-      <div class="div1">
+    <div class="min-footer clearfix">
+      <div class="left">
         <div class="pic1">
           <img
             src="https://www.beyondsoft.com/images/erweima_50.png"
-            title="公众号关注二维码"
+            title="公众号二维码"
           />
-          公众号
+          <p>公众号</p>
+          
         </div>
-        <div class="pic2">
+        <div class="pic1">
           <img src="../../assets/images/QRcode.png" title="APP下载二维码" />
-          APP下载
+          <p>博彦物联APP</p>
+          
         </div>
         <div class="pic2">
-          <img src="../../assets/images/logo-footer.png" title="超哥APP" />
-          超哥APP
+          <img src="www.bysiot.com/qrcode/jizhi.png" title="超哥APP" />
+          <p>超哥APP</p>
+          
         </div>
       </div>
-      <div class="div2">
-        <p class="p1" style="text-align: center;">产品与服务</p>
-        <div style="float: left;">
-          <p class="p2">建筑管理平台</p>
-          <p class="p2" @click="$router.push('/asset-platform?showflag')">
-            资产管理平台
-          </p>
-          <p class="p2">物业管理平台</p>
-          <p class="p2" @click="$router.push('/energy-platform?showflag')">
-            能源管理平台
-          </p>
-          <p class="p2" @click="$router.push('/loan-platform?showflag')">
-            租赁管理平台
-          </p>
-          <p class="p2" @click="$router.push('/trip-platform?showflag')">
-            出行管理平台
-          </p>
-        </div>
-        <div style="float: left; margin-left: 40px;">
-          <p class="p2" @click="$router.push('/security-platform?showflag')">
-            安防管理平台
-          </p>
-          <p class="p2" @click="$router.push('/enterprise-platform?showflag')">
-            企业管理平台
-          </p>
-          <p class="p2">商圈管理平台</p>
-          <p class="p2">应急管理平台</p>
-          <p class="p2">数据管理平台</p>
-          <p class="p2">场景管理平台</p>
-        </div>
+      <div class="right">
+          <div class="div1">
+              <p class="p1">关于我们</p>
+              <p @click="$router.push('/aboutUs?type=1')">企业简介</p>
+              <p @click="$router.push('/aboutUs?type=2')">荣誉资质</p>
+              <p @click="$router.push('/aboutUs?type=3')">合作伙伴</p>
+          </div>
+          <div class="div2">
+              <p class="p1">产品与方案</p>
+              <p @click="$router.push('/solutions?type=1')">场景化</p>
+              <p @click="$router.push('/solutions?type=2')">功能服务</p>
+              <p @click="$router.push('/solutions?type=3')">硬件</p>
+              
+
+          </div>
+           <div class="div3">
+              <p class="p1">新闻中心</p>
+              <p @click="$router.push('/newsCenter?newsType=1')">公司动态</p>
+              <p @click="$router.push('/newsCenter?newsType=2')">行业资讯</p>
+            
+          </div>
+           <div class="div4">
+              <p class="p1">案例分析</p>
+              <p @click="$router.push('/caseAnalysis')">案例</p>
+            
+          </div>
+           <div class="div5">
+              <p class="p1">联系我们</p>
+              <p @click="$router.push('/contactUs')">联系方式</p>
+              
+          </div>
+           <div class="div6">
+              <p class="p1">物联平台入口</p>
+              <p @click="$router.push('/platformEntrance')">BY OS</p>
+              <p @click="$router.push('/platformEntrance')">设备接入平台</p>
+            
+          </div>
+
       </div>
-      <div class="div3">
-        <p class="p1">解决方案</p>
-        <p class="p2" @click="$router.push('/smart-building')">
-          智慧楼宇解决方案
-        </p>
-        <p class="p2" @click="$router.push('/economic-park')">
-          智慧园区解决方案
-        </p>
-        <p class="p2" @click="$router.push('/smart-city')">智慧城市解决方案</p>
-        <p class="p2" @click="$router.push('/smart-stadium')">
-          智慧场馆解决方案
-        </p>
-        <p class="p2" @click="$router.push('/smart-commerce')">
-          智慧商业解决方案
-        </p>
-        <!-- <p class="p2" v-for="(item,index) in solutionList" :key="index" @click="changeTab(2,item.id)">{{item.solutionName}}</p> -->
-      </div>
-      <div class="div3" v-if="solutionListNum > 1">
-        <p class="p1" style="text-indent: -99999px;">1</p>
-        <p
-          class="p2"
-          v-for="(item, index) in solutionList[1]"
-          :key="index"
-          @click="changeTab(2, item.id)"
-        >
-          {{ item.solutionName }}
-        </p>
-      </div>
-      <div class="div3">
-        <p class="p1">联系我们</p>
-        <p class="p2">400 000 6282</p>
-        <p class="p2">159 1046 2778</p>
-        <p class="p2">bys_Iot_yy@beyondsoft.com</p>
-      </div>
+  
     </div>
     <div class="footer-bottom">
       @2019 博彦科技 博彦物联 用户协议 隐私权政策 服务状态
@@ -143,6 +121,7 @@ export default {
   height: 328px;
   background-color: #363636;
   position: relative;
+  z-index: 1 !important;
   .footer-bottom {
     width: 100%;
     height: 38px;
@@ -157,70 +136,72 @@ export default {
   .min-footer {
     width: 1200px;
     margin: 0 auto;
-    .div1 {
+    .left {
       float: left;
-      width: 350px;
-      margin-right: 110px;
-      padding-top: 60px;
+      width: 480px;
+     
+      padding-top: 53px;
       .pic1 {
         text-align: center;
-        color: #939793;
+        color: #E8E9E9;
         float: left;
-        width: 88px;
-        height: 85px;
-        margin-top: 40px;
+        font-size: 16px;
+        margin-right:43px;
         img {
-          margin-bottom: 30px;
-          width: 100%;
-          height: 100%;
+          margin-bottom: 10px;
+      
+          width: 130px;
+            height: 130px;
         }
       }
       .pic2 {
         text-align: center;
-        color: #939793;
+        color: #E8E9E9;
         float: left;
-        width: 88px;
-        height: 85px;
-        margin-top: 40px;
-        margin-left: 40px;
-        padding: 4px;
-        background-color: #fff;
+        font-size: 16px;
         img {
-          margin-bottom: 30px;
-          width: 100%;
-          height: 100%;
+          margin-bottom: 10px;
+       
+          width: 130px;
+            height: 130px;
         }
       }
     }
-    .div2,
-    .div3 {
-      float: left;
-      padding-top: 50px;
-      width: 200px;
-      height: 320px;
-      overflow: hidden;
-      margin-right: 80px;
-      &:last-child {
-        margin-right: 0;
-      }
-      .p1 {
-        color: #fff;
-        font-size: 14px;
-        margin-bottom: 15px;
-      }
-      .p2 {
-        cursor: pointer;
+    .right{
+        width:calc(100% - 480px);
+        float: right;
+        padding: 53px 0 0 80px;
+        
+        >div{
+            float: left;
+            margin-right:39px;
+            p{
+                color:#E8E9E9;
+                font-size: 14px;
+                margin-top:20px;
+                cursor: pointer;
+            }
+            .p1{
+                cursor:default ;
+                margin-top:0;
+                font-size: 16px;
+                color:#fff;
+                padding-bottom:10px;
+                border-bottom:1px solid #fff;
+            }
 
-        margin-bottom: 15px;
-        color: #939793;
-        &:hover {
-          color: #228ee8;
         }
-      }
-    }
-    .div3 {
-      width: 160px;
-      margin-right: 50px;
+        .div1,.div3,.div4,.div5{
+            width:64px;        
+        }
+        .div2{
+            width:80px;
+        }
+      
+        .div6{
+            margin-right:0;
+            width:100px;  
+        }
     }
   }
 }

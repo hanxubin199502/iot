@@ -250,7 +250,7 @@ export default {
   width: 100%;
   height: 78px;
   z-index: 300;
-  background: transparent;
+  background: #053982;
   position: fixed;
   top: 0;
   span {

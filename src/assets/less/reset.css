@@ -89,6 +89,11 @@ input:focus {
   margin: 0 auto;
   height: 100%;
 }
+.min {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+  }
 
 .clearfix:after {
   visibility: hidden;
