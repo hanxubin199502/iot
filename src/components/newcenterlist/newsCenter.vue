@@ -517,7 +517,6 @@ export default {
                 width: 100%;
                 height: 46px;
                 border: 1px solid #fff;
-                border:1px solid red;
                 text-align: left;
                 font-size: 16px;
                 color: #333;
@@ -526,6 +525,7 @@ export default {
                 display:-webkit-box;
                 -webkit-box-orient:vertical;
                 -webkit-line-clamp:2;
+                white-space: nowrap;
               }
               .brief_date{
                 color: #999;
@@ -593,6 +593,7 @@ export default {
                 display:-webkit-box;
                 -webkit-box-orient:vertical;
                 -webkit-line-clamp:2;
+                white-space: nowrap;
                 margin-bottom: 28px;
               }
             }
