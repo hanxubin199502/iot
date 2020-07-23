@@ -169,20 +169,18 @@ export default {
                 color:#1A66FF;
                 font-size: 20px;
                 text-align: right;
-                
+                padding-right:10px;                
                 letter-spacing:2px;
                 span{
                     text-decoration:underline;
                     cursor: pointer;
-                    margin-right: 10px;
+                    margin-right: 8px;
                 }
                 img{
                     width:30px;
+                    margin-top:-3px;
                 }
-
-            }
-            
+            }           
         }
-
     }
 </style>
