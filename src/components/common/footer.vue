@@ -4,10 +4,10 @@
       <div class="left">
         <div class="pic1">
           <img
-            src="https://www.beyondsoft.com/images/erweima_50.png"
+            src="../../assets/images/gzh.jpg" 
             title="公众号二维码"
           />
-          <p>公众号</p>
+          <p>博彦物联公众号</p>
           
         </div>
         <div class="pic1">
