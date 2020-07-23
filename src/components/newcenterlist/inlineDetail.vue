@@ -7,11 +7,12 @@
         <span class='detail_title' @click='jumpBack'>{{newsType==1?'公司动态':'行业资讯'}}</span><span class='detail_v'>></span><span class='detail_x'>详情</span>
       </div>
       <!-- 新闻主体 -->
-      <div class="right_newslist">
+      <div class="right_newslist" v-loading="loading">
         <div class="newsitem">
           <h1>{{news.newsTheme}}</h1>
           <p class='dete'>{{$moment(news.updateTime).format('YYYY-MM-DD')}}</p>
           <el-divider></el-divider>
+          <div style="margin:24px 0;font-size:16px;color:#333">{{news.newsAbstract}}</div>
           <p v-html="news.newsContent"></p>
         </div>
       </div>
@@ -30,7 +31,8 @@ export default {
   data() {
     return {
       newsType:'',
-      news: []
+      news: [],
+      loading:true
     };
   },
   created() {
@@ -54,7 +56,7 @@ export default {
           params
         )
         .then(res => {
-          console.log(res);
+          this.loading = false
           this.news = res.data;
         });
     },
