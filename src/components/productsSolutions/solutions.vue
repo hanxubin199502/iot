@@ -25,7 +25,7 @@
                  <img src="../../assets/images/pc1.png" alt="" >
                  <span>400 000 6282</span>
                </div>
-               <div class="pc_l" style="margin-left:15px">
+               <div class="pc_l" style="margin-left:12px">
                  <img src="../../assets/images/pc2.png" alt="">
                  <span>159 1046 2778</span>
                </div>
@@ -924,25 +924,24 @@ export default {
   .header_background {
     // position: relative;
     width: 100%;
-    height: 430px;
+    height: 444px;
     background: url(../../assets/images/pro_banner.png) center center;
     .solution_title {
       position: relative;
       color: #ffffff;
       .cooperate_slogan {
         user-select: none;
-        position: absolute;
         width: 100%;
         text-align: center;
-        top: 170px;
-        left: 0;
+        padding-top: 180px;
         font-size: 50px;
+        letter-spacing: 8px;
         .span{
           margin: auto;
           width: 95px;
           height: 3px;
           background: #fff;
-          margin-top: 5px;
+          margin-top: 18px;
         }
       }
     }
@@ -993,7 +992,7 @@ export default {
         top: 57px;
         .pc_l{
           text-align: left;
-          margin: 15px 10px;
+          margin: 18px 10px;
           span{
             color: #000;
             font-size: 12px;

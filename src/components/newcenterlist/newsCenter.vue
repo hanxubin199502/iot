@@ -69,7 +69,8 @@
                 <p class="title_e">{{item.newsAbstract}}</p>
               </div>
               <div class="list_right">
-                <img src="../../assets/images/right.png" alt="" @click='jump(item.id)'>
+                <i class="icon-lujing rse" @click='jumpid(item.id)'></i>
+                <!-- <img src="../../assets/images/right.png" alt="" @click='jump(item.id)'> -->
               </div>
             </div>
 
@@ -137,7 +138,8 @@
                 <p class="title_e">{{item.newsAbstract}}</p>
               </div>
               <div class="list_right">
-                <img src="../../assets/images/right.png" alt="" @click='jumpid(item.id)'>
+                <i class="icon-lujing rse" @click='jumpid(item.id)'></i>
+                <!-- <img src="../../assets/images/right.png" alt="" @click='jumpid(item.id)'> -->
               </div>
             </div>
 
@@ -368,25 +370,24 @@ export default {
   .header_background {
     // position: relative;
     width: 100%;
-    height: 430px;
+    height: 444px;
     background: url(../../assets/images/plo_banner.png) center center;
     .solution_title {
       position: relative;
       color: #ffffff;
       .cooperate_slogan {
         user-select: none;
-        position: absolute;
         width: 100%;
         text-align: center;
-        top: 170px;
-        left: 0;
+        padding-top: 180px;
+        letter-spacing: 8px;
         font-size: 50px;
         .span{
           margin: auto;
           width: 95px;
           height: 3px;
           background: #fff;
-          margin-top: 5px;
+          margin-top: 18px;
         }
       }
     }
@@ -605,14 +606,20 @@ export default {
               width: 117px;
               height: 95px;
               text-align: right;
-              img{
-                margin-top: 42px;
+              .rse{
+                width: 50px;
+                height: 30px;
+                color: #778495;
+              }
+              i{
                 cursor: pointer;
                 width: 34px;
                 height: 19px;
+                position: relative;
+                top: 42px;
               }
-              img:hover{
-                opacity: 0.5;
+              i:hover{
+                color: #1A66FF;
               }
             }
           }

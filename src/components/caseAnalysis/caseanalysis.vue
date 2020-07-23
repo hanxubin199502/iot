@@ -220,7 +220,7 @@
                   设备管理、故障检测诊断、用户管理、指挥中心驾驶舱等。<br>
                   能源站自动控制：本系统实现区域供冷系统的自动监控，在系统安全可靠运行的前提下，以满足末端用户供冷需求为根本。
                   系统从冷站制冷、二级泵管网稳定输冷和末端用户稳定供冷三个环节进行控制，在满足用户舒适性要求下，对系统进行优化，
-                  使系统运行于最佳工况实现经济运行<br>
+                  使系统运行于最佳工况实现经济运行。<br>
                   园区系统集成：对整个园区的智能化集成、统一管理，包括楼宇自控系统、安全防范系统、智能照明系统、门禁系统、防盗入侵系统。
 
 
@@ -229,7 +229,11 @@
               <div class="table_title" style="margin-top:34px">
                 <img src="../../assets/images/blackmore.png" alt=""><span class="table_obj">方案亮点与价值</span>
                 <div class="obj_text">
-                 ...
+                 智慧园区解决方案依托在智慧运维管理平台，为园区提供一站式运维管理服务，实现园区能耗管理效率的提升同时运维成本的降低。
+                 平台依据数据运算分析，制定公共设备不同状况的运行模式，提高了各环节运行质量，延长设备使用寿命，实现科学调度的目的；
+                 同时通过物联网等多项信息技术应用，解决了设备数据的实时采集存储与运算分析，起到辅助决策的功能；并且通过对园区各运行
+                 节点的传感、采集、收发，将各个设备设施运行效率和异常情况自动传输到后台，提高园区资产运行质量，实现智能化的故障报警
+                 和运行效能监测，提高处理故障的反应速度。
                 </div>
               </div>
             </div>
@@ -287,25 +291,24 @@ export default {
   .header_background {
     // position: relative;
     width: 100%;
-    height: 430px;
+    height: 444px;
     background: url(../../assets/images/pco_banner.png) center center;
     .solution_title {
       position: relative;
       color: #ffffff;
       .cooperate_slogan {
         user-select: none;
-        position: absolute;
         width: 100%;
         text-align: center;
-        top: 170px;
-        left: 0;
+        padding-top: 180px;
+        letter-spacing: 8px;
         font-size: 50px;
         .span{
           margin: auto;
           width: 95px;
           height: 3px;
           background: #fff;
-          margin-top: 5px;
+          margin-top: 18px;
         }
       }
     }
